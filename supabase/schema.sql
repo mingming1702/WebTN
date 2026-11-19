@@ -1,4 +1,4 @@
--- Chạy script này trong Supabase SQL Editor nếu muốn đồng bộ đề thi & điểm số trên nhiều thiết bị
+-- Chạy toàn bộ script này trong Supabase SQL Editor để tạo bảng và cấp quyền đầy đủ cho API (anon/authenticated)
 
 create table if not exists public.exams (
   id text primary key,
@@ -29,22 +29,27 @@ create table if not exists public.submissions (
 create index if not exists idx_submissions_exam_id on public.submissions(exam_id);
 create index if not exists idx_submissions_submitted_at on public.submissions(submitted_at desc);
 
--- Bật Row Level Security và policy đơn giản cho mô hình lớp học
+-- Cấp quyền truy cập schema và bảng cho role anon & authenticated của Supabase Data API
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on table public.exams to anon, authenticated;
+grant select, insert, update, delete on table public.submissions to anon, authenticated;
+
+-- Bật Row Level Security và policy cho phép đọc/ghi dữ liệu lớp học
 alter table public.exams enable row level security;
 alter table public.submissions enable row level security;
 
 drop policy if exists "Allow public read exams" on public.exams;
-create policy "Allow public read exams" on public.exams
-  for select using (true);
-
 drop policy if exists "Allow public insert/update/delete exams" on public.exams;
-create policy "Allow public insert/update/delete exams" on public.exams
-  for all using (true) with check (true);
+drop policy if exists "Allow public access exams" on public.exams;
+create policy "Allow public access exams" on public.exams
+  for all to anon, authenticated
+  using (true)
+  with check (true);
 
 drop policy if exists "Allow public read submissions" on public.submissions;
-create policy "Allow public read submissions" on public.submissions
-  for select using (true);
-
 drop policy if exists "Allow public insert/delete submissions" on public.submissions;
-create policy "Allow public insert/delete submissions" on public.submissions
-  for all using (true) with check (true);
+drop policy if exists "Allow public access submissions" on public.submissions;
+create policy "Allow public access submissions" on public.submissions
+  for all to anon, authenticated
+  using (true)
+  with check (true);

@@ -146,6 +146,11 @@ async function supabaseFetch(cfg, path, options = {}) {
         `Chưa tìm thấy bảng exams/submissions trên Supabase. Hãy mở Supabase SQL Editor và chạy file supabase/schema.sql. (${text})`
       );
     }
+    if (text.includes('42501')) {
+      throw new Error(
+        `Bảng trên Supabase chưa được cấp quyền cho role anon. Hãy mở Supabase SQL Editor và chạy lại toàn bộ file supabase/schema.sql mới nhất (có lệnh GRANT). (${text})`
+      );
+    }
     throw new Error(`Supabase error (${res.status}): ${text}`);
   }
 
