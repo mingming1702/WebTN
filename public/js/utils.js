@@ -1,4 +1,12 @@
 export const OPTION_KEYS = ['A', 'B', 'C', 'D'];
+export const SCORE_SCALE = 40;
+
+export function getScoreBadgeClass(correctCount, totalQuestions = 30) {
+  const ratio = Number(correctCount) / (Number(totalQuestions) || 30);
+  if (ratio >= 0.8) return 'badge-green';
+  if (ratio >= 0.5) return 'badge-blue';
+  return 'badge-red';
+}
 
 export function escapeHtml(value) {
   return String(value ?? '')
@@ -41,7 +49,8 @@ export function formatDateTime(isoString) {
     month: '2-digit',
     year: 'numeric',
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
+    second: '2-digit'
   });
 }
 
@@ -195,12 +204,14 @@ export function gradeExam(exam, answersMap) {
   });
 
   const totalQuestions = flatQuestions.length || 30;
-  const score = Number(((correctCount / totalQuestions) * 10).toFixed(2));
+  // Thang điểm 40: mỗi câu đúng được 1 điểm
+  const score = correctCount;
 
   return {
     correctCount,
     totalQuestions,
     score,
+    scoreScale: SCORE_SCALE,
     details
   };
 }

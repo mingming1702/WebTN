@@ -1,9 +1,14 @@
-import { getStorageMode, listExams, listSubmissions } from './storage.js';
-import { escapeHtml, formatDateTime, formatDurationText } from './utils.js';
+import { listExams, listSubmissions } from './storage.js';
+import {
+  SCORE_SCALE,
+  escapeHtml,
+  formatDateTime,
+  formatDurationText,
+  getScoreBadgeClass
+} from './utils.js';
 
 const examListContainer = document.getElementById('examListContainer');
 const searchExamInput = document.getElementById('searchExamInput');
-const storageBadge = document.getElementById('storageBadge');
 const recentHistorySection = document.getElementById('recentHistorySection');
 const recentHistoryList = document.getElementById('recentHistoryList');
 
@@ -88,33 +93,56 @@ function renderRecentHistory(submissions) {
     return;
   }
 
-  const latest = submissions.slice(0, 5);
   recentHistorySection.classList.remove('hidden');
-  recentHistoryList.innerHTML = latest
-    .map((sub) => {
-      const scoreClass = sub.score >= 8 ? 'badge-green' : sub.score >= 5 ? 'badge-blue' : 'badge-red';
-      const reviewHref = `/exam?id=${encodeURIComponent(sub.examId)}&review=${encodeURIComponent(sub.id)}`;
 
-      const classTag = sub.studentClass
-        ? ` <span style="font-weight:500; color:var(--text-muted);">(${escapeHtml(sub.studentClass)})</span>`
-        : '';
+  const grouped = new Map();
+  submissions.forEach((sub) => {
+    const key = sub.examId || sub.examTitle;
+    if (!grouped.has(key)) {
+      grouped.set(key, { examTitle: sub.examTitle, items: [] });
+    }
+    grouped.get(key).items.push(sub);
+  });
+
+  recentHistoryList.innerHTML = Array.from(grouped.values())
+    .map((group) => {
+      const itemsHtml = group.items
+        .map((sub) => {
+          const scoreClass = getScoreBadgeClass(sub.correctCount, sub.totalQuestions);
+          const reviewHref = `/exam?id=${encodeURIComponent(sub.examId)}&review=${encodeURIComponent(sub.id)}`;
+          const classTag = sub.studentClass
+            ? ` <span style="font-weight:500; color:var(--text-muted);">(${escapeHtml(sub.studentClass)})</span>`
+            : '';
+
+          return `
+            <div class="history-item">
+              <div>
+                <div style="font-weight:700; font-size:15px;">
+                  ${escapeHtml(sub.studentName)}${classTag}
+                </div>
+                <div style="font-size:13px; color:var(--text-secondary); margin-top:3px;">
+                  Đúng <strong>${sub.correctCount}/${sub.totalQuestions}</strong> câu •
+                  Thời gian làm: ${formatDurationText(sub.elapsedSeconds)} •
+                  Nộp lúc: <strong>${formatDateTime(sub.submittedAt)}</strong>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span class="badge ${scoreClass}" style="font-size:14px; padding:6px 12px;">${sub.score} / ${SCORE_SCALE} điểm</span>
+                <a href="${reviewHref}" class="btn btn-soft btn-sm">Xem lại bài &amp; đáp án</a>
+              </div>
+            </div>
+          `;
+        })
+        .join('');
 
       return `
-        <div class="history-item">
-          <div>
-            <div style="font-weight:700; font-size:15px;">
-              ${escapeHtml(sub.studentName)}${classTag}
-              — ${escapeHtml(sub.examTitle)}
+        <div class="card" style="margin-bottom:12px;">
+          <div class="card-body" style="padding:16px 18px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px;">
+              <strong style="font-size:15.5px; color:var(--primary-hover);">${escapeHtml(group.examTitle)}</strong>
+              <span class="badge badge-blue">${group.items.length} lượt làm</span>
             </div>
-            <div style="font-size:13px; color:var(--text-secondary); margin-top:3px;">
-              Đúng <strong>${sub.correctCount}/${sub.totalQuestions}</strong> câu •
-              Thời gian: ${formatDurationText(sub.elapsedSeconds)} •
-              Nộp lúc ${formatDateTime(sub.submittedAt)}
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span class="badge ${scoreClass}" style="font-size:14px; padding:6px 12px;">${sub.score} điểm</span>
-            <a href="${reviewHref}" class="btn btn-soft btn-sm">Xem lại bài &amp; đáp án</a>
+            <div class="history-list" style="margin-top:0;">${itemsHtml}</div>
           </div>
         </div>
       `;
@@ -124,10 +152,6 @@ function renderRecentHistory(submissions) {
 
 async function init() {
   try {
-    const mode = await getStorageMode();
-    storageBadge.textContent = mode.mode === 'supabase' ? 'Đồng bộ Cloud' : 'Lưu cục bộ';
-    storageBadge.className = mode.mode === 'supabase' ? 'badge badge-green' : 'badge badge-blue';
-
     allExams = await listExams({ includeUnpublished: false });
     renderExams(allExams);
 

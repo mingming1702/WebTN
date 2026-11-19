@@ -170,40 +170,24 @@
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-body">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+        <div class="card" style="margin-bottom:18px;">
+          <div class="card-body" style="padding:16px 22px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
               <div style="display:flex; gap:10px; flex-wrap:wrap; flex:1;">
                 <select id="filterScoreExam" class="form-control" style="max-width:300px;">
                   <option value="">Tất cả đề thi</option>
                 </select>
-                <input id="searchScoreStudent" type="search" class="form-control" style="max-width:260px;" placeholder="Tìm tên học sinh hoặc lớp..." />
+                <input id="searchScoreStudent" type="search" class="form-control" style="max-width:260px;" placeholder="Tìm tên học sinh..." />
               </div>
               <div style="display:flex; gap:10px;">
                 <button id="refreshScoresBtn" type="button" class="btn btn-outline">Làm mới</button>
                 <button id="exportCsvBtn" type="button" class="btn btn-primary">Xuất bảng điểm CSV</button>
               </div>
             </div>
-
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Học sinh</th>
-                    <th>Lớp</th>
-                    <th>Đề thi</th>
-                    <th>Số câu đúng</th>
-                    <th>Điểm (/10)</th>
-                    <th>Thời gian</th>
-                    <th>Ngày nộp</th>
-                    <th>Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody id="scoresTableBody"></tbody>
-              </table>
-            </div>
           </div>
         </div>
+
+        <div id="scoresGroupedContainer"></div>
       </div>
 
       <!-- TAB 3: CÀI ĐẶT & ĐỒNG BỘ -->

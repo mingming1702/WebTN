@@ -14,12 +14,14 @@ import {
 } from './storage.js';
 import {
   OPTION_KEYS,
+  SCORE_SCALE,
   createEmptyExamTemplate,
   escapeHtml,
   flattenExamQuestions,
   formatDateTime,
   formatDurationText,
   generateId,
+  getScoreBadgeClass,
   validateExam
 } from './utils.js';
 
@@ -57,7 +59,7 @@ const editorPart3 = document.getElementById('editorPart3');
 
 const filterScoreExam = document.getElementById('filterScoreExam');
 const searchScoreStudent = document.getElementById('searchScoreStudent');
-const scoresTableBody = document.getElementById('scoresTableBody');
+const scoresGroupedContainer = document.getElementById('scoresGroupedContainer');
 const scoreStatsGrid = document.getElementById('scoreStatsGrid');
 const wrongStatsCard = document.getElementById('wrongStatsCard');
 const wrongStatsGrid = document.getElementById('wrongStatsGrid');
@@ -625,12 +627,16 @@ function renderScoreTable() {
   const totalCount = list.length;
   const avgScore = totalCount
     ? (list.reduce((sum, s) => sum + Number(s.score || 0), 0) / totalCount).toFixed(2)
-    : '0.00';
+    : '0';
   const maxScore = totalCount
-    ? Math.max(...list.map((s) => Number(s.score || 0))).toFixed(2)
-    : '0.00';
+    ? Math.max(...list.map((s) => Number(s.score || 0)))
+    : 0;
   const highRate = totalCount
-    ? Math.round((list.filter((s) => Number(s.score || 0) >= 8).length / totalCount) * 100)
+    ? Math.round(
+        (list.filter((s) => Number(s.correctCount || 0) / (Number(s.totalQuestions) || 30) >= 0.8).length /
+          totalCount) *
+          100
+      )
     : 0;
 
   scoreStatsGrid.innerHTML = `
@@ -640,14 +646,14 @@ function renderScoreTable() {
     </div>
     <div class="stat-card">
       <div class="stat-label">Điểm trung bình</div>
-      <div class="stat-value">${avgScore} / 10</div>
+      <div class="stat-value">${avgScore} / ${SCORE_SCALE}</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Điểm cao nhất</div>
-      <div class="stat-value">${maxScore} / 10</div>
+      <div class="stat-value">${maxScore} / ${SCORE_SCALE}</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Tỷ lệ khá giỏi (≥ 8.0)</div>
+      <div class="stat-label">Tỷ lệ đạt ≥ 80%</div>
       <div class="stat-value">${highRate}%</div>
     </div>
   `;
@@ -655,43 +661,95 @@ function renderScoreTable() {
   renderWrongQuestionStats(list);
 
   if (!list.length) {
-    scoresTableBody.innerHTML = `
-      <tr>
-        <td colspan="8" style="text-align:center; padding:28px; color:var(--text-muted);">
+    scoresGroupedContainer.innerHTML = `
+      <div class="card">
+        <div class="card-body" style="text-align:center; padding:32px; color:var(--text-muted);">
           Chưa có kết quả bài làm nào phù hợp.
-        </td>
-      </tr>
+        </div>
+      </div>
     `;
     return;
   }
 
-  scoresTableBody.innerHTML = list
-    .map(
-      (s) => `
-        <tr>
-          <td><strong>${escapeHtml(s.studentName)}</strong></td>
-          <td>${escapeHtml(s.studentClass || '—')}</td>
-          <td>${escapeHtml(s.examTitle)}</td>
-          <td>${s.correctCount} / ${s.totalQuestions}</td>
-          <td><span class="badge ${s.score >= 8 ? 'badge-green' : s.score >= 5 ? 'badge-blue' : 'badge-red'}">${s.score}</span></td>
-          <td>${formatDurationText(s.elapsedSeconds)}</td>
-          <td>${formatDateTime(s.submittedAt)}</td>
-          <td>
-            <div style="display:flex; gap:6px;">
-              <button type="button" class="btn btn-soft btn-sm" data-view-sub="${escapeHtml(s.id)}">Xem bài</button>
-              <button type="button" class="btn btn-danger-soft btn-sm" data-del-sub="${escapeHtml(s.id)}">Xóa</button>
+  // Nhóm kết quả bài làm theo từng đề
+  const grouped = new Map();
+  examsCache.forEach((exam) => {
+    grouped.set(exam.id, { examId: exam.id, examTitle: exam.title, items: [] });
+  });
+  list.forEach((s) => {
+    const key = s.examId || s.examTitle;
+    if (!grouped.has(key)) {
+      grouped.set(key, { examId: key, examTitle: s.examTitle, items: [] });
+    }
+    grouped.get(key).items.push(s);
+  });
+
+  const nonEmptyGroups = Array.from(grouped.values()).filter((g) => g.items.length > 0);
+
+  scoresGroupedContainer.innerHTML = nonEmptyGroups
+    .map((group) => {
+      const groupAvg = (
+        group.items.reduce((sum, s) => sum + Number(s.score || 0), 0) / group.items.length
+      ).toFixed(2);
+
+      const rowsHtml = group.items
+        .map((s) => {
+          const badgeClass = getScoreBadgeClass(s.correctCount, s.totalQuestions);
+          const classLabel = s.studentClass ? ` (${escapeHtml(s.studentClass)})` : '';
+          return `
+            <tr>
+              <td><strong>${escapeHtml(s.studentName)}</strong>${classLabel}</td>
+              <td>${s.correctCount} / ${s.totalQuestions}</td>
+              <td><span class="badge ${badgeClass}">${s.score} / ${SCORE_SCALE}</span></td>
+              <td>${formatDurationText(s.elapsedSeconds)}</td>
+              <td>${formatDateTime(s.submittedAt)}</td>
+              <td>
+                <div style="display:flex; gap:6px;">
+                  <button type="button" class="btn btn-soft btn-sm" data-view-sub="${escapeHtml(s.id)}">Xem bài</button>
+                  <button type="button" class="btn btn-danger-soft btn-sm" data-del-sub="${escapeHtml(s.id)}">Xóa</button>
+                </div>
+              </td>
+            </tr>
+          `;
+        })
+        .join('');
+
+      return `
+        <div class="card" style="margin-bottom:18px;">
+          <div class="card-body">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+              <h3 style="margin:0; font-size:17px;">${escapeHtml(group.examTitle)}</h3>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <span class="badge badge-blue">${group.items.length} lượt nộp</span>
+                <span class="badge badge-green">Trung bình: ${groupAvg} / ${SCORE_SCALE}</span>
+              </div>
             </div>
-          </td>
-        </tr>
-      `
-    )
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Học sinh</th>
+                    <th>Số câu đúng</th>
+                    <th>Điểm (/${SCORE_SCALE})</th>
+                    <th>Thời gian làm</th>
+                    <th>Thời điểm nộp</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>${rowsHtml}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      `;
+    })
     .join('');
 
-  scoresTableBody.querySelectorAll('[data-view-sub]').forEach((btn) => {
+  scoresGroupedContainer.querySelectorAll('[data-view-sub]').forEach((btn) => {
     btn.addEventListener('click', () => openSubmissionDetail(btn.getAttribute('data-view-sub')));
   });
 
-  scoresTableBody.querySelectorAll('[data-del-sub]').forEach((btn) => {
+  scoresGroupedContainer.querySelectorAll('[data-del-sub]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const id = btn.getAttribute('data-del-sub');
       if (!window.confirm('Xóa kết quả bài làm này?')) return;
@@ -706,14 +764,26 @@ async function openSubmissionDetail(subId) {
   if (!sub) return;
 
   const classLabel = sub.studentClass ? ` (${sub.studentClass})` : '';
-  subDetailTitle.textContent = `${sub.studentName}${classLabel} – ${sub.score}/10 (${sub.correctCount}/${sub.totalQuestions} câu)`;
+  subDetailTitle.textContent = `${sub.studentName}${classLabel} – ${sub.score}/${SCORE_SCALE} (${sub.correctCount}/${sub.totalQuestions} câu đúng)`;
   const exam = await getExamById(sub.examId);
 
+  const metaBanner = `
+    <div class="alert alert-info" style="margin-bottom:12px;">
+      <span>
+        Đề thi: <strong>${escapeHtml(sub.examTitle)}</strong> •
+        Thời gian làm: <strong>${formatDurationText(sub.elapsedSeconds)}</strong> •
+        Thời điểm nộp: <strong>${formatDateTime(sub.submittedAt)}</strong>
+      </span>
+    </div>
+  `;
+
   if (!exam) {
-    subDetailBody.innerHTML = '<p>Đề thi gốc đã bị xóa nên không thể hiển thị chi tiết câu hỏi.</p>';
+    subDetailBody.innerHTML = metaBanner + '<p>Đề thi gốc đã bị xóa nên không thể hiển thị chi tiết câu hỏi.</p>';
   } else {
     const flat = flattenExamQuestions(exam);
-    subDetailBody.innerHTML = `
+    subDetailBody.innerHTML =
+      metaBanner +
+      `
       <div style="display:grid; gap:10px;">
         ${flat
           .map((q) => {
@@ -745,13 +815,15 @@ function exportFilteredScoresCsv() {
     return;
   }
 
+  const sorted = [...list].sort(
+    (a, b) => (a.examTitle || '').localeCompare(b.examTitle || '', 'vi') || new Date(b.submittedAt) - new Date(a.submittedAt)
+  );
   const csvCell = (val) => `"${String(val ?? '').replace(/"/g, '""')}"`;
-  const headers = ['Họ và tên', 'Lớp', 'Đề thi', 'Số câu đúng', 'Tổng số câu', 'Điểm', 'Thời gian (giây)', 'Ngày nộp'];
-  const rows = list.map((s) =>
+  const headers = ['Đề thi', 'Họ và tên', 'Số câu đúng', 'Tổng số câu', `Điểm (/${SCORE_SCALE})`, 'Thời gian làm (giây)', 'Thời điểm nộp'];
+  const rows = sorted.map((s) =>
     [
-      s.studentName,
-      s.studentClass,
       s.examTitle,
+      s.studentName,
       s.correctCount,
       s.totalQuestions,
       s.score,

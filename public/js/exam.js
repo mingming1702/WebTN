@@ -8,6 +8,7 @@ import {
 } from './storage.js';
 import {
   OPTION_KEYS,
+  SCORE_SCALE,
   escapeHtml,
   flattenExamQuestions,
   formatDateTime,
@@ -380,7 +381,7 @@ function renderResultSummary({ isAutoTimeUp = false, elapsedSeconds, saveStatusH
         <p style="margin:0; color:var(--text-secondary);">
           Số câu trả lời đúng: <strong>${submissionResult.correctCount} / ${submissionResult.totalQuestions} câu</strong> •
           Thời gian làm bài: <strong>${formatDurationText(elapsedSeconds)}</strong>
-          ${submittedAtText ? ` • Nộp lúc ${escapeHtml(submittedAtText)}` : ''}
+          ${submittedAtText ? ` • Thời điểm nộp: <strong>${escapeHtml(submittedAtText)}</strong>` : ''}
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
           <a href="/" class="btn btn-outline btn-sm">Quay về trang chủ</a>
@@ -389,7 +390,7 @@ function renderResultSummary({ isAutoTimeUp = false, elapsedSeconds, saveStatusH
       </div>
       <div class="score-circle">
         <div class="score-val">${submissionResult.score}</div>
-        <div class="score-sub">Điểm / 10</div>
+        <div class="score-sub">Điểm / ${SCORE_SCALE}</div>
       </div>
     </div>
   `;
@@ -434,7 +435,12 @@ async function finalizeSubmission(isAutoTimeUp = false) {
     saveStatusHtml = `<span class="badge badge-amber">Lưu điểm lỗi: ${escapeHtml(err.message)}</span>`;
   }
 
-  renderResultSummary({ isAutoTimeUp, elapsedSeconds, saveStatusHtml });
+  renderResultSummary({
+    isAutoTimeUp,
+    elapsedSeconds,
+    saveStatusHtml,
+    submittedAtText: formatDateTime(submissionRecord.submittedAt)
+  });
   renderPalette();
   renderQuestions();
   window.scrollTo({ top: 0, behavior: 'smooth' });
