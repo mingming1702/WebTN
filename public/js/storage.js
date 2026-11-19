@@ -64,13 +64,24 @@ export function setTeacherPin(pin) {
   localStorage.setItem(STORAGE_KEYS.TEACHER_PIN, String(pin).trim() || '1234');
 }
 
+export function normalizeSupabaseUrl(raw) {
+  const trimmed = String(raw || '').trim();
+  if (!trimmed) return '';
+  try {
+    const parsed = new URL(trimmed);
+    return parsed.origin;
+  } catch {
+    return trimmed.replace(/\/rest\/v1\/?$/i, '').replace(/\/+$/, '');
+  }
+}
+
 export function getLocalCloudConfig() {
   return readLocalJson(STORAGE_KEYS.CLOUD_CONFIG, { supabaseUrl: '', supabaseAnonKey: '' });
 }
 
 export function setLocalCloudConfig(config) {
   writeLocalJson(STORAGE_KEYS.CLOUD_CONFIG, {
-    supabaseUrl: (config?.supabaseUrl || '').trim().replace(/\/+$/, ''),
+    supabaseUrl: normalizeSupabaseUrl(config?.supabaseUrl),
     supabaseAnonKey: (config?.supabaseAnonKey || '').trim()
   });
   cachedRuntimeConfig = null;
@@ -84,7 +95,8 @@ export async function getStorageMode() {
     cachedRuntimeConfig = {
       mode: 'supabase',
       source: 'local-settings',
-      ...localCfg
+      supabaseUrl: normalizeSupabaseUrl(localCfg.supabaseUrl),
+      supabaseAnonKey: localCfg.supabaseAnonKey.trim()
     };
     return cachedRuntimeConfig;
   }
@@ -97,8 +109,8 @@ export async function getStorageMode() {
         cachedRuntimeConfig = {
           mode: 'supabase',
           source: 'vercel-env',
-          supabaseUrl: data.supabaseUrl.replace(/\/+$/, ''),
-          supabaseAnonKey: data.supabaseAnonKey
+          supabaseUrl: normalizeSupabaseUrl(data.supabaseUrl),
+          supabaseAnonKey: String(data.supabaseAnonKey).trim()
         };
         return cachedRuntimeConfig;
       }
@@ -129,6 +141,11 @@ async function supabaseFetch(cfg, path, options = {}) {
 
   if (!res.ok) {
     const text = await res.text();
+    if (text.includes('PGRST205')) {
+      throw new Error(
+        `Chưa tìm thấy bảng exams/submissions trên Supabase. Hãy mở Supabase SQL Editor và chạy file supabase/schema.sql. (${text})`
+      );
+    }
     throw new Error(`Supabase error (${res.status}): ${text}`);
   }
 
