@@ -114,10 +114,13 @@ export async function getStorageMode() {
 async function supabaseFetch(cfg, path, options = {}) {
   const headers = {
     apikey: cfg.supabaseAnonKey,
-    Authorization: `Bearer ${cfg.supabaseAnonKey}`,
     'Content-Type': 'application/json',
     ...(options.headers || {})
   };
+
+  if (!cfg.supabaseAnonKey.startsWith('sb_publishable_')) {
+    headers.Authorization = `Bearer ${cfg.supabaseAnonKey}`;
+  }
 
   const res = await fetch(`${cfg.supabaseUrl}/rest/v1/${path}`, {
     ...options,
