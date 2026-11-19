@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trắc Nghiệm Tiếng Việt – Học Sinh Làm Bài</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <div class="brand-logo">TV</div>
+        <div>
+          <div class="brand-title">Trắc Nghiệm Tiếng Việt</div>
+          <div class="brand-sub">Hệ thống luyện tập &amp; kiểm tra trực tuyến</div>
+        </div>
+      </a>
+      <nav class="nav-actions">
+        <span id="storageBadge" class="badge badge-blue">Đang tải...</span>
+        <a href="/teacher" class="btn btn-outline">Khu vực Giáo viên</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Chào mừng các em đến với bài thi Tiếng Việt</h1>
+        <p>
+          Chọn một đề thi bên dưới, nhập họ tên và lớp để bắt đầu. Kết quả và đáp án chi tiết sẽ hiển thị ngay sau khi nộp bài.
+        </p>
+        <div class="hero-specs">
+          <span class="badge badge-blue">30 câu trắc nghiệm A, B, C, D</span>
+          <span class="badge badge-green">20 câu đơn (1–20) + 2 nhóm đọc hiểu (21–30)</span>
+          <span class="badge badge-amber">Thời gian: 40 phút / đề</span>
+        </div>
+      </div>
+      <div>
+        <a href="/teacher" class="btn btn-soft btn-lg">Giáo viên nhập đề &amp; xem điểm</a>
+      </div>
+    </section>
+
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:8px;">
+      <h2 style="margin:0; font-size:20px;">Danh sách đề thi hiện có</h2>
+      <div style="min-width:240px; flex:0 1 300px;">
+        <input id="searchExamInput" type="search" class="form-control" placeholder="Tìm theo tên đề thi..." />
+      </div>
+    </div>
+
+    <div id="examListContainer" class="grid-exams"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Web Trắc Nghiệm Tiếng Việt • Giao diện sáng thân thiện cho học sinh • Sẵn sàng triển khai trên Vercel
+    </div>
+  </footer>
+
+  <!-- Modal nhập thông tin học sinh trước khi thi -->
+  <div id="startModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Thông tin thí sinh</h3>
+        <button id="closeStartModal" type="button" class="btn btn-outline btn-sm">Đóng</button>
+      </div>
+      <p id="modalExamTitle" style="margin:0 0 14px; font-weight:600; color:var(--primary-hover);"></p>
+      <form id="startExamForm">
+        <input type="hidden" id="selectedExamId" />
+        <div class="form-group">
+          <label class="form-label" for="studentNameInput">Họ và tên học sinh *</label>
+          <input id="studentNameInput" type="text" class="form-control" required placeholder="Ví dụ: Nguyễn Minh Anh" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="studentClassInput">Lớp *</label>
+          <input id="studentClassInput" type="text" class="form-control" required placeholder="Ví dụ: 5A1 hoặc 9B" />
+        </div>
+        <div class="alert alert-info" style="margin-bottom:16px;">
+          <span>Thời gian làm bài là <strong>40 phút</strong> cho <strong>30 câu hỏi</strong>. Đồng hồ sẽ bắt đầu đếm ngược ngay khi vào làm bài.</span>
+        </div>
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button id="cancelStartBtn" type="button" class="btn btn-outline">Hủy</button>
+          <button type="submit" class="btn btn-primary">Bắt đầu làm bài</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/js/home.js"></script>
+</body>
+</html>

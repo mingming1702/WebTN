@@ -1,0 +1,9 @@
+{
+  "name": "web-trac-nghiem-tieng-viet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web trắc nghiệm Tiếng Việt 30 câu (20 câu đơn + 2 nhóm đọc hiểu), 40 phút, hỗ trợ giáo viên nhập đề và ghi nhận điểm học sinh.",
+  "scripts": {
+    "dev": "python -m http.server 3000 --directory public"
+  }
+}

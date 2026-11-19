@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Làm Bài Thi Tiếng Việt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="exam-topbar">
+    <div class="container exam-topbar-inner">
+      <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+        <a href="/" class="btn btn-outline btn-sm">← Trang chủ</a>
+        <div style="min-width:0;">
+          <div id="topbarExamTitle" style="font-weight:700; font-size:15.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+            Đang tải đề thi...
+          </div>
+          <div id="topbarStudentInfo" style="font-size:12.5px; color:var(--text-muted);"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <span id="progressBadge" class="badge badge-blue">Đã làm: 0 / 30</span>
+        <div id="timerPill" class="timer-pill">40:00</div>
+        <button id="submitTopBtn" type="button" class="btn btn-success">Nộp bài</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Form nhập tên nếu mở link trực tiếp -->
+    <section id="gateSection" class="card hidden" style="max-width:520px; margin:32px auto;">
+      <div class="card-body">
+        <h2 style="margin:0 0 8px;">Nhập thông tin trước khi làm bài</h2>
+        <p id="gateExamName" style="margin:0 0 16px; color:var(--text-secondary);"></p>
+        <form id="gateForm">
+          <div class="form-group">
+            <label class="form-label" for="gateStudentName">Họ và tên học sinh *</label>
+            <input id="gateStudentName" type="text" class="form-control" required placeholder="Ví dụ: Trần Gia Bảo" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gateStudentClass">Lớp *</label>
+            <input id="gateStudentClass" type="text" class="form-control" required placeholder="Ví dụ: 5A1" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Bắt đầu tính giờ &amp; làm bài</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Màn hình làm bài / xem lại bài làm -->
+    <section id="examWorkspace" class="hidden">
+      <div id="resultSummaryContainer" class="hidden" style="margin-top:20px;"></div>
+
+      <div id="sectionTabs" class="tabs">
+        <button type="button" class="tab-btn active" data-section-tab="all">Tất cả (30 câu)</button>
+        <button type="button" class="tab-btn" data-section-tab="single">Phần I: Câu 1–20</button>
+        <button type="button" class="tab-btn" data-section-tab="group-1">Phần II: Nhóm 1 (21–25)</button>
+        <button type="button" class="tab-btn" data-section-tab="group-2">Phần III: Nhóm 2 (26–30)</button>
+      </div>
+
+      <div id="reviewFilterBar" class="tabs hidden" style="margin-top:-6px;">
+        <button type="button" class="tab-btn active" data-review-filter="all">Tất cả câu (30)</button>
+        <button type="button" class="tab-btn" data-review-filter="correct">Câu làm đúng</button>
+        <button type="button" class="tab-btn" data-review-filter="wrong">Câu sai / Chưa làm</button>
+      </div>
+
+      <div class="exam-layout">
+        <div id="questionsColumn"></div>
+
+        <aside class="card palette-card">
+          <div class="card-body">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+              <strong style="font-size:15px;">Bảng câu hỏi (30 câu)</strong>
+              <span id="paletteCounter" class="badge badge-blue">0/30</span>
+            </div>
+            <p style="margin:0 0 10px; font-size:12.5px; color:var(--text-muted);">
+              Bấm vào số câu để di chuyển nhanh.
+            </p>
+
+            <div class="palette-group-title">Phần I • Câu đơn (1 – 20)</div>
+            <div id="paletteSingle" class="palette-grid"></div>
+
+            <div class="palette-group-title">Phần II • Nhóm đọc hiểu 1 (21 – 25)</div>
+            <div id="paletteGroup1" class="palette-grid"></div>
+
+            <div class="palette-group-title">Phần III • Nhóm đọc hiểu 2 (26 – 30)</div>
+            <div id="paletteGroup2" class="palette-grid"></div>
+
+            <div id="paletteSubmitWrap" style="margin-top:18px; padding-top:14px; border-top:1px solid var(--border);">
+              <button id="submitSideBtn" type="button" class="btn btn-success" style="width:100%;">
+                Nộp bài &amp; Xem điểm
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="errorSection" class="card hidden" style="max-width:540px; margin:32px auto;">
+      <div class="card-body" style="text-align:center;">
+        <h2 style="margin-top:0;">Không tìm thấy đề thi</h2>
+        <p id="errorMessage" style="color:var(--text-secondary);"></p>
+        <a href="/" class="btn btn-primary">Quay lại trang chủ</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal xác nhận nộp bài -->
+  <div id="confirmSubmitModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Xác nhận nộp bài</h3>
+        <button id="cancelSubmitModal" type="button" class="btn btn-outline btn-sm">Đóng</button>
+      </div>
+      <p id="confirmSubmitText" style="margin:0 0 18px; color:var(--text-secondary);"></p>
+      <div style="display:flex; gap:10px; justify-content:flex-end;">
+        <button id="continueExamBtn" type="button" class="btn btn-outline">Làm tiếp</button>
+        <button id="confirmSubmitBtn" type="button" class="btn btn-success">Đồng ý nộp bài</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/exam.js"></script>
+</body>
+</html>
