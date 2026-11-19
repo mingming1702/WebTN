@@ -33,7 +33,6 @@ const gateSection = document.getElementById('gateSection');
 const gateExamName = document.getElementById('gateExamName');
 const gateForm = document.getElementById('gateForm');
 const gateStudentName = document.getElementById('gateStudentName');
-const gateStudentClass = document.getElementById('gateStudentClass');
 
 const examWorkspace = document.getElementById('examWorkspace');
 const questionsColumn = document.getElementById('questionsColumn');
@@ -377,7 +376,7 @@ function renderResultSummary({ isAutoTimeUp = false, elapsedSeconds, saveStatusH
           ${isAutoTimeUp ? '<span class="badge badge-amber">Hết giờ – hệ thống tự động nộp bài</span>' : '<span class="badge badge-green">Đã hoàn thành bài thi</span>'}
           ${saveStatusHtml}
         </div>
-        <h2 style="margin:0 0 6px;">Kết quả của ${escapeHtml(studentName)} (${escapeHtml(studentClass)})</h2>
+        <h2 style="margin:0 0 6px;">Kết quả của ${escapeHtml(studentName)}${studentClass ? ` (${escapeHtml(studentClass)})` : ''}</h2>
         <p style="margin:0; color:var(--text-secondary);">
           Số câu trả lời đúng: <strong>${submissionResult.correctCount} / ${submissionResult.totalQuestions} câu</strong> •
           Thời gian làm bài: <strong>${formatDurationText(elapsedSeconds)}</strong>
@@ -397,7 +396,9 @@ function renderResultSummary({ isAutoTimeUp = false, elapsedSeconds, saveStatusH
 
   document.getElementById('retakeExamBtn').addEventListener('click', () => {
     clearExamDraft(currentExam.id);
-    const nextUrl = `/exam?id=${encodeURIComponent(currentExam.id)}&name=${encodeURIComponent(studentName)}&class=${encodeURIComponent(studentClass)}`;
+    const paramsObj = { id: currentExam.id, name: studentName };
+    if (studentClass) paramsObj.class = studentClass;
+    const nextUrl = `/exam?${new URLSearchParams(paramsObj).toString()}`;
     window.location.href = nextUrl;
   });
 }
@@ -477,14 +478,16 @@ function beginExamSession() {
   gateSection.classList.add('hidden');
   examWorkspace.classList.remove('hidden');
   demoAutoFillBtn.classList.remove('hidden');
-  topbarStudentInfo.textContent = `Thí sinh: ${studentName} • Lớp: ${studentClass}`;
+  topbarStudentInfo.textContent = studentClass
+    ? `Thí sinh: ${studentName} • Lớp: ${studentClass}`
+    : `Thí sinh: ${studentName}`;
 
   totalDurationSeconds = (Number(currentExam.durationMinutes) || 40) * 60;
   const draft = loadExamDraft(currentExam.id);
   if (
     draft &&
     draft.studentName === studentName &&
-    draft.studentClass === studentClass &&
+    (draft.studentClass || '') === (studentClass || '') &&
     typeof draft.remainingSeconds === 'number' &&
     draft.remainingSeconds > 0
   ) {
@@ -506,13 +509,15 @@ function beginExamSession() {
 function beginReviewFromSavedSubmission(sub) {
   isSubmitted = true;
   studentName = sub.studentName;
-  studentClass = sub.studentClass;
+  studentClass = sub.studentClass || '';
   answers = { ...(sub.answers || {}) };
   submissionResult = gradeExam(currentExam, answers);
 
   gateSection.classList.add('hidden');
   examWorkspace.classList.remove('hidden');
-  topbarStudentInfo.textContent = `Xem lại bài làm: ${studentName} • Lớp: ${studentClass}`;
+  topbarStudentInfo.textContent = studentClass
+    ? `Xem lại bài làm: ${studentName} • Lớp: ${studentClass}`
+    : `Xem lại bài làm: ${studentName}`;
   updateProgressUI();
 
   renderResultSummary({
@@ -552,11 +557,10 @@ async function init() {
       return;
     }
 
-    if (studentName && studentClass) {
+    if (studentName) {
       beginExamSession();
     } else {
       gateStudentName.value = localStorage.getItem('tv_last_student_name') || '';
-      gateStudentClass.value = localStorage.getItem('tv_last_student_class') || '';
       gateSection.classList.remove('hidden');
     }
   } catch (err) {
@@ -567,11 +571,9 @@ async function init() {
 gateForm.addEventListener('submit', (e) => {
   e.preventDefault();
   studentName = gateStudentName.value.trim();
-  studentClass = gateStudentClass.value.trim();
-  if (!studentName || !studentClass) return;
+  if (!studentName) return;
 
   localStorage.setItem('tv_last_student_name', studentName);
-  localStorage.setItem('tv_last_student_class', studentClass);
   beginExamSession();
 });
 

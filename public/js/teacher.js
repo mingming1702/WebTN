@@ -670,7 +670,7 @@ function renderScoreTable() {
       (s) => `
         <tr>
           <td><strong>${escapeHtml(s.studentName)}</strong></td>
-          <td>${escapeHtml(s.studentClass)}</td>
+          <td>${escapeHtml(s.studentClass || '—')}</td>
           <td>${escapeHtml(s.examTitle)}</td>
           <td>${s.correctCount} / ${s.totalQuestions}</td>
           <td><span class="badge ${s.score >= 8 ? 'badge-green' : s.score >= 5 ? 'badge-blue' : 'badge-red'}">${s.score}</span></td>
@@ -705,7 +705,8 @@ async function openSubmissionDetail(subId) {
   const sub = submissionsCache.find((s) => s.id === subId);
   if (!sub) return;
 
-  subDetailTitle.textContent = `${sub.studentName} (${sub.studentClass}) – ${sub.score}/10 (${sub.correctCount}/${sub.totalQuestions} câu)`;
+  const classLabel = sub.studentClass ? ` (${sub.studentClass})` : '';
+  subDetailTitle.textContent = `${sub.studentName}${classLabel} – ${sub.score}/10 (${sub.correctCount}/${sub.totalQuestions} câu)`;
   const exam = await getExamById(sub.examId);
 
   if (!exam) {

@@ -12,7 +12,6 @@ const startExamForm = document.getElementById('startExamForm');
 const selectedExamIdInput = document.getElementById('selectedExamId');
 const modalExamTitle = document.getElementById('modalExamTitle');
 const studentNameInput = document.getElementById('studentNameInput');
-const studentClassInput = document.getElementById('studentClassInput');
 
 let allExams = [];
 
@@ -20,7 +19,6 @@ function openStartModal(exam) {
   selectedExamIdInput.value = exam.id;
   modalExamTitle.textContent = `${exam.title} (${exam.durationMinutes || 40} phút • 30 câu)`;
   studentNameInput.value = localStorage.getItem('tv_last_student_name') || '';
-  studentClassInput.value = localStorage.getItem('tv_last_student_class') || '';
   startModal.classList.remove('hidden');
   studentNameInput.focus();
 }
@@ -97,11 +95,15 @@ function renderRecentHistory(submissions) {
       const scoreClass = sub.score >= 8 ? 'badge-green' : sub.score >= 5 ? 'badge-blue' : 'badge-red';
       const reviewHref = `/exam?id=${encodeURIComponent(sub.examId)}&review=${encodeURIComponent(sub.id)}`;
 
+      const classTag = sub.studentClass
+        ? ` <span style="font-weight:500; color:var(--text-muted);">(${escapeHtml(sub.studentClass)})</span>`
+        : '';
+
       return `
         <div class="history-item">
           <div>
             <div style="font-weight:700; font-size:15px;">
-              ${escapeHtml(sub.studentName)} <span style="font-weight:500; color:var(--text-muted);">(${escapeHtml(sub.studentClass)})</span>
+              ${escapeHtml(sub.studentName)}${classTag}
               — ${escapeHtml(sub.examTitle)}
             </div>
             <div style="font-size:13px; color:var(--text-secondary); margin-top:3px;">
@@ -160,16 +162,13 @@ startExamForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const examId = selectedExamIdInput.value;
   const studentName = studentNameInput.value.trim();
-  const studentClass = studentClassInput.value.trim();
-  if (!examId || !studentName || !studentClass) return;
+  if (!examId || !studentName) return;
 
   localStorage.setItem('tv_last_student_name', studentName);
-  localStorage.setItem('tv_last_student_class', studentClass);
 
   const params = new URLSearchParams({
     id: examId,
-    name: studentName,
-    class: studentClass
+    name: studentName
   });
   window.location.href = `/exam?${params.toString()}`;
 });
