@@ -947,7 +947,7 @@ document.getElementById('changePinForm').addEventListener('submit', (e) => {
 });
 
 document.getElementById('resetDemoDataBtn').addEventListener('click', async () => {
-  if (!window.confirm('Khôi phục lại 2 đề mẫu và 5 bài làm mẫu ban đầu?')) return;
+  if (!window.confirm('Khôi phục lại đầy đủ 5 đề từ Đề 11 đến Đề 15?')) return;
   await resetDemoData();
   await loadAndRenderExams();
   await loadAndRenderScores();

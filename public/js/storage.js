@@ -9,7 +9,8 @@ const STORAGE_KEYS = {
   EXAM_DRAFT_PREFIX: 'tv_exam_draft_'
 };
 
-const CURRENT_DEMO_VERSION = '2';
+const CURRENT_DEMO_VERSION = '3';
+const LEGACY_SAMPLE_EXAM_IDS = new Set(['exam_tv_mau_01', 'exam_tv_mau_02']);
 
 let cachedRuntimeConfig = null;
 
@@ -36,20 +37,21 @@ function ensureLocalSeed() {
     exams = structuredClone(SAMPLE_EXAMS);
     writeLocalJson(STORAGE_KEYS.EXAMS, exams);
   } else if (seedVer !== CURRENT_DEMO_VERSION) {
-    const existingIds = new Set(existingExams.map((e) => e.id));
-    const missing = SAMPLE_EXAMS.filter((s) => !existingIds.has(s.id));
-    exams = [...existingExams, ...structuredClone(missing)];
+    const keptExams = existingExams.filter((e) => !LEGACY_SAMPLE_EXAM_IDS.has(e.id));
+    const keptIds = new Set(keptExams.map((e) => e.id));
+    const missing = SAMPLE_EXAMS.filter((s) => !keptIds.has(s.id));
+    exams = [...structuredClone(missing), ...keptExams];
     writeLocalJson(STORAGE_KEYS.EXAMS, exams);
   } else {
     exams = existingExams;
   }
 
   const existingSubs = readLocalJson(STORAGE_KEYS.SUBMISSIONS, null);
-  if ((!Array.isArray(existingSubs) || existingSubs.length === 0) && seedVer !== CURRENT_DEMO_VERSION) {
-    writeLocalJson(STORAGE_KEYS.SUBMISSIONS, structuredClone(SAMPLE_SUBMISSIONS));
-  }
-
   if (seedVer !== CURRENT_DEMO_VERSION) {
+    const cleanedSubs = Array.isArray(existingSubs)
+      ? existingSubs.filter((s) => !LEGACY_SAMPLE_EXAM_IDS.has(s.examId))
+      : [];
+    writeLocalJson(STORAGE_KEYS.SUBMISSIONS, cleanedSubs);
     localStorage.setItem(STORAGE_KEYS.DEMO_SEED_VERSION, CURRENT_DEMO_VERSION);
   }
 
@@ -226,10 +228,32 @@ export async function listExams({ includeUnpublished = false } = {}) {
   let exams = [];
 
   if (cfg.mode === 'supabase') {
-    const rows = await supabaseFetch(cfg, 'exams?select=*&order=created_at.desc');
-    if (!rows || rows.length === 0) {
+    let rows = await supabaseFetch(cfg, 'exams?select=*&order=created_at.desc');
+    const hasLegacy = (rows || []).some((r) => LEGACY_SAMPLE_EXAM_IDS.has(r.id));
+
+    if (hasLegacy) {
+      for (const legacyId of LEGACY_SAMPLE_EXAM_IDS) {
+        if (rows.some((r) => r.id === legacyId)) {
+          await supabaseFetch(cfg, `exams?id=eq.${encodeURIComponent(legacyId)}`, {
+            method: 'DELETE'
+          });
+        }
+      }
+      const existingIds = new Set(rows.map((r) => r.id));
       for (const sample of SAMPLE_EXAMS) {
-        await supabaseFetch(cfg, 'exams', {
+        if (!existingIds.has(sample.id)) {
+          await supabaseFetch(cfg, 'exams?on_conflict=id', {
+            method: 'POST',
+            headers: { Prefer: 'resolution=merge-duplicates' },
+            body: JSON.stringify(mapAppExamToDb(sample))
+          });
+        }
+      }
+      rows = await supabaseFetch(cfg, 'exams?select=*&order=created_at.desc');
+      exams = (rows || []).map(mapDbExamToApp);
+    } else if (!rows || rows.length === 0) {
+      for (const sample of SAMPLE_EXAMS) {
+        await supabaseFetch(cfg, 'exams?on_conflict=id', {
           method: 'POST',
           headers: { Prefer: 'resolution=merge-duplicates' },
           body: JSON.stringify(mapAppExamToDb(sample))
@@ -358,6 +382,11 @@ export async function deleteSubmission(submissionId) {
 export async function resetDemoData() {
   const cfg = await getStorageMode();
   if (cfg.mode === 'supabase') {
+    for (const legacyId of LEGACY_SAMPLE_EXAM_IDS) {
+      await supabaseFetch(cfg, `exams?id=eq.${encodeURIComponent(legacyId)}`, {
+        method: 'DELETE'
+      });
+    }
     for (const sample of SAMPLE_EXAMS) {
       await supabaseFetch(cfg, 'exams?on_conflict=id', {
         method: 'POST',
