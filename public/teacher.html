@@ -28,7 +28,7 @@
 
   <main class="container" style="padding-top:22px; padding-bottom:48px;">
     <!-- Màn hình nhập mã PIN giáo viên -->
-    <section id="pinGateSection" class="card" style="max-width:440px; margin:36px auto;">
+    <section id="pinGateSection" class="card" style="max-width:450px; margin:36px auto;">
       <div class="card-body">
         <h2 style="margin:0 0 8px;">Đăng nhập Giáo viên</h2>
         <p style="margin:0 0 16px; color:var(--text-secondary); font-size:14px;">
@@ -42,7 +42,12 @@
           <div id="pinError" class="alert alert-warning hidden" style="margin-bottom:14px;">
             <span>Mã PIN chưa đúng. Vui lòng thử lại.</span>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Mở trang quản lý</button>
+          <div style="display:grid; gap:10px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;">Mở trang quản lý</button>
+            <button id="demoQuickLoginBtn" type="button" class="btn btn-soft" style="width:100%;">
+              ⚡ Đăng nhập nhanh Demo (PIN mặc định)
+            </button>
+          </div>
         </form>
       </div>
     </section>
@@ -51,8 +56,8 @@
     <section id="teacherApp" class="hidden">
       <div id="localModeNotice" class="alert alert-info hidden" style="margin-bottom:16px;">
         <div>
-          <strong>Chế độ Lưu cục bộ (LocalStorage):</strong> Đề thi và điểm số đang lưu trên trình duyệt này để dùng thử ngay trên Vercel.
-          Để học sinh làm bài từ điện thoại/máy khác và gửi điểm về máy giáo viên, hãy kết nối <strong>Supabase miễn phí</strong> trong tab <em>Cài đặt &amp; Đồng bộ</em>.
+          <strong>Chế độ Lưu cục bộ (LocalStorage):</strong> Web đã nạp sẵn <strong>2 đề mẫu (30 câu/đề)</strong> và <strong>5 bài làm mẫu</strong> trên trình duyệt này để bạn trải nghiệm ngay bản Demo trên Vercel.
+          Để học sinh thi từ máy khác và tự gửi điểm về giáo viên, hãy kết nối <strong>Supabase miễn phí</strong> trong tab <em>Cài đặt &amp; Đồng bộ</em>.
         </div>
       </div>
 
@@ -155,6 +160,16 @@
       <div id="tabScores" class="hidden">
         <div class="stat-grid" id="scoreStatsGrid"></div>
 
+        <div id="wrongStatsCard" class="card hidden" style="margin-bottom:18px;">
+          <div class="card-body">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+              <h3 style="margin:0; font-size:16px;">Top câu hỏi học sinh hay sai nhất</h3>
+              <span class="badge badge-amber">Thống kê từ các lượt nộp bài</span>
+            </div>
+            <div id="wrongStatsGrid" class="wrong-stat-grid"></div>
+          </div>
+        </div>
+
         <div class="card">
           <div class="card-body">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
@@ -220,7 +235,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h3 style="margin-top:0;">Bảo mật khu vực Giáo viên</h3>
+              <h3 style="margin-top:0;">Bảo mật &amp; Dữ liệu Demo</h3>
               <p style="font-size:14px; color:var(--text-secondary);">
                 Đổi mã PIN để học sinh không tự ý vào xem đáp án hoặc chỉnh sửa đề thi.
               </p>
@@ -232,6 +247,15 @@
                 <button type="submit" class="btn btn-primary">Cập nhật mã PIN</button>
               </form>
               <div id="pinChangeMsg" style="margin-top:12px; font-size:13.5px;"></div>
+
+              <hr style="border:none; border-top:1px solid var(--border); margin:20px 0;" />
+
+              <h4 style="margin:0 0 6px;">Khôi phục dữ liệu Demo gốc</h4>
+              <p style="margin:0 0 12px; font-size:13.5px; color:var(--text-secondary);">
+                Nạp lại 2 đề thi Tiếng Việt mẫu (30 câu/đề) và 5 bài làm mẫu của học sinh nếu bạn đã lỡ xóa khi dùng thử.
+              </p>
+              <button id="resetDemoDataBtn" type="button" class="btn btn-outline">Khôi phục dữ liệu Demo gốc</button>
+              <div id="resetDemoMsg" style="margin-top:10px; font-size:13.5px;"></div>
             </div>
           </div>
         </div>
@@ -243,20 +267,27 @@
   <div id="quickImportModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
     <div class="modal-box wide">
       <div class="modal-header">
-        <h3>Nhập nhanh câu hỏi từ văn bản</h3>
+        <h3>Nhập nhanh đề thi từ văn bản</h3>
         <button id="closeQuickImport" type="button" class="btn btn-outline btn-sm">Đóng</button>
       </div>
-      <p style="margin:0 0 10px; font-size:13.5px; color:var(--text-secondary);">
-        Dán danh sách câu hỏi theo định dạng bên dưới (hệ thống tự nhận diện Câu 1 đến Câu 30, hoặc dán riêng từng phần):
-      </p>
-      <textarea id="quickImportTextarea" class="form-control" style="min-height:240px; font-family:monospace; font-size:13px;" placeholder="Câu 1: Từ nào viết đúng chính tả?
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+        <p style="margin:0; font-size:13.5px; color:var(--text-secondary);">
+          Hỗ trợ dán <code>Câu 1: ... A. ... B. ... C. ... D. ... Đáp án: A</code> và thẻ <code>[NGỮ LIỆU 1]</code>, <code>[NGỮ LIỆU 2]</code>.
+        </p>
+        <button id="insertQuickSampleBtn" type="button" class="btn btn-soft btn-sm">Chèn mẫu văn bản 30 câu để thử</button>
+      </div>
+      <textarea id="quickImportTextarea" class="form-control" style="min-height:260px; font-family:monospace; font-size:13px;" placeholder="Câu 1: Từ nào viết đúng chính tả?
 A. Sáng sủa
 B. Sáng xủa
 C. Xáng sủa
 D. Xáng xủa
 Đáp án: A
 
-Câu 2: ..."></textarea>
+[NGỮ LIỆU 1]
+Tiêu đề: Buổi sáng trên quê hương
+Đoạn văn đọc hiểu cho câu 21-25...
+
+Câu 21: ..."></textarea>
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:14px;">
         <button id="cancelQuickImport" type="button" class="btn btn-outline">Hủy</button>
         <button id="applyQuickImport" type="button" class="btn btn-primary">Điền vào biểu mẫu</button>

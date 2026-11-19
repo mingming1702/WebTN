@@ -52,6 +52,18 @@
     </div>
 
     <div id="examListContainer" class="grid-exams"></div>
+
+    <section id="recentHistorySection" class="history-section hidden">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0; font-size:20px;">Lịch sử bài làm gần đây</h2>
+          <p style="margin:4px 0 0; color:var(--text-secondary); font-size:13.5px;">
+            Xem lại điểm số, bài làm đã chọn và đáp án đúng của các lượt thi gần nhất.
+          </p>
+        </div>
+      </div>
+      <div id="recentHistoryList" class="history-list"></div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -76,7 +88,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="studentClassInput">Lớp *</label>
-          <input id="studentClassInput" type="text" class="form-control" required placeholder="Ví dụ: 5A1 hoặc 9B" />
+          <input id="studentClassInput" type="text" class="form-control" required placeholder="Ví dụ: 9A1" />
         </div>
         <div class="alert alert-info" style="margin-bottom:16px;">
           <span>Thời gian làm bài là <strong>40 phút</strong> cho <strong>30 câu hỏi</strong>. Đồng hồ sẽ bắt đầu đếm ngược ngay khi vào làm bài.</span>

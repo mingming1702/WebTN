@@ -1,6 +1,7 @@
 import {
   clearExamDraft,
   getExamById,
+  getSubmissionById,
   loadExamDraft,
   saveExamDraft,
   saveSubmission
@@ -9,6 +10,7 @@ import {
   OPTION_KEYS,
   escapeHtml,
   flattenExamQuestions,
+  formatDateTime,
   formatDurationText,
   formatTimer,
   generateId,
@@ -17,6 +19,7 @@ import {
 
 const params = new URLSearchParams(window.location.search);
 const examId = params.get('id') || '';
+const reviewSubId = params.get('review') || '';
 
 const topbarExamTitle = document.getElementById('topbarExamTitle');
 const topbarStudentInfo = document.getElementById('topbarStudentInfo');
@@ -24,6 +27,7 @@ const progressBadge = document.getElementById('progressBadge');
 const timerPill = document.getElementById('timerPill');
 const submitTopBtn = document.getElementById('submitTopBtn');
 const submitSideBtn = document.getElementById('submitSideBtn');
+const demoAutoFillBtn = document.getElementById('demoAutoFillBtn');
 
 const gateSection = document.getElementById('gateSection');
 const gateExamName = document.getElementById('gateExamName');
@@ -52,6 +56,7 @@ let studentName = (params.get('name') || '').trim();
 let studentClass = (params.get('class') || '').trim();
 
 let answers = {};
+let flaggedQuestions = new Set();
 let remainingSeconds = 40 * 60;
 let totalDurationSeconds = 40 * 60;
 let timerInterval = null;
@@ -67,7 +72,20 @@ function showError(msg) {
   errorMessage.textContent = msg;
   topbarExamTitle.textContent = 'Không tìm thấy đề thi';
   submitTopBtn.classList.add('hidden');
+  demoAutoFillBtn.classList.add('hidden');
   timerPill.classList.add('hidden');
+}
+
+function persistDraft() {
+  if (!currentExam || isSubmitted) return;
+  saveExamDraft(currentExam.id, {
+    studentName,
+    studentClass,
+    answers,
+    flagged: Array.from(flaggedQuestions),
+    remainingSeconds,
+    savedAt: Date.now()
+  });
 }
 
 function getAnsweredCount() {
@@ -85,16 +103,17 @@ function renderPalette() {
   const makeBtn = (num) => {
     const qKey = String(num);
     const chosen = answers[qKey] || '';
-    let extraClass = '';
+    const classes = ['palette-btn'];
 
     if (isSubmitted && submissionResult) {
       const detail = submissionResult.details.find((d) => d.number === num);
-      extraClass = detail?.isCorrect ? 'review-correct' : 'review-wrong';
-    } else if (chosen) {
-      extraClass = 'answered';
+      classes.push(detail?.isCorrect ? 'review-correct' : 'review-wrong');
+    } else {
+      if (chosen) classes.push('answered');
+      if (flaggedQuestions.has(num)) classes.push('flagged');
     }
 
-    return `<button type="button" class="palette-btn ${extraClass}" data-jump-q="${num}">${num}</button>`;
+    return `<button type="button" class="${classes.join(' ')}" data-jump-q="${num}">${num}</button>`;
   };
 
   paletteSingle.innerHTML = Array.from({ length: 20 }, (_, i) => makeBtn(i + 1)).join('');
@@ -104,16 +123,19 @@ function renderPalette() {
   document.querySelectorAll('[data-jump-q]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const num = Number(btn.getAttribute('data-jump-q'));
+      let rerenderNeeded = false;
       if (activeSectionTab !== 'all') {
         activeSectionTab = 'all';
         syncSectionTabButtons();
-        renderQuestions();
+        rerenderNeeded = true;
       }
       if (isSubmitted && activeReviewFilter !== 'all') {
         activeReviewFilter = 'all';
         syncReviewFilterButtons();
-        renderQuestions();
+        rerenderNeeded = true;
       }
+      if (rerenderNeeded) renderQuestions();
+
       const target = document.getElementById(`question-${num}`);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -134,21 +156,28 @@ function shouldShowQuestionInReview(qNumber) {
 function renderQuestionCard(q) {
   const qKey = String(q.number);
   const selected = answers[qKey] || '';
+  const isFlagged = flaggedQuestions.has(q.number);
   const detail = isSubmitted ? submissionResult?.details.find((d) => d.number === q.number) : null;
 
   let cardStatusClass = '';
-  let statusBadge = '';
+  let rightActionHtml = '';
 
   if (isSubmitted && detail) {
     if (detail.isCorrect) {
       cardStatusClass = 'correct';
-      statusBadge = '<span class="badge badge-green">Đúng</span>';
+      rightActionHtml = '<span class="badge badge-green">Đúng</span>';
     } else {
       cardStatusClass = 'wrong';
-      statusBadge = selected
+      rightActionHtml = selected
         ? '<span class="badge badge-red">Sai</span>'
         : '<span class="badge badge-red">Chưa chọn</span>';
     }
+  } else {
+    rightActionHtml = `
+      <button type="button" class="flag-btn ${isFlagged ? 'flagged' : ''}" data-flag-q="${q.number}">
+        ${isFlagged ? '★ Đã đánh dấu' : '☆ Xem lại'}
+      </button>
+    `;
   }
 
   const optionsHtml = OPTION_KEYS.map((key) => {
@@ -197,7 +226,7 @@ function renderQuestionCard(q) {
       <div class="question-head">
         <span class="question-num">Câu ${q.number}</span>
         <div class="question-text">${escapeHtml(q.question)}</div>
-        ${statusBadge}
+        ${rightActionHtml}
       </div>
       <div class="options-list">
         ${optionsHtml}
@@ -244,14 +273,18 @@ function renderQuestions() {
       blocks.push(`
         <div class="section-banner" style="border-left-color:#d97706; margin-top:22px;">
           <h2>Phần ${gIdx === 0 ? 'II' : 'III'}: Nhóm đọc hiểu ${gIdx + 1} (Câu ${startNum} – ${endNum})</h2>
-          <p>Đọc kỹ ngữ liệu bên dưới rồi trả lời 5 câu hỏi liên quan.</p>
+          <p>Đọc kỹ ngữ liệu bên trái (hoặc phía trên trên điện thoại) rồi trả lời 5 câu hỏi liên quan.</p>
         </div>
-        <div class="passage-card">
-          <span class="passage-label">Ngữ liệu đọc hiểu • Câu ${startNum}–${endNum}</span>
-          ${group.passageTitle ? `<h3 class="passage-title">${escapeHtml(group.passageTitle)}</h3>` : ''}
-          <div class="passage-content">${escapeHtml(group.passage || '')}</div>
+        <div class="split-group-layout">
+          <div class="passage-card">
+            <span class="passage-label">Ngữ liệu đọc hiểu • Câu ${startNum}–${endNum}</span>
+            ${group.passageTitle ? `<h3 class="passage-title">${escapeHtml(group.passageTitle)}</h3>` : ''}
+            <div class="passage-content">${escapeHtml(group.passage || '')}</div>
+          </div>
+          <div>
+            ${groupCards || '<div class="card"><div class="card-body">Không có câu nào trong bộ lọc này ở nhóm này.</div></div>'}
+          </div>
         </div>
-        ${groupCards || '<div class="card"><div class="card-body">Không có câu nào trong bộ lọc này ở nhóm này.</div></div>'}
       `);
     }
   });
@@ -264,16 +297,8 @@ function renderQuestions() {
         const qNum = btn.getAttribute('data-q');
         const opt = btn.getAttribute('data-opt');
         answers[qNum] = opt;
+        persistDraft();
 
-        saveExamDraft(currentExam.id, {
-          studentName,
-          studentClass,
-          answers,
-          remainingSeconds,
-          savedAt: Date.now()
-        });
-
-        // Update option visuals cleanly without full re-render
         const card = document.getElementById(`question-${qNum}`);
         if (card) {
           card.querySelectorAll('.option-item').forEach((item) => {
@@ -281,6 +306,23 @@ function renderQuestions() {
           });
         }
         updateProgressUI();
+        renderPalette();
+      });
+    });
+
+    questionsColumn.querySelectorAll('[data-flag-q]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const num = Number(btn.getAttribute('data-flag-q'));
+        if (flaggedQuestions.has(num)) {
+          flaggedQuestions.delete(num);
+          btn.classList.remove('flagged');
+          btn.textContent = '☆ Xem lại';
+        } else {
+          flaggedQuestions.add(num);
+          btn.classList.add('flagged');
+          btn.textContent = '★ Đã đánh dấu';
+        }
+        persistDraft();
         renderPalette();
       });
     });
@@ -309,13 +351,7 @@ function startTimer() {
     updateTimerDisplay();
 
     if (remainingSeconds % 5 === 0) {
-      saveExamDraft(currentExam.id, {
-        studentName,
-        studentClass,
-        answers,
-        remainingSeconds,
-        savedAt: Date.now()
-      });
+      persistDraft();
     }
 
     if (remainingSeconds <= 0) {
@@ -323,6 +359,47 @@ function startTimer() {
       finalizeSubmission(true);
     }
   }, 1000);
+}
+
+function renderResultSummary({ isAutoTimeUp = false, elapsedSeconds, saveStatusHtml, submittedAtText = '' }) {
+  submitTopBtn.classList.add('hidden');
+  demoAutoFillBtn.classList.add('hidden');
+  paletteSubmitWrap.classList.add('hidden');
+  timerPill.classList.remove('warning', 'danger');
+  timerPill.textContent = 'Đã nộp bài';
+  reviewFilterBar.classList.remove('hidden');
+
+  resultSummaryContainer.classList.remove('hidden');
+  resultSummaryContainer.innerHTML = `
+    <div class="result-banner">
+      <div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+          ${isAutoTimeUp ? '<span class="badge badge-amber">Hết giờ – hệ thống tự động nộp bài</span>' : '<span class="badge badge-green">Đã hoàn thành bài thi</span>'}
+          ${saveStatusHtml}
+        </div>
+        <h2 style="margin:0 0 6px;">Kết quả của ${escapeHtml(studentName)} (${escapeHtml(studentClass)})</h2>
+        <p style="margin:0; color:var(--text-secondary);">
+          Số câu trả lời đúng: <strong>${submissionResult.correctCount} / ${submissionResult.totalQuestions} câu</strong> •
+          Thời gian làm bài: <strong>${formatDurationText(elapsedSeconds)}</strong>
+          ${submittedAtText ? ` • Nộp lúc ${escapeHtml(submittedAtText)}` : ''}
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <a href="/" class="btn btn-outline btn-sm">Quay về trang chủ</a>
+          <button id="retakeExamBtn" type="button" class="btn btn-soft btn-sm">Làm lại đề này</button>
+        </div>
+      </div>
+      <div class="score-circle">
+        <div class="score-val">${submissionResult.score}</div>
+        <div class="score-sub">Điểm / 10</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('retakeExamBtn').addEventListener('click', () => {
+    clearExamDraft(currentExam.id);
+    const nextUrl = `/exam?id=${encodeURIComponent(currentExam.id)}&name=${encodeURIComponent(studentName)}&class=${encodeURIComponent(studentClass)}`;
+    window.location.href = nextUrl;
+  });
 }
 
 async function finalizeSubmission(isAutoTimeUp = false) {
@@ -356,42 +433,7 @@ async function finalizeSubmission(isAutoTimeUp = false) {
     saveStatusHtml = `<span class="badge badge-amber">Lưu điểm lỗi: ${escapeHtml(err.message)}</span>`;
   }
 
-  submitTopBtn.classList.add('hidden');
-  paletteSubmitWrap.classList.add('hidden');
-  timerPill.classList.remove('warning', 'danger');
-  timerPill.textContent = 'Đã nộp bài';
-  reviewFilterBar.classList.remove('hidden');
-
-  resultSummaryContainer.classList.remove('hidden');
-  resultSummaryContainer.innerHTML = `
-    <div class="result-banner">
-      <div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
-          ${isAutoTimeUp ? '<span class="badge badge-amber">Hết giờ – hệ thống tự động nộp bài</span>' : '<span class="badge badge-green">Nộp bài thành công</span>'}
-          ${saveStatusHtml}
-        </div>
-        <h2 style="margin:0 0 6px;">Kết quả của ${escapeHtml(studentName)} (${escapeHtml(studentClass)})</h2>
-        <p style="margin:0; color:var(--text-secondary);">
-          Số câu trả lời đúng: <strong>${submissionResult.correctCount} / ${submissionResult.totalQuestions} câu</strong> •
-          Thời gian làm bài: <strong>${formatDurationText(elapsedSeconds)}</strong>
-        </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-          <a href="/" class="btn btn-outline btn-sm">Làm đề khác</a>
-          <button id="retakeExamBtn" type="button" class="btn btn-soft btn-sm">Làm lại đề này</button>
-        </div>
-      </div>
-      <div class="score-circle">
-        <div class="score-val">${submissionResult.score}</div>
-        <div class="score-sub">Điểm / 10</div>
-      </div>
-    </div>
-  `;
-
-  document.getElementById('retakeExamBtn').addEventListener('click', () => {
-    clearExamDraft(currentExam.id);
-    window.location.reload();
-  });
-
+  renderResultSummary({ isAutoTimeUp, elapsedSeconds, saveStatusHtml });
   renderPalette();
   renderQuestions();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -402,12 +444,20 @@ function openSubmitConfirm() {
   const total = flattenExamQuestions(currentExam).length || 30;
   const answered = getAnsweredCount();
   const unanswered = total - answered;
+  const flaggedCount = flaggedQuestions.size;
 
-  confirmSubmitText.innerHTML =
-    unanswered > 0
-      ? `Bạn đã trả lời <strong>${answered}/${total}</strong> câu. Vẫn còn <strong>${unanswered}</strong> câu chưa chọn đáp án. Bạn có chắc chắn muốn nộp bài ngay không?`
-      : `Bạn đã trả lời đầy đủ <strong>${answered}/${total}</strong> câu hỏi. Bấm <strong>Đồng ý nộp bài</strong> để xem điểm và đáp án đúng.`;
+  const parts = [];
+  if (unanswered > 0) {
+    parts.push(`Bạn đã trả lời <strong>${answered}/${total}</strong> câu, vẫn còn <strong>${unanswered}</strong> câu chưa chọn đáp án.`);
+  } else {
+    parts.push(`Bạn đã trả lời đầy đủ <strong>${answered}/${total}</strong> câu hỏi.`);
+  }
+  if (flaggedCount > 0) {
+    parts.push(`Đang có <strong>${flaggedCount}</strong> câu bạn đánh dấu xem lại.`);
+  }
+  parts.push('Bấm <strong>Đồng ý nộp bài</strong> để xem điểm và đáp án đúng.');
 
+  confirmSubmitText.innerHTML = parts.join(' ');
   confirmSubmitModal.classList.remove('hidden');
 }
 
@@ -426,6 +476,7 @@ function syncReviewFilterButtons() {
 function beginExamSession() {
   gateSection.classList.add('hidden');
   examWorkspace.classList.remove('hidden');
+  demoAutoFillBtn.classList.remove('hidden');
   topbarStudentInfo.textContent = `Thí sinh: ${studentName} • Lớp: ${studentClass}`;
 
   totalDurationSeconds = (Number(currentExam.durationMinutes) || 40) * 60;
@@ -438,9 +489,11 @@ function beginExamSession() {
     draft.remainingSeconds > 0
   ) {
     answers = draft.answers || {};
+    flaggedQuestions = new Set(draft.flagged || []);
     remainingSeconds = draft.remainingSeconds;
   } else {
     answers = {};
+    flaggedQuestions = new Set();
     remainingSeconds = totalDurationSeconds;
   }
 
@@ -448,6 +501,29 @@ function beginExamSession() {
   renderPalette();
   renderQuestions();
   startTimer();
+}
+
+function beginReviewFromSavedSubmission(sub) {
+  isSubmitted = true;
+  studentName = sub.studentName;
+  studentClass = sub.studentClass;
+  answers = { ...(sub.answers || {}) };
+  submissionResult = gradeExam(currentExam, answers);
+
+  gateSection.classList.add('hidden');
+  examWorkspace.classList.remove('hidden');
+  topbarStudentInfo.textContent = `Xem lại bài làm: ${studentName} • Lớp: ${studentClass}`;
+  updateProgressUI();
+
+  renderResultSummary({
+    isAutoTimeUp: false,
+    elapsedSeconds: sub.elapsedSeconds || 0,
+    saveStatusHtml: '<span class="badge badge-blue">Chế độ xem lại bài đã nộp</span>',
+    submittedAtText: formatDateTime(sub.submittedAt)
+  });
+
+  renderPalette();
+  renderQuestions();
 }
 
 async function init() {
@@ -465,6 +541,16 @@ async function init() {
 
     topbarExamTitle.textContent = currentExam.title;
     gateExamName.textContent = `${currentExam.title} • ${Number(currentExam.durationMinutes) || 40} phút • 30 câu`;
+
+    if (reviewSubId) {
+      const sub = await getSubmissionById(reviewSubId);
+      if (!sub) {
+        showError('Không tìm thấy lịch sử bài làm này.');
+        return;
+      }
+      beginReviewFromSavedSubmission(sub);
+      return;
+    }
 
     if (studentName && studentClass) {
       beginExamSession();
@@ -503,6 +589,24 @@ document.querySelectorAll('[data-review-filter]').forEach((btn) => {
     syncReviewFilterButtons();
     renderQuestions();
   });
+});
+
+demoAutoFillBtn.addEventListener('click', () => {
+  if (isSubmitted || !currentExam) return;
+  const flat = flattenExamQuestions(currentExam);
+  flat.forEach((q, idx) => {
+    // Chọn đúng ~80% câu và sai nhẹ ~20% để giao diện review sinh động
+    if (idx % 5 === 4) {
+      const wrongOpts = OPTION_KEYS.filter((k) => k !== q.correctAnswer);
+      answers[String(q.number)] = wrongOpts[idx % wrongOpts.length];
+    } else {
+      answers[String(q.number)] = q.correctAnswer;
+    }
+  });
+  persistDraft();
+  updateProgressUI();
+  renderPalette();
+  renderQuestions();
 });
 
 submitTopBtn.addEventListener('click', openSubmitConfirm);

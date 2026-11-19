@@ -915,3 +915,112 @@ tr:last-child td {
   text-align: center;
   background: var(--surface);
 }
+
+/* Split-view Reading Comprehension (Câu 21-25, 26-30) */
+.split-group-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 1080px) {
+  .split-group-layout {
+    grid-template-columns: minmax(290px, 0.92fr) minmax(0, 1.18fr);
+  }
+
+  .split-group-layout .passage-card {
+    position: sticky;
+    top: 84px;
+    max-height: calc(100vh - 108px);
+    overflow-y: auto;
+    margin-bottom: 0;
+  }
+}
+
+/* Flag / Mark for Review */
+.flag-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.14s ease;
+}
+
+.flag-btn:hover {
+  border-color: var(--warning);
+  color: #b45309;
+}
+
+.flag-btn.flagged {
+  background: var(--warning-soft);
+  border-color: var(--warning-border);
+  color: #b45309;
+}
+
+.palette-btn {
+  position: relative;
+}
+
+.palette-btn.flagged {
+  border: 2px solid var(--warning);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.16);
+}
+
+.palette-btn.flagged::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warning);
+}
+
+/* Recent History List on Home */
+.history-section {
+  margin: 0 0 42px;
+}
+
+.history-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Top Wrong Questions Analytics */
+.wrong-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.wrong-stat-item {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+}

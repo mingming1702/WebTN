@@ -7,6 +7,7 @@ import {
   getTeacherPin,
   listExams,
   listSubmissions,
+  resetDemoData,
   saveExam,
   setLocalCloudConfig,
   setTeacherPin
@@ -28,6 +29,7 @@ const pinGateSection = document.getElementById('pinGateSection');
 const pinForm = document.getElementById('pinForm');
 const pinInput = document.getElementById('pinInput');
 const pinError = document.getElementById('pinError');
+const demoQuickLoginBtn = document.getElementById('demoQuickLoginBtn');
 
 const teacherApp = document.getElementById('teacherApp');
 const teacherStorageBadge = document.getElementById('teacherStorageBadge');
@@ -57,6 +59,8 @@ const filterScoreExam = document.getElementById('filterScoreExam');
 const searchScoreStudent = document.getElementById('searchScoreStudent');
 const scoresTableBody = document.getElementById('scoresTableBody');
 const scoreStatsGrid = document.getElementById('scoreStatsGrid');
+const wrongStatsCard = document.getElementById('wrongStatsCard');
+const wrongStatsGrid = document.getElementById('wrongStatsGrid');
 
 const quickImportModal = document.getElementById('quickImportModal');
 const quickImportTextarea = document.getElementById('quickImportTextarea');
@@ -152,10 +156,11 @@ function renderTeacherExamList() {
             <p class="exam-card-desc">${escapeHtml(exam.description || 'Chưa có mô tả.')}</p>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               <button type="button" class="btn btn-primary btn-sm" data-edit-exam="${escapeHtml(exam.id)}">Sửa đề</button>
+              <a href="/exam?id=${encodeURIComponent(exam.id)}" target="_blank" rel="noopener" class="btn btn-soft btn-sm">Xem thử đề</a>
               <button type="button" class="btn btn-outline btn-sm" data-toggle-pub="${escapeHtml(exam.id)}">
                 ${exam.isPublished !== false ? 'Ẩn đề' : 'Mở đề'}
               </button>
-              <button type="button" class="btn btn-soft btn-sm" data-copy-link="${escapeHtml(exam.id)}">Copy link thi</button>
+              <button type="button" class="btn btn-outline btn-sm" data-copy-link="${escapeHtml(exam.id)}">Copy link thi</button>
               <button type="button" class="btn btn-outline btn-sm" data-export-json="${escapeHtml(exam.id)}">Tải JSON</button>
               <button type="button" class="btn btn-danger-soft btn-sm" data-delete-exam="${escapeHtml(exam.id)}">Xóa</button>
             </div>
@@ -391,8 +396,41 @@ function closeEditor() {
   editingExam = null;
 }
 
+function extractPassageBlock(text, groupNum) {
+  const regex = new RegExp(
+    `\\[NGỮ LIỆU ${groupNum}\\]\\s*([\\s\\S]*?)(?=\\[(?:NGỮ LIỆU|HẾT NGỮ LIỆU)|^Câu\\s+\\d+\\s*[:.)]|$)`,
+    'im'
+  );
+  const match = text.match(regex);
+  if (!match) return null;
+
+  const lines = match[1].trim().split('\n');
+  let passageTitle = '';
+  if (lines[0] && /^Tiêu đề\s*:/i.test(lines[0])) {
+    passageTitle = lines[0].replace(/^Tiêu đề\s*:/i, '').trim();
+    lines.shift();
+  }
+  return {
+    passageTitle,
+    passage: lines.join('\n').trim()
+  };
+}
+
 function parseQuickText(rawText) {
   const normalized = rawText.replace(/\r\n/g, '\n');
+
+  const p1 = extractPassageBlock(normalized, 1);
+  if (p1 && editingExam.groups[0]) {
+    if (p1.passageTitle) editingExam.groups[0].passageTitle = p1.passageTitle;
+    if (p1.passage) editingExam.groups[0].passage = p1.passage;
+  }
+
+  const p2 = extractPassageBlock(normalized, 2);
+  if (p2 && editingExam.groups[1]) {
+    if (p2.passageTitle) editingExam.groups[1].passageTitle = p2.passageTitle;
+    if (p2.passage) editingExam.groups[1].passage = p2.passage;
+  }
+
   const blocks = normalized.split(/(?=^Câu\s+\d+\s*[:.)])/gim).filter((b) => b.trim());
   let updatedCount = 0;
 
@@ -402,7 +440,10 @@ function parseQuickText(rawText) {
     const num = Number(numMatch[1]);
     if (num < 1 || num > 30) return;
 
-    const body = numMatch[2];
+    const cleanBlock = block.split(/\[NGỮ LIỆU \d+\]/i)[0];
+    const bodyMatch = cleanBlock.match(/^Câu\s+\d+\s*[:.)]\s*([\s\S]*)/i);
+    const body = bodyMatch ? bodyMatch[1] : numMatch[2];
+
     const optAMatch = body.match(/(?:^|\n)\s*A[\.\):]\s*(.+)/);
     const optBMatch = body.match(/(?:^|\n)\s*B[\.\):]\s*(.+)/);
     const optCMatch = body.match(/(?:^|\n)\s*C[\.\):]\s*(.+)/);
@@ -432,6 +473,56 @@ function parseQuickText(rawText) {
   });
 
   return updatedCount;
+}
+
+function buildQuickSampleText30() {
+  const lines = [];
+  for (let i = 1; i <= 20; i += 1) {
+    lines.push(
+      `Câu ${i}: Câu hỏi trắc nghiệm Tiếng Việt số ${i} (mẫu nhập nhanh)?`,
+      `A. Phương án A câu ${i}`,
+      `B. Phương án B câu ${i}`,
+      `C. Phương án C câu ${i}`,
+      `D. Phương án D câu ${i}`,
+      `Đáp án: ${OPTION_KEYS[(i - 1) % 4]}`,
+      ''
+    );
+  }
+  lines.push(
+    '[NGỮ LIỆU 1]',
+    'Tiêu đề: Kỷ niệm mùa thu đến trường',
+    'Sáng thu, bầu trời trong xanh vời vợi. Những hàng cây ven đường khẽ rung rinh trong làn gió mát rượi, chào đón bước chân học trò trở lại mái trường thân yêu.',
+    ''
+  );
+  for (let i = 21; i <= 25; i += 1) {
+    lines.push(
+      `Câu ${i}: Câu hỏi đọc hiểu nhóm 1 số ${i}?`,
+      `A. Phương án A câu ${i}`,
+      `B. Phương án B câu ${i}`,
+      `C. Phương án C câu ${i}`,
+      `D. Phương án D câu ${i}`,
+      `Đáp án: ${OPTION_KEYS[(i - 1) % 4]}`,
+      ''
+    );
+  }
+  lines.push(
+    '[NGỮ LIỆU 2]',
+    'Tiêu đề: Vai trò của cây xanh đô thị',
+    'Cây xanh đô thị không chỉ tạo bóng mát, điều hòa không khí mà còn góp phần làm giảm tiếng ồn và mang lại cảnh quan dịu mắt cho người dân thành phố.',
+    ''
+  );
+  for (let i = 26; i <= 30; i += 1) {
+    lines.push(
+      `Câu ${i}: Câu hỏi đọc hiểu nhóm 2 số ${i}?`,
+      `A. Phương án A câu ${i}`,
+      `B. Phương án B câu ${i}`,
+      `C. Phương án C câu ${i}`,
+      `D. Phương án D câu ${i}`,
+      `Đáp án: ${OPTION_KEYS[(i - 1) % 4]}`,
+      ''
+    );
+  }
+  return lines.join('\n');
 }
 
 function populateScoreExamFilter() {
@@ -466,6 +557,68 @@ function getFilteredSubmissions() {
   });
 }
 
+function renderWrongQuestionStats(filteredSubs) {
+  if (!filteredSubs.length) {
+    wrongStatsCard.classList.add('hidden');
+    return;
+  }
+
+  const examMap = new Map(examsCache.map((e) => [e.id, e]));
+  const statMap = new Map();
+
+  filteredSubs.forEach((sub) => {
+    const exam = examMap.get(sub.examId);
+    if (!exam) return;
+    const flat = flattenExamQuestions(exam);
+    flat.forEach((q) => {
+      const key = `${exam.id}::${q.number}`;
+      if (!statMap.has(key)) {
+        statMap.set(key, {
+          examTitle: exam.title,
+          number: q.number,
+          question: q.question,
+          total: 0,
+          wrong: 0
+        });
+      }
+      const entry = statMap.get(key);
+      entry.total += 1;
+      const chosen = sub.answers?.[String(q.number)] || '';
+      if (chosen !== q.correctAnswer) {
+        entry.wrong += 1;
+      }
+    });
+  });
+
+  const topWrong = Array.from(statMap.values())
+    .filter((item) => item.wrong > 0)
+    .sort((a, b) => b.wrong / b.total - a.wrong / a.total || b.wrong - a.wrong)
+    .slice(0, 4);
+
+  if (!topWrong.length) {
+    wrongStatsCard.classList.add('hidden');
+    return;
+  }
+
+  wrongStatsCard.classList.remove('hidden');
+  wrongStatsGrid.innerHTML = topWrong
+    .map((item) => {
+      const rate = Math.round((item.wrong / item.total) * 100);
+      const snippet = item.question.length > 78 ? `${item.question.slice(0, 78)}...` : item.question;
+      return `
+        <div class="wrong-stat-item">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+            <span class="badge badge-red">Câu ${item.number}</span>
+            <strong style="font-size:13px; color:var(--danger);">Sai ${item.wrong}/${item.total} lượt (${rate}%)</strong>
+          </div>
+          <div style="font-size:13px; color:var(--text); font-weight:500;">${escapeHtml(snippet)}</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">${escapeHtml(item.examTitle)}</div>
+        </div>
+      `;
+    })
+    .join('');
+}
+
 function renderScoreTable() {
   const list = getFilteredSubmissions();
 
@@ -476,6 +629,9 @@ function renderScoreTable() {
   const maxScore = totalCount
     ? Math.max(...list.map((s) => Number(s.score || 0))).toFixed(2)
     : '0.00';
+  const highRate = totalCount
+    ? Math.round((list.filter((s) => Number(s.score || 0) >= 8).length / totalCount) * 100)
+    : 0;
 
   scoreStatsGrid.innerHTML = `
     <div class="stat-card">
@@ -490,7 +646,13 @@ function renderScoreTable() {
       <div class="stat-label">Điểm cao nhất</div>
       <div class="stat-value">${maxScore} / 10</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-label">Tỷ lệ khá giỏi (≥ 8.0)</div>
+      <div class="stat-value">${highRate}%</div>
+    </div>
   `;
+
+  renderWrongQuestionStats(list);
 
   if (!list.length) {
     scoresTableBody.innerHTML = `
@@ -628,6 +790,11 @@ pinForm.addEventListener('submit', (e) => {
   }
 });
 
+demoQuickLoginBtn.addEventListener('click', () => {
+  pinError.classList.add('hidden');
+  unlockTeacher();
+});
+
 document.querySelectorAll('[data-main-tab]').forEach((btn) => {
   btn.addEventListener('click', () => switchMainTab(btn.getAttribute('data-main-tab')));
 });
@@ -706,11 +873,17 @@ document.getElementById('closeQuickImport').addEventListener('click', () => {
 document.getElementById('cancelQuickImport').addEventListener('click', () => {
   quickImportModal.classList.add('hidden');
 });
+document.getElementById('insertQuickSampleBtn').addEventListener('click', () => {
+  quickImportTextarea.value = buildQuickSampleText30();
+  if (!editorTitle.value.trim()) {
+    editorTitle.value = `Đề Tiếng Việt nhập nhanh (${new Date().toLocaleDateString('vi-VN')})`;
+  }
+});
 document.getElementById('applyQuickImport').addEventListener('click', () => {
   const count = parseQuickText(quickImportTextarea.value);
   quickImportModal.classList.add('hidden');
   renderEditorSections();
-  window.alert(`Đã nhận diện và điền tự động ${count} câu hỏi vào biểu mẫu.`);
+  window.alert(`Đã nhận diện và điền tự động ${count} câu hỏi (cùng ngữ liệu nếu có) vào biểu mẫu.`);
 });
 
 document.getElementById('importJsonFileInput').addEventListener('change', async (e) => {
@@ -770,6 +943,15 @@ document.getElementById('changePinForm').addEventListener('submit', (e) => {
   document.getElementById('newPinInput').value = '';
   document.getElementById('pinChangeMsg').innerHTML =
     '<span class="badge badge-green">Đã đổi mã PIN giáo viên thành công!</span>';
+});
+
+document.getElementById('resetDemoDataBtn').addEventListener('click', async () => {
+  if (!window.confirm('Khôi phục lại 2 đề mẫu và 5 bài làm mẫu ban đầu?')) return;
+  await resetDemoData();
+  await loadAndRenderExams();
+  await loadAndRenderScores();
+  document.getElementById('resetDemoMsg').innerHTML =
+    '<span class="badge badge-green">Đã khôi phục dữ liệu Demo gốc thành công!</span>';
 });
 
 if (isTeacherUnlocked()) {

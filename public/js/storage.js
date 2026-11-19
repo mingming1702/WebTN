@@ -1,12 +1,15 @@
-import { SAMPLE_EXAMS } from './sample-data.js';
+import { SAMPLE_EXAMS, SAMPLE_SUBMISSIONS } from './sample-data.js';
 
 const STORAGE_KEYS = {
   EXAMS: 'tv_exams_v1',
   SUBMISSIONS: 'tv_submissions_v1',
+  DEMO_SEED_VERSION: 'tv_demo_seed_version',
   TEACHER_PIN: 'tv_teacher_pin_v1',
   CLOUD_CONFIG: 'tv_cloud_config_v1',
   EXAM_DRAFT_PREFIX: 'tv_exam_draft_'
 };
+
+const CURRENT_DEMO_VERSION = '2';
 
 let cachedRuntimeConfig = null;
 
@@ -25,12 +28,32 @@ function writeLocalJson(key, value) {
 }
 
 function ensureLocalSeed() {
-  const existing = readLocalJson(STORAGE_KEYS.EXAMS, null);
-  if (!Array.isArray(existing) || existing.length === 0) {
-    writeLocalJson(STORAGE_KEYS.EXAMS, SAMPLE_EXAMS);
-    return structuredClone(SAMPLE_EXAMS);
+  const existingExams = readLocalJson(STORAGE_KEYS.EXAMS, null);
+  const seedVer = localStorage.getItem(STORAGE_KEYS.DEMO_SEED_VERSION);
+
+  let exams;
+  if (!Array.isArray(existingExams) || existingExams.length === 0) {
+    exams = structuredClone(SAMPLE_EXAMS);
+    writeLocalJson(STORAGE_KEYS.EXAMS, exams);
+  } else if (seedVer !== CURRENT_DEMO_VERSION) {
+    const existingIds = new Set(existingExams.map((e) => e.id));
+    const missing = SAMPLE_EXAMS.filter((s) => !existingIds.has(s.id));
+    exams = [...existingExams, ...structuredClone(missing)];
+    writeLocalJson(STORAGE_KEYS.EXAMS, exams);
+  } else {
+    exams = existingExams;
   }
-  return existing;
+
+  const existingSubs = readLocalJson(STORAGE_KEYS.SUBMISSIONS, null);
+  if ((!Array.isArray(existingSubs) || existingSubs.length === 0) && seedVer !== CURRENT_DEMO_VERSION) {
+    writeLocalJson(STORAGE_KEYS.SUBMISSIONS, structuredClone(SAMPLE_SUBMISSIONS));
+  }
+
+  if (seedVer !== CURRENT_DEMO_VERSION) {
+    localStorage.setItem(STORAGE_KEYS.DEMO_SEED_VERSION, CURRENT_DEMO_VERSION);
+  }
+
+  return exams;
 }
 
 export function getTeacherPin() {
@@ -81,7 +104,7 @@ export async function getStorageMode() {
       }
     }
   } catch {
-    // Fallback to LocalStorage when running without /api/config (e.g. local python static server)
+    // Fallback to LocalStorage when running without /api/config
   }
 
   cachedRuntimeConfig = { mode: 'local', source: 'localstorage' };
@@ -180,7 +203,6 @@ export async function listExams({ includeUnpublished = false } = {}) {
   if (cfg.mode === 'supabase') {
     const rows = await supabaseFetch(cfg, 'exams?select=*&order=created_at.desc');
     if (!rows || rows.length === 0) {
-      // Auto-seed sample exam on first run
       for (const sample of SAMPLE_EXAMS) {
         await supabaseFetch(cfg, 'exams', {
           method: 'POST',
@@ -262,6 +284,7 @@ export async function listSubmissions({ examId = '' } = {}) {
     const rows = await supabaseFetch(cfg, query);
     list = (rows || []).map(mapDbSubmissionToApp);
   } else {
+    ensureLocalSeed();
     list = readLocalJson(STORAGE_KEYS.SUBMISSIONS, []);
     list.sort((a, b) => new Date(b.submittedAt) - new Date(a.submittedAt));
     if (examId) {
@@ -270,6 +293,11 @@ export async function listSubmissions({ examId = '' } = {}) {
   }
 
   return list;
+}
+
+export async function getSubmissionById(subId) {
+  const list = await listSubmissions();
+  return list.find((s) => s.id === subId) || null;
 }
 
 export async function saveSubmission(submission) {
@@ -282,6 +310,7 @@ export async function saveSubmission(submission) {
     return submission;
   }
 
+  ensureLocalSeed();
   const list = readLocalJson(STORAGE_KEYS.SUBMISSIONS, []);
   list.unshift(submission);
   writeLocalJson(STORAGE_KEYS.SUBMISSIONS, list);
@@ -299,6 +328,31 @@ export async function deleteSubmission(submissionId) {
 
   const list = readLocalJson(STORAGE_KEYS.SUBMISSIONS, []).filter((s) => s.id !== submissionId);
   writeLocalJson(STORAGE_KEYS.SUBMISSIONS, list);
+}
+
+export async function resetDemoData() {
+  const cfg = await getStorageMode();
+  if (cfg.mode === 'supabase') {
+    for (const sample of SAMPLE_EXAMS) {
+      await supabaseFetch(cfg, 'exams?on_conflict=id', {
+        method: 'POST',
+        headers: { Prefer: 'resolution=merge-duplicates' },
+        body: JSON.stringify(mapAppExamToDb(sample))
+      });
+    }
+    for (const sub of SAMPLE_SUBMISSIONS) {
+      await supabaseFetch(cfg, 'submissions?on_conflict=id', {
+        method: 'POST',
+        headers: { Prefer: 'resolution=merge-duplicates' },
+        body: JSON.stringify(mapAppSubmissionToDb(sub))
+      });
+    }
+    return;
+  }
+
+  writeLocalJson(STORAGE_KEYS.EXAMS, structuredClone(SAMPLE_EXAMS));
+  writeLocalJson(STORAGE_KEYS.SUBMISSIONS, structuredClone(SAMPLE_SUBMISSIONS));
+  localStorage.setItem(STORAGE_KEYS.DEMO_SEED_VERSION, CURRENT_DEMO_VERSION);
 }
 
 export function saveExamDraft(examId, draft) {

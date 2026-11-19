@@ -390,5 +390,525 @@ export const SAMPLE_EXAMS = [
         ]
       }
     ]
+  },
+  {
+    id: 'exam_tv_mau_02',
+    title: 'Đề Đánh giá năng lực Tiếng Việt – Đề số 02',
+    description:
+      'Đề luyện tập nâng cao kỹ năng dùng từ, phát hiện lỗi sai ngữ pháp – logic và 2 bài đọc hiểu văn bản nghị luận & thông tin (Câu 21–30).',
+    durationMinutes: 40,
+    isPublished: true,
+    createdAt: '2026-11-19T09:30:00.000Z',
+    updatedAt: '2026-11-19T09:30:00.000Z',
+    singleQuestions: [
+      {
+        number: 1,
+        question: 'Chọn từ viết đúng chính tả để điền vào chỗ trống: "Anh ấy là người rất ... trong công việc."',
+        options: {
+          A: 'chỉnh chu',
+          B: 'chỉn chu',
+          C: 'chỉn tru',
+          D: 'chỉnh tru'
+        },
+        correctAnswer: 'B',
+        explanation: 'Từ đúng chính tả là "chỉn chu" (chu đáo, cẩn thận, không sơ suất).'
+      },
+      {
+        number: 2,
+        question: 'Câu nào dưới đây mắc lỗi dùng từ sai nghĩa?',
+        options: {
+          A: 'Nhà trường luôn đề cao tinh thần tự học của học sinh.',
+          B: 'Bức tranh phong cảnh quê hương được vẽ rất sinh động.',
+          C: 'Chúng ta cần khắc phục những điểm yếu để tiến bộ hơn.',
+          D: 'Cô ấy có giọng hát rất truyền cảm và bàng quan.'
+        },
+        correctAnswer: 'D',
+        explanation: '"Bàng quan" nghĩa là thờ ơ, đứng ngoài cuộc, không phù hợp để miêu tả giọng hát.'
+      },
+      {
+        number: 3,
+        question: 'Xác định lỗi sai trong câu: "Qua tác phẩm Tắt đèn đã cho thấy số phận bi thảm của người nông dân xưa."',
+        options: {
+          A: 'Thiếu chủ ngữ do dùng thừa quan hệ từ "Qua"',
+          B: 'Thiếu vị ngữ',
+          C: 'Sai dấu câu ở cuối câu',
+          D: 'Dùng sai từ nối giữa hai vế'
+        },
+        correctAnswer: 'A',
+        explanation: '"Qua tác phẩm Tắt đèn" là trạng ngữ, khiến câu thiếu chủ ngữ. Cần bỏ từ "Qua".'
+      },
+      {
+        number: 4,
+        question: 'Từ Hán Việt "nhân ái" có nghĩa là gì?',
+        options: {
+          A: 'Lòng yêu thương con người',
+          B: 'Sự thông minh, sáng suốt',
+          C: 'Tính kiên trì, nhẫn nại',
+          D: 'Lòng dũng cảm trước khó khăn'
+        },
+        correctAnswer: 'A',
+        explanation: '"Nhân" là người/lòng thương người, "ái" là yêu thương.'
+      },
+      {
+        number: 5,
+        question: 'Trong các từ sau, từ nào KHÔNG phải là từ láy?',
+        options: {
+          A: 'Mênh mông',
+          B: 'Rì rào',
+          C: 'Tươi tốt',
+          D: 'Long lanh'
+        },
+        correctAnswer: 'C',
+        explanation: '"Tươi tốt" là từ ghép đẳng lập (tươi + tốt), hai tiếng đều có nghĩa.'
+      },
+      {
+        number: 6,
+        question: 'Cặp từ nào dưới đây là cặp từ trái nghĩa?',
+        options: {
+          A: 'Khiêm tốn – giản dị',
+          B: 'Thận trọng – liều lĩnh',
+          C: 'Trung thực – thật thà',
+          D: 'Đoàn kết – gắn bó'
+        },
+        correctAnswer: 'B',
+        explanation: '"Thận trọng" (cẩn thận, cân nhắc kỹ) trái nghĩa với "liều lĩnh" (làm bừa không ngại nguy hiểm).'
+      },
+      {
+        number: 7,
+        question: 'Biện pháp tu từ nào nổi bật trong hai câu thơ:\n"Mặt trời của bắp thì nằm trên đồi / Mặt trời của mẹ, em nằm trên lưng."',
+        options: {
+          A: 'Ẩn dụ',
+          B: 'Nói quá',
+          C: 'Hoán dụ',
+          D: 'Đảo ngữ'
+        },
+        correctAnswer: 'A',
+        explanation: '"Mặt trời của mẹ" là hình ảnh ẩn dụ chỉ người con – nguồn sáng, niềm tin và hy vọng của mẹ.'
+      },
+      {
+        number: 8,
+        question: 'Dòng nào dưới đây có sự sắp xếp các từ theo trình tự tăng dần về mức độ?',
+        options: {
+          A: 'Thích, say mê, yêu quý',
+          B: 'Mưa phùn, mưa rào, mưa bão',
+          C: 'Lạnh buốt, se lạnh, mát mẻ',
+          D: 'Vui sướng, hài lòng, hạnh phúc'
+        },
+        correctAnswer: 'B',
+        explanation: 'Mức độ mưa tăng dần từ nhẹ (mưa phùn) -> vừa/to (mưa rào) -> dữ dội (mưa bão).'
+      },
+      {
+        number: 9,
+        question: 'Câu: "Dù trời mưa to nhưng Nam vẫn đến lớp đúng giờ." mắc lỗi gì?',
+        options: {
+          A: 'Không mắc lỗi, câu đúng chuẩn ngữ pháp',
+          B: 'Thiếu thành phần chủ ngữ',
+          C: 'Dùng sai dấu phẩy',
+          D: 'Sai nghĩa từ "đúng giờ"'
+        },
+        correctAnswer: 'A',
+        explanation: 'Cặp quan hệ từ "Dù ... nhưng ..." biểu thị quan hệ tương phản hoàn toàn đúng ngữ pháp.'
+      },
+      {
+        number: 10,
+        question: 'Từ "chín" trong câu nào mang nghĩa chuyển?',
+        options: {
+          A: 'Vườn cam năm nay quả đã chín vàng.',
+          B: 'Nồi cơm đã chín, tỏa mùi thơm phức.',
+          C: 'Trước khi quyết định, bạn cần suy nghĩ cho thật chín.',
+          D: 'Quả chuối chín có vị ngọt đậm.'
+        },
+        correctAnswer: 'C',
+        explanation: '"Suy nghĩ cho thật chín" nghĩa là suy nghĩ kỹ càng, thấu đáo (nghĩa chuyển).'
+      },
+      {
+        number: 11,
+        question: 'Thành ngữ "Nước đổ đầu vịt" dùng để chỉ điều gì?',
+        options: {
+          A: 'Cảnh thiên nhiên vùng sông nước thanh bình',
+          B: 'Nói mãi, khuyên bảo mãi mà người nghe không tiếp thu',
+          C: 'Sự nhanh nhẹn, tháo vát trong công việc',
+          D: 'Tình cảm gắn bó keo sơn giữa bạn bè'
+        },
+        correctAnswer: 'B',
+        explanation: 'Thành ngữ ví sự không tiếp thu lời khuyên như nước đổ lên lông vịt không thấm.'
+      },
+      {
+        number: 12,
+        question: 'Trong câu "Trên bầu trời cao rộng, đàn chim én chao lượn báo hiệu mùa xuân về.", cụm từ "Trên bầu trời cao rộng" giữ chức vụ gì?',
+        options: {
+          A: 'Chủ ngữ',
+          B: 'Vị ngữ',
+          C: 'Trạng ngữ chỉ nơi chốn',
+          D: 'Bổ ngữ'
+        },
+        correctAnswer: 'C',
+        explanation: 'Cụm từ đứng đầu câu chỉ địa điểm diễn ra sự việc nên là trạng ngữ chỉ nơi chốn.'
+      },
+      {
+        number: 13,
+        question: 'Cách dùng dấu hai chấm trong câu: "Chủ đề buổi thảo luận gồm ba nội dung chính: bảo vệ môi trường, tiết kiệm điện và phân loại rác." có tác dụng gì?',
+        options: {
+          A: 'Báo hiệu phần liệt kê, giải thích đứng sau',
+          B: 'Dẫn lời nói trực tiếp của nhân vật',
+          C: 'Thể hiện cảm xúc ngạc nhiên',
+          D: 'Ngăn cách các vế trong câu ghép'
+        },
+        correctAnswer: 'A',
+        explanation: 'Dấu hai chấm mở ra phần liệt kê ba nội dung chính.'
+      },
+      {
+        number: 14,
+        question: 'Từ nào viết đúng chính tả trong các phương án sau?',
+        options: {
+          A: 'Lãng mạng',
+          B: 'Lãng mạn',
+          C: 'Lãn mạn',
+          D: 'Lảng mạn'
+        },
+        correctAnswer: 'B',
+        explanation: 'Viết đúng chính tả tiếng Việt là "lãng mạn".'
+      },
+      {
+        number: 15,
+        question: 'Trong đoạn văn: "Hà Nội bước vào thu. Tiết trời dịu nhẹ, thoang thoảng hương hoa sữa.", câu thứ hai liên kết với câu thứ nhất chủ yếu bằng phép nào?',
+        options: {
+          A: 'Phép liên tưởng',
+          B: 'Phép lặp từ ngữ',
+          C: 'Phép nối bằng quan hệ từ',
+          D: 'Phép trái nghĩa'
+        },
+        correctAnswer: 'A',
+        explanation: '"Tiết trời dịu nhẹ, hương hoa sữa" là những hình ảnh đặc trưng gắn liền với "mùa thu Hà Nội" (phép liên tưởng).'
+      },
+      {
+        number: 16,
+        question: 'Câu nào dưới đây là câu đơn?',
+        options: {
+          A: 'Nếu trời nắng đẹp, cả lớp sẽ đi tham quan bảo tàng.',
+          B: 'Mặt trời lên cao, sương tan dần trên mặt hồ.',
+          C: 'Những bông hoa hướng dương rực rỡ vươn mình đón ánh nắng ban mai.',
+          D: 'Mẹ nấu cơm còn bố dọn dẹp lại góc học tập.'
+        },
+        correctAnswer: 'C',
+        explanation: 'Câu C chỉ có một cụm chủ-vị nòng cốt: Những bông hoa hướng dương rực rỡ / vươn mình đón ánh nắng ban mai.'
+      },
+      {
+        number: 17,
+        question: 'Chọn từ thích hợp nhất điền vào chỗ trống: "Lối diễn đạt ... giúp bài văn nghị luận trở nên thuyết phục hơn."',
+        options: {
+          A: 'mạch lạc',
+          B: 'rời rạc',
+          C: 'mơ hồ',
+          D: 'lan man'
+        },
+        correctAnswer: 'A',
+        explanation: '"Mạch lạc" nghĩa là rõ ràng, liên kết chặt chẽ và hợp lý.'
+      },
+      {
+        number: 18,
+        question: 'Câu thơ "Bàn tay ta làm nên tất cả / Có sức người sỏi đá cũng thành cơm" sử dụng biện pháp tu từ nào là chủ yếu?',
+        options: {
+          A: 'Nói quá (phóng đại) kết hợp hoán dụ',
+          B: 'So sánh',
+          C: 'Chơi chữ',
+          D: 'Điệp thanh'
+        },
+        correctAnswer: 'A',
+        explanation: '"Bàn tay" hoán dụ chỉ người lao động; "sỏi đá cũng thành cơm" là cách nói quá nhằm đề cao sức lao động.'
+      },
+      {
+        number: 19,
+        question: 'Từ nào dưới đây có tiếng "quốc" KHÔNG mang nghĩa là "đất nước / nhà nước"?',
+        options: {
+          A: 'Quốc kỳ',
+          B: 'Quốc ca',
+          C: 'Quốc gia',
+          D: 'Tất cả đều mang nghĩa đất nước / nhà nước'
+        },
+        correctAnswer: 'D',
+        explanation: 'Quốc kỳ (cờ nước), quốc ca (bài hát chính thức của nước), quốc gia (đất nước) đều có tiếng "quốc" là nước.'
+      },
+      {
+        number: 20,
+        question: 'Đọc câu: "Cây bàng cổ thụ đứng sừng sững giữa sân trường như một người bảo vệ thầm lặng." Câu văn có mấy từ láy?',
+        options: {
+          A: '1 từ (sừng sững)',
+          B: '2 từ (cổ thụ, sừng sững)',
+          C: '2 từ (sừng sững, thầm lặng)',
+          D: '3 từ (cổ thụ, sừng sững, thầm lặng)'
+        },
+        correctAnswer: 'A',
+        explanation: 'Chỉ có "sừng sững" là từ láy; "cổ thụ" và "thầm lặng" là từ ghép.'
+      }
+    ],
+    groups: [
+      {
+        id: 'group_1',
+        title: 'Nhóm đọc hiểu 1 (Câu 21 – 25)',
+        passageTitle: 'Giá trị của lời xin lỗi chân thành',
+        passage:
+          'Trong giao tiếp hằng ngày, không ai tránh khỏi những lúc sơ suất làm phiền hoặc gây tổn thương cho người khác. Khi nhận ra lỗi lầm, một lời xin lỗi kịp thời và chân thành chính là chiếc cầu nối giúp hóa giải hiểu lầm, giữ gìn sự tôn trọng lẫn nhau.\n\nTuy nhiên, lời xin lỗi chỉ thực sự có giá trị khi đi kèm với thái độ cầu thị và hành động sửa sai cụ thể. Nếu chỉ nói "xin lỗi" cho xong chuyện rồi tiếp tục lặp lại sai sót cũ, niềm tin giữa người với người sẽ dần phai nhạt. Biết nhận lỗi không phải là biểu hiện của sự yếu đuối, mà là dấu hiệu của bản lĩnh và lòng tự trọng.',
+        questions: [
+          {
+            number: 21,
+            question: 'Theo đoạn văn, lời xin lỗi kịp thời và chân thành có vai trò gì?',
+            options: {
+              A: 'Giúp chứng tỏ bản thân luôn đúng',
+              B: 'Giúp hóa giải hiểu lầm và giữ gìn sự tôn trọng lẫn nhau',
+              C: 'Giúp người khác quên ngay mọi trách nhiệm',
+              D: 'Giúp tránh phải sửa chữa sai sót'
+            },
+            correctAnswer: 'B',
+            explanation: 'Đoạn đầu nêu rõ lời xin lỗi là chiếc cầu nối giúp hóa giải hiểu lầm, giữ gìn sự tôn trọng.'
+          },
+          {
+            number: 22,
+            question: 'Điều kiện để lời xin lỗi thực sự có giá trị là gì?',
+            options: {
+              A: 'Phải nói trước đám đông thật lớn',
+              B: 'Phải đi kèm thái độ cầu thị và hành động sửa sai cụ thể',
+              C: 'Chỉ cần gửi một tin nhắn ngắn gọn',
+              D: 'Phải chờ thật lâu mới nói'
+            },
+            correctAnswer: 'B',
+            explanation: 'Đoạn hai viết: "lời xin lỗi chỉ thực sự có giá trị khi đi kèm với thái độ cầu thị và hành động sửa sai cụ thể".'
+          },
+          {
+            number: 23,
+            question: 'Điều gì xảy ra nếu nói xin lỗi qua loa nhưng vẫn lặp lại lỗi cũ?',
+            options: {
+              A: 'Mọi người sẽ càng yêu quý hơn',
+              B: 'Niềm tin giữa người với người sẽ dần phai nhạt',
+              C: 'Sai sót sẽ tự động biến mất',
+              D: 'Không ảnh hưởng đến các mối quan hệ'
+            },
+            correctAnswer: 'B',
+            explanation: 'Tác giả cảnh báo niềm tin giữa người với người sẽ dần phai nhạt nếu lặp lại sai sót cũ.'
+          },
+          {
+            number: 24,
+            question: 'Theo tác giả, việc biết nhận lỗi thể hiện phẩm chất nào?',
+            options: {
+              A: 'Sự yếu đuối và tự ti',
+              B: 'Sự nóng nảy và bảo thủ',
+              C: 'Bản lĩnh và lòng tự trọng',
+              D: 'Sự phụ thuộc vào người khác'
+            },
+            correctAnswer: 'C',
+            explanation: 'Câu cuối khẳng định: "Biết nhận lỗi... là dấu hiệu của bản lĩnh và lòng tự trọng."'
+          },
+          {
+            number: 25,
+            question: 'Phong cách ngôn ngữ chính của đoạn văn trên là gì?',
+            options: {
+              A: 'Nghệ thuật (truyện ngắn)',
+              B: 'Nghị luận xã hội',
+              C: 'Hành chính – công vụ',
+              D: 'Khoa học tự nhiên'
+            },
+            correctAnswer: 'B',
+            explanation: 'Đoạn văn bàn luận, nêu quan điểm về một vấn đề đạo đức – lối sống (nghị luận xã hội).'
+          }
+        ]
+      },
+      {
+        id: 'group_2',
+        title: 'Nhóm đọc hiểu 2 (Câu 26 – 30)',
+        passageTitle: 'Rừng ngập mặn – "Bức tường xanh" bảo vệ vùng ven biển',
+        passage:
+          'Rừng ngập mặn phát triển dọc theo các vùng cửa sông, bãi bồi ven biển nhiệt đới. Với hệ rễ chằng chịt cắm sâu xuống lớp bùn lầy, cây đước, cây mắm và cây vẹt có khả năng làm giảm đáng kể sức tàn phá của sóng lớn, triều cường và gió bão đối với đê điều cũng như khu dân cư.\n\nBên cạnh vai trò chắn sóng, rừng ngập mặn còn là "ngôi nhà chung" giàu dinh dưỡng cho nhiều loài tôm, cua, cá và chim nước sinh trưởng. Theo các nhà khoa học, mỗi héc-ta rừng ngập mặn còn hấp thụ lượng khí cacbonic lớn hơn nhiều so với rừng trên cạn, góp phần tích cực vào việc ứng phó với biến đổi khí hậu toàn cầu.',
+        questions: [
+          {
+            number: 26,
+            question: 'Rừng ngập mặn thường phân bố ở khu vực nào?',
+            options: {
+              A: 'Trên các đỉnh núi cao quanh năm mây phủ',
+              B: 'Dọc theo vùng cửa sông, bãi bồi ven biển nhiệt đới',
+              C: 'Giữa các vùng sa mạc khô hạn',
+              D: 'Trong các hang động đá vôi'
+            },
+            correctAnswer: 'B',
+            explanation: 'Câu đầu tiên cho biết rừng ngập mặn phát triển dọc theo các vùng cửa sông, bãi bồi ven biển nhiệt đới.'
+          },
+          {
+            number: 27,
+            question: 'Nhờ đặc điểm nào mà cây ngập mặn giúp giảm sức tàn phá của sóng lớn và gió bão?',
+            options: {
+              A: 'Thân cây rất cao và lá rụng hết vào mùa mưa',
+              B: 'Hệ rễ chằng chịt cắm sâu xuống lớp bùn lầy',
+              C: 'Hoa nở quanh năm thu hút côn trùng',
+              D: 'Vỏ cây có màu trắng phản chiếu ánh nắng'
+            },
+            correctAnswer: 'B',
+            explanation: 'Đoạn văn nêu rõ nhờ "hệ rễ chằng chịt cắm sâu xuống lớp bùn lầy".'
+          },
+          {
+            number: 28,
+            question: 'Cụm từ "ngôi nhà chung" trong đoạn hai nói về vai trò nào của rừng ngập mặn?',
+            options: {
+              A: 'Nơi cung cấp vật liệu xây dựng nhà ở',
+              B: 'Môi trường sống giàu dinh dưỡng cho nhiều loài thủy sản và chim nước',
+              C: 'Khu vui chơi giải trí trên biển',
+              D: 'Nơi neo đậu tàu thuyền đánh cá lớn'
+            },
+            correctAnswer: 'B',
+            explanation: 'Rừng ngập mặn là nơi sinh trưởng giàu dinh dưỡng cho tôm, cua, cá và chim nước.'
+          },
+          {
+            number: 29,
+            question: 'Theo các nhà khoa học, lợi ích nổi bật của rừng ngập mặn đối với khí hậu là gì?',
+            options: {
+              A: 'Làm tăng nhiệt độ nước biển vào mùa đông',
+              B: 'Hấp thụ lượng khí cacbonic lớn, góp phần ứng phó biến đổi khí hậu',
+              C: 'Ngăn hoàn toàn lượng mưa rơi xuống đất liền',
+              D: 'Tạo ra nhiều mỏ khoáng sản quý'
+            },
+            correctAnswer: 'B',
+            explanation: 'Câu cuối nêu rõ khả năng hấp thụ khí cacbonic lớn hơn nhiều so với rừng trên cạn.'
+          },
+          {
+            number: 30,
+            question: 'Nhan đề của văn bản gọi rừng ngập mặn là "Bức tường xanh" nhằm nhấn mạnh điều gì?',
+            options: {
+              A: 'Màu sắc đồng nhất của nước biển',
+              B: 'Vai trò che chắn, bảo vệ tự nhiên vững chắc cho vùng ven biển',
+              C: 'Chi phí trồng rừng rất tốn kém',
+              D: 'Hình dáng thẳng đứng của các vách đá'
+            },
+            correctAnswer: 'B',
+            explanation: '"Bức tường xanh" nhấn mạnh chức năng chắn sóng, chắn gió, bảo vệ đê điều và dân cư ven biển.'
+          }
+        ]
+      }
+    ]
+  }
+];
+
+function buildSampleAnswers(exam, wrongMap) {
+  const answers = {};
+  const all = [
+    ...exam.singleQuestions,
+    ...exam.groups[0].questions,
+    ...exam.groups[1].questions
+  ];
+  all.forEach((q) => {
+    const key = String(q.number);
+    answers[key] = wrongMap[key] || q.correctAnswer;
+  });
+  return answers;
+}
+
+const exam1 = SAMPLE_EXAMS[0];
+const exam2 = SAMPLE_EXAMS[1];
+
+export const SAMPLE_SUBMISSIONS = [
+  {
+    id: 'sub_demo_01',
+    examId: exam1.id,
+    examTitle: exam1.title,
+    studentName: 'Nguyễn Minh Anh',
+    studentClass: '9A1',
+    correctCount: 28,
+    totalQuestions: 30,
+    score: 9.33,
+    elapsedSeconds: 1420,
+    answers: buildSampleAnswers(exam1, { '13': 'A', '24': 'C' }),
+    submittedAt: '2026-11-19T08:45:00.000Z'
+  },
+  {
+    id: 'sub_demo_02',
+    examId: exam1.id,
+    examTitle: exam1.title,
+    studentName: 'Trần Gia Bảo',
+    studentClass: '9A1',
+    correctCount: 24,
+    totalQuestions: 30,
+    score: 8,
+    elapsedSeconds: 1685,
+    answers: buildSampleAnswers(exam1, {
+      '3': 'B',
+      '12': 'C',
+      '13': 'A',
+      '17': 'A',
+      '23': 'C',
+      '28': 'A'
+    }),
+    submittedAt: '2026-11-19T09:10:00.000Z'
+  },
+  {
+    id: 'sub_demo_03',
+    examId: exam1.id,
+    examTitle: exam1.title,
+    studentName: 'Lê Thảo Vy',
+    studentClass: '9A2',
+    correctCount: 22,
+    totalQuestions: 30,
+    score: 7.33,
+    elapsedSeconds: 1910,
+    answers: buildSampleAnswers(exam1, {
+      '1': 'B',
+      '7': 'A',
+      '12': 'A',
+      '13': 'C',
+      '15': 'A',
+      '18': 'B',
+      '23': 'D',
+      '29': 'A'
+    }),
+    submittedAt: '2026-11-19T09:40:00.000Z'
+  },
+  {
+    id: 'sub_demo_04',
+    examId: exam2.id,
+    examTitle: exam2.title,
+    studentName: 'Phạm Quốc Huy',
+    studentClass: '9A2',
+    correctCount: 20,
+    totalQuestions: 30,
+    score: 6.67,
+    elapsedSeconds: 2050,
+    answers: buildSampleAnswers(exam2, {
+      '2': 'A',
+      '3': 'B',
+      '5': 'A',
+      '7': 'C',
+      '10': 'A',
+      '15': 'B',
+      '18': 'B',
+      '20': 'C',
+      '25': 'A',
+      '30': 'A'
+    }),
+    submittedAt: '2026-11-19T10:15:00.000Z'
+  },
+  {
+    id: 'sub_demo_05',
+    examId: exam2.id,
+    examTitle: exam2.title,
+    studentName: 'Võ Ngọc Hân',
+    studentClass: '9A3',
+    correctCount: 15,
+    totalQuestions: 30,
+    score: 5,
+    elapsedSeconds: 2280,
+    answers: buildSampleAnswers(exam2, {
+      '1': 'A',
+      '3': 'B',
+      '4': 'B',
+      '5': 'B',
+      '8': 'A',
+      '10': 'B',
+      '11': 'C',
+      '14': 'A',
+      '15': 'B',
+      '16': 'A',
+      '18': 'B',
+      '20': 'B',
+      '22': 'A',
+      '25': 'A',
+      '29': 'A'
+    }),
+    submittedAt: '2026-11-19T10:50:00.000Z'
   }
 ];

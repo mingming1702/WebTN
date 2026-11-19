@@ -1,9 +1,11 @@
-import { getStorageMode, listExams } from './storage.js';
-import { escapeHtml } from './utils.js';
+import { getStorageMode, listExams, listSubmissions } from './storage.js';
+import { escapeHtml, formatDateTime, formatDurationText } from './utils.js';
 
 const examListContainer = document.getElementById('examListContainer');
 const searchExamInput = document.getElementById('searchExamInput');
 const storageBadge = document.getElementById('storageBadge');
+const recentHistorySection = document.getElementById('recentHistorySection');
+const recentHistoryList = document.getElementById('recentHistoryList');
 
 const startModal = document.getElementById('startModal');
 const startExamForm = document.getElementById('startExamForm');
@@ -44,9 +46,9 @@ function renderExams(exams) {
 
   examListContainer.innerHTML = exams
     .map((exam) => {
-      const totalCount =
-        (exam.singleQuestions?.length || 0) +
-        (exam.groups || []).reduce((sum, g) => sum + (g.questions?.length || 0), 0);
+      const singleCount = exam.singleQuestions?.length || 0;
+      const groupCount = (exam.groups || []).reduce((sum, g) => sum + (g.questions?.length || 0), 0);
+      const totalCount = singleCount + groupCount;
 
       return `
         <article class="card exam-card">
@@ -60,8 +62,9 @@ function renderExams(exams) {
               ${escapeHtml(exam.description || 'Đề trắc nghiệm Tiếng Việt 30 câu hỏi 4 phương án A, B, C, D.')}
             </p>
             <div class="exam-meta">
-              <span class="badge">${totalCount} câu hỏi</span>
-              <span class="badge">20 câu đơn + 2 nhóm đọc hiểu</span>
+              <span class="badge badge-blue">${totalCount} câu</span>
+              <span class="badge">${singleCount} câu đơn (1–20)</span>
+              <span class="badge">2 bài đọc hiểu (${groupCount} câu)</span>
             </div>
             <button type="button" class="btn btn-primary" style="width:100%;" data-start-exam="${escapeHtml(exam.id)}">
               Làm bài ngay
@@ -81,6 +84,42 @@ function renderExams(exams) {
   });
 }
 
+function renderRecentHistory(submissions) {
+  if (!submissions.length) {
+    recentHistorySection.classList.add('hidden');
+    return;
+  }
+
+  const latest = submissions.slice(0, 5);
+  recentHistorySection.classList.remove('hidden');
+  recentHistoryList.innerHTML = latest
+    .map((sub) => {
+      const scoreClass = sub.score >= 8 ? 'badge-green' : sub.score >= 5 ? 'badge-blue' : 'badge-red';
+      const reviewHref = `/exam?id=${encodeURIComponent(sub.examId)}&review=${encodeURIComponent(sub.id)}`;
+
+      return `
+        <div class="history-item">
+          <div>
+            <div style="font-weight:700; font-size:15px;">
+              ${escapeHtml(sub.studentName)} <span style="font-weight:500; color:var(--text-muted);">(${escapeHtml(sub.studentClass)})</span>
+              — ${escapeHtml(sub.examTitle)}
+            </div>
+            <div style="font-size:13px; color:var(--text-secondary); margin-top:3px;">
+              Đúng <strong>${sub.correctCount}/${sub.totalQuestions}</strong> câu •
+              Thời gian: ${formatDurationText(sub.elapsedSeconds)} •
+              Nộp lúc ${formatDateTime(sub.submittedAt)}
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="badge ${scoreClass}" style="font-size:14px; padding:6px 12px;">${sub.score} điểm</span>
+            <a href="${reviewHref}" class="btn btn-soft btn-sm">Xem lại bài &amp; đáp án</a>
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+}
+
 async function init() {
   try {
     const mode = await getStorageMode();
@@ -89,6 +128,9 @@ async function init() {
 
     allExams = await listExams({ includeUnpublished: false });
     renderExams(allExams);
+
+    const submissions = await listSubmissions();
+    renderRecentHistory(submissions);
   } catch (err) {
     examListContainer.innerHTML = `
       <div class="alert alert-warning" style="grid-column:1/-1;">
