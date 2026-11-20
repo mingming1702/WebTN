@@ -10,7 +10,8 @@ const STORAGE_KEYS = {
   EXAM_DRAFT_PREFIX: 'tv_exam_draft_'
 };
 
-const CURRENT_DEMO_VERSION = '4';
+const CURRENT_DEMO_VERSION = '5';
+const SAMPLE_CONTENT_VERSION = '2026-11-20T20:40:00.000Z';
 const LEGACY_SAMPLE_EXAM_IDS = new Set(['exam_tv_mau_01', 'exam_tv_mau_02']);
 
 let cachedRuntimeConfig = null;
@@ -38,7 +39,10 @@ function ensureLocalSeed() {
     exams = structuredClone(SAMPLE_EXAMS);
     writeLocalJson(STORAGE_KEYS.EXAMS, exams);
   } else if (seedVer !== CURRENT_DEMO_VERSION) {
-    const keptExams = existingExams.filter((e) => !LEGACY_SAMPLE_EXAM_IDS.has(e.id));
+    const sampleMap = new Map(SAMPLE_EXAMS.map((s) => [s.id, s]));
+    const keptExams = existingExams
+      .filter((e) => !LEGACY_SAMPLE_EXAM_IDS.has(e.id))
+      .map((e) => (sampleMap.has(e.id) ? structuredClone(sampleMap.get(e.id)) : e));
     const keptIds = new Set(keptExams.map((e) => e.id));
     const missing = SAMPLE_EXAMS.filter((s) => !keptIds.has(s.id));
     exams = [...structuredClone(missing), ...keptExams];
@@ -250,15 +254,18 @@ export async function listExams({ includeUnpublished = false } = {}) {
       );
     }
 
-    const existingIds = new Set(rows.map((r) => r.id));
+    const existingMap = new Map(rows.map((r) => [r.id, r]));
     const deletedIds = getDeletedSampleIds();
-    const missingSamples = SAMPLE_EXAMS.filter(
-      (s) => !existingIds.has(s.id) && !deletedIds.has(s.id)
-    );
+    const samplesToSync = SAMPLE_EXAMS.filter((s) => {
+      if (deletedIds.has(s.id)) return false;
+      const existing = existingMap.get(s.id);
+      if (!existing) return true;
+      return !existing.updated_at || existing.updated_at < SAMPLE_CONTENT_VERSION;
+    });
 
-    if (missingSamples.length > 0) {
+    if (samplesToSync.length > 0) {
       await Promise.all(
-        missingSamples.map((sample) =>
+        samplesToSync.map((sample) =>
           supabaseFetch(cfg, 'exams?on_conflict=id', {
             method: 'POST',
             headers: { Prefer: 'resolution=merge-duplicates' },
@@ -268,7 +275,7 @@ export async function listExams({ includeUnpublished = false } = {}) {
       );
     }
 
-    if (legacyRows.length > 0 || missingSamples.length > 0) {
+    if (legacyRows.length > 0 || samplesToSync.length > 0) {
       rows = (await supabaseFetch(cfg, 'exams?select=*&order=created_at.desc')) || [];
     }
 

@@ -6,11 +6,11 @@ export const SAMPLE_EXAMS = [
     "durationMinutes": 40,
     "isPublished": true,
     "createdAt": "2026-11-19T15:00:00.000Z",
-    "updatedAt": "2026-11-19T20:30:00.000Z",
+    "updatedAt": "2026-11-20T20:40:00.000Z",
     "singleQuestions": [
       {
         "number": 1,
-        "question": "Có hai anh lính hầu hạ quan lâu ngay, thấy quan đã ác lại hay ăn tiền, cứ có việc vào cửa quan là y\nnhư bị đánh đập tàn tệ, đến lúc xì tiền ra mới thôi.\nMột hôm, rỗi rãi, hai anh ngồi kháo chuyện với nhau, nói xấu quan. Một anh bảo:\n“ác thế thì có ngày dân nó quật lại cho mà xem!”\nQuan quán quạt chi quàn quan\nDân dấn dận chi dần dân\nQuan là quan, quan quàn dân\nDân là dân, dân giần quan.\nChẳng ngờ quan đi qua nghe được trợn mắt hỏi: - Bay nói gì thế?\nAnh kia nói chữa:\n- Bẩm quan, con bảo: “Quan quản dân, dân... cần quan. Không có quan thì ai cai trị dân”.\n(Truyện cười dân gian, Dân giần quan)\nQua đoạn trích, đặc trưng nào của truyện cười dân gian được thể hiện rõ nét nhất?",
+        "question": "Có hai anh lính hầu hạ quan lâu ngay, thấy quan đã ác lại hay ăn tiền, cứ có việc vào cửa quan là y như bị đánh đập tàn tệ, đến lúc xì tiền ra mới thôi.\n\nMột hôm, rỗi rãi, hai anh ngồi kháo chuyện với nhau, nói xấu quan. Một anh bảo:\n\n“ác thế thì có ngày dân nó quật lại cho mà xem!”\n\nQuan quán quạt chi quàn quan\nDân dấn dận chi dần dân\nQuan là quan, quan quàn dân\nDân là dân, dân giần quan.\n\nChẳng ngờ quan đi qua nghe được trợn mắt hỏi: - Bay nói gì thế?\n\nAnh kia nói chữa:\n\n- Bẩm quan, con bảo: “Quan quản dân, dân... cần quan. Không có quan thì ai cai trị dân”.\n\n(Truyện cười dân gian, Dân giần quan)\n\nQua đoạn trích, đặc trưng nào của truyện cười dân gian được thể hiện rõ nét nhất?",
         "options": {
           "A": "Đề cao sự thông minh và khéo léo của con người trong tình huống khó khăn.",
           "B": "Phản ánh hiện thực xã hội một cách trào phúng và phê phán thói hư tật xấu.",
@@ -22,7 +22,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 2,
-        "question": "Trước năm 1918, việc học của các trường bản xứ ở Bắc Kỳ và Trung Kỳ thuộc sự giám sát của các\nquan học chính: đốc học (tỉnh), giáo thụ (phủ), huấn đạo (huyện). Sau khi Học chính Tổng quy được\nban hành, tất cả các chức quan học chính cũ bị bãi bỏ, việc học ở các xứ phải có sự giám sát của các\nthanh tra người Pháp. Ở các tỉnh lỵ và huyện lỵ, các trường Tiểu học, trong đó có Tiểu học toàn cấp\n(27) nằm dưới sự kiểm soát của một Đốc học người Pháp. Trong trường hợp thiếu thanh tra Pháp,\nngười Việt cũng có thể đảm nhận vị trí này.\n(Tạp chí Nghiên cứu Lịch sử, Tổ chức quản lý giáo dục ở Việt Nam trong bộ máy chính quyền thời\nPháp thuộc trước năm 1945)\nViệc thay đổi tổ chức quản lý giáo dục ở Việt Nam thời Pháp thuộc, theo đoạn trích, phản ánh điều\ngì?",
+        "question": "Trước năm 1918, việc học của các trường bản xứ ở Bắc Kỳ và Trung Kỳ thuộc sự giám sát của các quan học chính: đốc học (tỉnh), giáo thụ (phủ), huấn đạo (huyện). Sau khi Học chính Tổng quy được ban hành, tất cả các chức quan học chính cũ bị bãi bỏ, việc học ở các xứ phải có sự giám sát của các thanh tra người Pháp. Ở các tỉnh lỵ và huyện lỵ, các trường Tiểu học, trong đó có Tiểu học toàn cấp (27) nằm dưới sự kiểm soát của một Đốc học người Pháp. Trong trường hợp thiếu thanh tra Pháp, người Việt cũng có thể đảm nhận vị trí này.\n\n(Tạp chí Nghiên cứu Lịch sử, Tổ chức quản lý giáo dục ở Việt Nam trong bộ máy chính quyền thời Pháp thuộc trước năm 1945)\n\nViệc thay đổi tổ chức quản lý giáo dục ở Việt Nam thời Pháp thuộc, theo đoạn trích, phản ánh điều gì?",
         "options": {
           "A": "Người Việt được trao quyền tự do quản lý giáo dục.",
           "B": "Hệ thống giáo dục truyền thống của người Việt được bảo tồn.",
@@ -34,7 +34,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 3,
-        "question": "Con vua thì lại làm vua\nCon sãi ở chùa thì quét lá đa\nKhi nào dân nổi can qua\nCon vua thất thế lại ra quét chùa\n(Ca dao Việt Nam)\nDựa vào bài ca dao, thông điệp nào sau đây là đúng?",
+        "question": "Con vua thì lại làm vua\nCon sãi ở chùa thì quét lá đa\nKhi nào dân nổi can qua\nCon vua thất thế lại ra quét chùa\n\n(Ca dao Việt Nam)\n\nDựa vào bài ca dao, thông điệp nào sau đây là đúng?",
         "options": {
           "A": "Quyền lực và địa vị luôn được bảo toàn qua các thế hệ.",
           "B": "Giai cấp thấp luôn hài lòng với vị trí của mình trong xã hội.",
@@ -46,7 +46,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 4,
-        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\nMột buổi hầu rồi một buổi ngơi,\nĐâu còn nhớ chữ “viễn phương lai”.\nMới sang chừng ấy ngơi chừng ấy,\nSang nữa thì ngơi biết mấy đời.\n(Cao Bá Quát, Quan ngơi)\nXác định thể thơ của đoạn trích?",
+        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n\nMột buổi hầu rồi một buổi ngơi,\nĐâu còn nhớ chữ “viễn phương lai”.\nMới sang chừng ấy ngơi chừng ấy,\nSang nữa thì ngơi biết mấy đời.\n\n(Cao Bá Quát, Quan ngơi)\n\nXác định thể thơ của đoạn trích?",
         "options": {
           "A": "Ngũ ngôn tứ tuyệt.",
           "B": "Ngũ ngôn bát cú.",
@@ -58,7 +58,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 5,
-        "question": "Gió hiu hắt, phòng tiêu lạnh lẽo,\nTrước thềm lan hoa héo ron ron!\nCầu Tiên khói toả đỉnh non,\nXe rồng thăm thẳm, bóng loan rầu rầu!\nNỗi lai lịch dễ hầu than thở,\nTrách nhân duyên mờ lỡ cớ sao?\nSầu sầu, thảm thảm xiết bao,\nSầu đầy giạt bể, thảm cao ngất trời!\nTừ cờ thắm trỏ vời cõi Bắc,\nNghĩa tôn phò vằng vặc bóng dương,\nRút dây vâng mệnh phụ hoàng,\nThuyền lan, chèo quế thuận đường vu qui.\n…\n(Ngọc Hân công chúa, Ai tư vãn)\nBài thơ “Ai tư vãn” của Ngọc Hân công chúa được sáng tác trong bối cảnh lịch sử nào?",
+        "question": "Gió hiu hắt, phòng tiêu lạnh lẽo,\nTrước thềm lan hoa héo ron ron!\nCầu Tiên khói toả đỉnh non,\nXe rồng thăm thẳm, bóng loan rầu rầu!\nNỗi lai lịch dễ hầu than thở,\nTrách nhân duyên mờ lỡ cớ sao?\nSầu sầu, thảm thảm xiết bao,\nSầu đầy giạt bể, thảm cao ngất trời!\nTừ cờ thắm trỏ vời cõi Bắc,\nNghĩa tôn phò vằng vặc bóng dương,\nRút dây vâng mệnh phụ hoàng,\nThuyền lan, chèo quế thuận đường vu qui.\n…\n\n(Ngọc Hân công chúa, Ai tư vãn)\n\nBài thơ “Ai tư vãn” của Ngọc Hân công chúa được sáng tác trong bối cảnh lịch sử nào?",
         "options": {
           "A": "Triều đại nhà Lý, khi đất nước đang ở thời kỳ thịnh vượng.",
           "B": "Triều đại nhà Trần, gắn liền với cuộc kháng chiến chống quân Nguyên.",
@@ -70,7 +70,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 6,
-        "question": "Tôi yêu em âm thầm không hy vọng,\nLúc rụt rè, khi hậm hực lòng ghen,\nTôi yêu em, yêu chân thành đằm thắm,\nCầu em được người tình như tôi đã yêu em.\n(Aleksandr Sergeyevich Pushkin, Tôi yêu em)\nTrong bài thơ “Tôi yêu em,” ý nghĩa của việc nhắc đến “không hy vọng” là gì?",
+        "question": "Tôi yêu em âm thầm không hy vọng,\nLúc rụt rè, khi hậm hực lòng ghen,\nTôi yêu em, yêu chân thành đằm thắm,\nCầu em được người tình như tôi đã yêu em.\n\n(Aleksandr Sergeyevich Pushkin, Tôi yêu em)\n\nTrong bài thơ “Tôi yêu em,” ý nghĩa của việc nhắc đến “không hy vọng” là gì?",
         "options": {
           "A": "Nhân vật trữ tình không còn yêu và muốn từ bỏ tình cảm.",
           "B": "Tình yêu không đòi hỏi sự đáp lại mà xuất phát từ sự chân thành.",
@@ -82,7 +82,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 7,
-        "question": "Trong giờ học toán, Minh cứ loay hoay mãi với bài tập cơ bản mà không giải nổi. Ngược lại,\nLan, người thường được coi là học sinh khá, lại làm rất nhanh nhưng đáp án thì sai hoàn toàn. Cô\ngiáo nhìn bài làm của cả hai, thở dài nói: “Dốt đặc còn hơn chữ lỏng.” Minh ngẩng đầu, có vẻ ngượng\nngùng, còn Lan cúi mặt, không dám nói gì. Cô nhẹ nhàng giải thích thêm: “Em không biết thì không\nsao, cứ học từ đầu, sẽ tiến bộ. Nhưng Lan, em biết sai mà không chịu sửa, lại vội vàng làm cho có,\nthì nguy hiểm hơn nhiều.” Sau giờ học, Minh kiên nhẫn ở lại nhờ cô giáo giảng lại bài, còn Lan ngồi\nbuồn vì biết mình đã không nghiêm túc. Từ đó, cả hai đều rút ra bài học: học hành phải cẩn thận, từng\nbước chắc chắn, không được chủ quan hoặc qua loa.\nTrong đoạn văn trên, câu thành ngữ “Dốt đặc còn hơn chữ lỏng” được hiểu như thế nào?",
+        "question": "Trong giờ học toán, Minh cứ loay hoay mãi với bài tập cơ bản mà không giải nổi. Ngược lại, Lan, người thường được coi là học sinh khá, lại làm rất nhanh nhưng đáp án thì sai hoàn toàn. Cô giáo nhìn bài làm của cả hai, thở dài nói: “Dốt đặc còn hơn chữ lỏng.” Minh ngẩng đầu, có vẻ ngượng ngùng, còn Lan cúi mặt, không dám nói gì. Cô nhẹ nhàng giải thích thêm: “Em không biết thì không sao, cứ học từ đầu, sẽ tiến bộ. Nhưng Lan, em biết sai mà không chịu sửa, lại vội vàng làm cho có, thì nguy hiểm hơn nhiều.” Sau giờ học, Minh kiên nhẫn ở lại nhờ cô giáo giảng lại bài, còn Lan ngồi buồn vì biết mình đã không nghiêm túc. Từ đó, cả hai đều rút ra bài học: học hành phải cẩn thận, từng bước chắc chắn, không được chủ quan hoặc qua loa.\n\nTrong đoạn văn trên, câu thành ngữ “Dốt đặc còn hơn chữ lỏng” được hiểu như thế nào?",
         "options": {
           "A": "Không biết gì còn dễ sửa chữa hơn là biết qua loa nhưng sai lệch.",
           "B": "Học sinh yếu kém sẽ có nhiều cơ hội tiến bộ hơn học sinh giỏi.",
@@ -94,7 +94,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 8,
-        "question": "Sự dữ dội của cơn giông tố cũng như cơn thịnh nộ của đại dương đã gây nên một cơn sóng lừng tràn\nvào vịnh. Vào lúc triều cường, nước dâng lên ngập các bãi đá. Đánh dữ dội vào chân các vách đá, bờ\nđá ngập trắng nước biển. Sóng biển tràn cả vào chỗ ở của tổ gác đèn và lớp bụi nước bay mù mịt cả\nkhu rừng sồi.\n(Jules Verne, Ngọn hải đăng nơi cuối trời)\nXác định biện pháp tu từ trong đoạn trích trên?",
+        "question": "Sự dữ dội của cơn giông tố cũng như cơn thịnh nộ của đại dương đã gây nên một cơn sóng lừng tràn vào vịnh. Vào lúc triều cường, nước dâng lên ngập các bãi đá. Đánh dữ dội vào chân các vách đá, bờ đá ngập trắng nước biển. Sóng biển tràn cả vào chỗ ở của tổ gác đèn và lớp bụi nước bay mù mịt cả khu rừng sồi.\n\n(Jules Verne, Ngọn hải đăng nơi cuối trời)\n\nXác định biện pháp tu từ trong đoạn trích trên?",
         "options": {
           "A": "So sánh, nhân hóa, liệt kê.",
           "B": "So sánh, điệp từ, phóng đại.",
@@ -106,7 +106,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 9,
-        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n“Đông đã muộn lại sang ____,\nXuân muộn thì hè lại đổi lần.\nTính kể tư mùa có ___,\nThu âu là nhẫn một hai phần.”\n(Nguyễn Trãi, Ức Trai Thi Tập)",
+        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n\n“Đông đã muộn lại sang ____,\nXuân muộn thì hè lại đổi lần.\nTính kể tư mùa có ___,\nThu âu là nhẫn một hai phần.”\n\n(Nguyễn Trãi, Ức Trai Thi Tập)",
         "options": {
           "A": "Thu/ trúc.",
           "B": "Xuân/ nguyệt.",
@@ -118,7 +118,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 10,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nTiếng chim uể oải đập cánh, tiếng ong bay trong vườn ổi ban trưa những ngày này nghe buồn tẻ làm\nsao. Nắng hè hừng hực khiến cỏ trong vườn khô đi và đổi sang màu lông chuột, mỗi khi đặt chân lên\ntôi nghe tiếng lào xạo dưới chân và âm thanh đó khiến cảm giác sắp sửa đi xa trở nên rõ rệt hơn bao\ngiờ hết.\n(Nguyễn Nhật Ánh, Ngày xưa có một chuyện tình)\nQua đoạn trích, khung cảnh mùa hè được miêu tả nhằm gợi lên điều gì về tâm trạng của nhân vật?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nTiếng chim uể oải đập cánh, tiếng ong bay trong vườn ổi ban trưa những ngày này nghe buồn tẻ làm sao. Nắng hè hừng hực khiến cỏ trong vườn khô đi và đổi sang màu lông chuột, mỗi khi đặt chân lên tôi nghe tiếng lào xạo dưới chân và âm thanh đó khiến cảm giác sắp sửa đi xa trở nên rõ rệt hơn bao giờ hết.\n\n(Nguyễn Nhật Ánh, Ngày xưa có một chuyện tình)\n\nQua đoạn trích, khung cảnh mùa hè được miêu tả nhằm gợi lên điều gì về tâm trạng của nhân vật?",
         "options": {
           "A": "Nỗi buồn chia xa và sự bâng khuâng khi đối diện với sự thay đổi.",
           "B": "Sự bức bối và khó chịu do không gian ngột ngạt của mùa hè.",
@@ -130,7 +130,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 11,
-        "question": "Đọc đoạn văn dưới đây và trả lời câu hỏi:\n“Sau khi ra ngoài trời, tôi cảm nhận được ánh sáng mặt trời chiếu xuống, ấm áp và dễ chịu. Nhưng\nkhi nói về ánh sáng trong cuộc sống, tôi luôn nghĩ đến những khoảnh khắc hạnh phúc và những người\nmang lại niềm vui cho mình.”\nTừ “ánh sáng” trong đoạn văn có bao nhiêu nghĩa?",
+        "question": "Đọc đoạn văn dưới đây và trả lời câu hỏi:\n\n“Sau khi ra ngoài trời, tôi cảm nhận được ánh sáng mặt trời chiếu xuống, ấm áp và dễ chịu. Nhưng khi nói về ánh sáng trong cuộc sống, tôi luôn nghĩ đến những khoảnh khắc hạnh phúc và những người mang lại niềm vui cho mình.”\n\nTừ “ánh sáng” trong đoạn văn có bao nhiêu nghĩa?",
         "options": {
           "A": "1 nghĩa.",
           "B": "2 nghĩa.",
@@ -178,7 +178,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 15,
-        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n“Để đạt được thành công, cần phải có tầm với chiến lược, sự bền bỉ, và một kế hoạch thực tế, khả\nthi.”",
+        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n\n“Để đạt được thành công, cần phải có tầm với chiến lược, sự bền bỉ, và một kế hoạch thực tế, khả thi.”",
         "options": {
           "A": "Thành công.",
           "B": "Tầm với.",
@@ -192,10 +192,10 @@ export const SAMPLE_EXAMS = [
         "number": 16,
         "question": "Trong các câu sau, câu nào thiếu chủ ngữ nhưng vẫn dễ gây nhầm lẫn là câu đủ thành phần?",
         "options": {
-          "A": "“Đi qua những cánh đồng lúa chín vàng, lòng bỗng thấy nhẹ nhàng.”",
-          "B": "“Học sinh ngồi lặng im, nghe thầy giáo giảng bài.”",
           "C": "“Lúc trời tối hẳn, trên đường chỉ còn lại ánh đèn leo lét.”",
-          "D": "“Tiếng cười vang lên khắp nơi, làm không gian trở nên rộn ràng.”"
+          "D": "“Tiếng cười vang lên khắp nơi, làm không gian trở nên rộn ràng.”",
+          "A": "“Đi qua những cánh đồng lúa chín vàng, lòng bỗng thấy nhẹ nhàng.”",
+          "B": "“Học sinh ngồi lặng im, nghe thầy giáo giảng bài.”"
         },
         "correctAnswer": "A",
         "explanation": ""
@@ -254,7 +254,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_1",
         "title": "Nhóm đọc hiểu 1 (Câu 21 – 25)",
         "passageTitle": "",
-        "passage": "Cháu ba đời Viêm Đế họ Thần Nông tên là Đế Minh, sinh ra Đế Nghi, rồi đi nam tuần đến Ngũ Lĩnh,\ngặp được nàng con gái Vụ Tiên đem lòng yêu mến mới cưới đem về, sinh ra Lộc Tục, dung mạo đoan\nchính, thông minh túc thành; Đế Minh lấy làm lạ, cho nối ngôi vua; Lộc Tục cố nhường cho anh. Đế\nMinh lập Đế Nghi làm tự quân cai trị phương Bắc, phong Lộc Tục làm Kinh Dương Vương cai trị\nphương Nam, đặt quốc hiệu là Xích Quỷ Quốc.\nKinh Dương Vương xuống thủy phủ, cưới con gái vua Động Đình là Long Nữ, sinh ra Sùng Lãm tức\nlà Lạc Long Quân; Lạc Long Quân thay cha để trị nước, còn Kinh Dương Vương thì không biết đi\nđâu. Lạc Long Quân dạy dân ăn mặc, bắt đầu có trật tự về quân thần tôn ty, có luân thường về phụ tử\nphu phụ; hoặc có lúc đi về Thủy phủ nhưng trăm họ vẫn được yên ổn. Dân lúc nào có việc cần thời\nkêu Lạc Long Quân: “Bố đi đằng nào, không đến mà cứu chúng ta”, (Người Nam gọi cha bằng Bố,\ngọi quân bằng vua là từ đấy), thì Lạc Long Quân lập tức đến ngay, uy linh cảm ứng không ai có thể\ntrắc lượng được. Đế Nghi truyền ngôi cho Đế Lai cai trị phương Bắc; nhân khi thiên hạ vô sự, sực\nnhớ đến chuyện ông nội là Đế Minh nam tuần gặp được tiên nữ, Đế Lai bèn khiến Xi Vưu tác chủ\nquốc sự mà nam tuần qua nước Xích Quỷ, thấy Long Quân đã về Thủy phủ, trong nước không vua,\nmới lưu ái thê là Âu Cơ cùng với bộ chúng thị thiếp ở lại hành tại. Đế Lai chu lưu khắp thiên hạ, trải\nxem tất cả hình thể, trông thấy kỳ hoa dị thảo, trân cầm dị thú, tê tượng, đồi mồi, kim ngân, châu\nngọc, hồ tiêu, nhũ hương, trầm đàn, các loại sơn hào hải vị không thứ nào là không có; khí hậu bốn\nmùa lại không nóng không lạnh, Đế Lai ái mộ quá, quên cả ngày về. Nhân dân nước Nam khổ về sự\nphiền nhiễu, không yên ổn như xưa, đêm ngày mong đợi Long Quân về nên mới đem nhau kêu rằng:\n- Bố ở phương nào, nên mau về cứu nhân dân.\n(Các câu chuyện dân gian Việt Nam, Lĩnh Nam chích quái)",
+        "passage": "Cháu ba đời Viêm Đế họ Thần Nông tên là Đế Minh, sinh ra Đế Nghi, rồi đi nam tuần đến Ngũ Lĩnh, gặp được nàng con gái Vụ Tiên đem lòng yêu mến mới cưới đem về, sinh ra Lộc Tục, dung mạo đoan chính, thông minh túc thành; Đế Minh lấy làm lạ, cho nối ngôi vua; Lộc Tục cố nhường cho anh. Đế Minh lập Đế Nghi làm tự quân cai trị phương Bắc, phong Lộc Tục làm Kinh Dương Vương cai trị phương Nam, đặt quốc hiệu là Xích Quỷ Quốc.\n\nKinh Dương Vương xuống thủy phủ, cưới con gái vua Động Đình là Long Nữ, sinh ra Sùng Lãm tức là Lạc Long Quân; Lạc Long Quân thay cha để trị nước, còn Kinh Dương Vương thì không biết đi đâu. Lạc Long Quân dạy dân ăn mặc, bắt đầu có trật tự về quân thần tôn ty, có luân thường về phụ tử phu phụ; hoặc có lúc đi về Thủy phủ nhưng trăm họ vẫn được yên ổn. Dân lúc nào có việc cần thời kêu Lạc Long Quân: “Bố đi đằng nào, không đến mà cứu chúng ta”, (Người Nam gọi cha bằng Bố, gọi quân bằng vua là từ đấy), thì Lạc Long Quân lập tức đến ngay, uy linh cảm ứng không ai có thể trắc lượng được. Đế Nghi truyền ngôi cho Đế Lai cai trị phương Bắc; nhân khi thiên hạ vô sự, sực nhớ đến chuyện ông nội là Đế Minh nam tuần gặp được tiên nữ, Đế Lai bèn khiến Xi Vưu tác chủ quốc sự mà nam tuần qua nước Xích Quỷ, thấy Long Quân đã về Thủy phủ, trong nước không vua, mới lưu ái thê là Âu Cơ cùng với bộ chúng thị thiếp ở lại hành tại. Đế Lai chu lưu khắp thiên hạ, trải xem tất cả hình thể, trông thấy kỳ hoa dị thảo, trân cầm dị thú, tê tượng, đồi mồi, kim ngân, châu ngọc, hồ tiêu, nhũ hương, trầm đàn, các loại sơn hào hải vị không thứ nào là không có; khí hậu bốn mùa lại không nóng không lạnh, Đế Lai ái mộ quá, quên cả ngày về. Nhân dân nước Nam khổ về sự phiền nhiễu, không yên ổn như xưa, đêm ngày mong đợi Long Quân về nên mới đem nhau kêu rằng:\n\n- Bố ở phương nào, nên mau về cứu nhân dân.\n\n(Các câu chuyện dân gian Việt Nam, Lĩnh Nam chích quái)",
         "questions": [
           {
             "number": 21,
@@ -294,7 +294,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 24,
-            "question": "Trong câu: “Dân lúc nào có việc cần thời kêu Lạc Long Quân: 'Bố đi đằng nào, không đến\nmà cứu chúng ta.”\nQuan hệ từ “thời” trong câu này có thể thay thế bằng từ nào để phù hợp với ngữ pháp hiện đại?",
+            "question": "Trong câu: “Dân lúc nào có việc cần thời kêu Lạc Long Quân: 'Bố đi đằng nào, không đến mà cứu chúng ta.”\n\nQuan hệ từ “thời” trong câu này có thể thay thế bằng từ nào để phù hợp với ngữ pháp hiện đại?",
             "options": {
               "A": "Khi.",
               "B": "Nếu.",
@@ -322,7 +322,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_2",
         "title": "Nhóm đọc hiểu 2 (Câu 26 – 30)",
         "passageTitle": "",
-        "passage": "Theo đó, trong những ngày qua, Nvidia - “ông lớn” trong ngành chip của thế giới đã đăng tải thông\ntin tuyển dụng hàng loạt vị trí việc làm tại Việt Nam trên trang mạng xã hội dành cho những người\ntìm việc LinkedIn.\nCác công việc này làm tại Hà Nội hoặc làm việc từ xa (remote).\nCác vị trí được Nvidia tuyển dụng bao gồm kỹ sư kiểm thử cấp cao, kỹ sư phát triển sản phẩm cấp\ncao, kỹ sư quản lý cơ sở hạ tầng cho sản xuất hàng loạt, kỹ sư công nghệ thông tin - mạng, chuyên\nviên lập kế hoạch nhà máy, quản lý cấp cao vận hành sản xuất…\nNvidia không đưa ra mức lương cụ thể, nhưng yêu cầu khá cao từ người ứng tuyển, bao gồm kỹ năng\ngiao tiếp bằng tiếng Anh và tiếng Việt lưu loát, nhiều năm kinh nghiệm ở vị trí tương đương… trong\nđó vị trí quản lý cấp cao vận hành sản xuất yêu cầu ứng viên phải có 15 năm kinh nghiệm chuyên\nmôn và 5 năm kinh nghiệm quản lý.\nTheo các chuyên gia công nghệ, đây là cơ hội để cho các kỹ sư công nghệ, nhân tài Việt Nam thỏa\nsức và phát huy hết khả năng sáng tạo, trí tuệ của mình.\n(Báo Người Lao Động, Nvidia bắt đầu tuyển dụng hàng loạt nhân sự tại Việt\nNam)",
+        "passage": "Theo đó, trong những ngày qua, Nvidia - “ông lớn” trong ngành chip của thế giới đã đăng tải thông tin tuyển dụng hàng loạt vị trí việc làm tại Việt Nam trên trang mạng xã hội dành cho những người tìm việc LinkedIn.\n\nCác công việc này làm tại Hà Nội hoặc làm việc từ xa (remote).\n\nCác vị trí được Nvidia tuyển dụng bao gồm kỹ sư kiểm thử cấp cao, kỹ sư phát triển sản phẩm cấp cao, kỹ sư quản lý cơ sở hạ tầng cho sản xuất hàng loạt, kỹ sư công nghệ thông tin - mạng, chuyên viên lập kế hoạch nhà máy, quản lý cấp cao vận hành sản xuất…\n\nNvidia không đưa ra mức lương cụ thể, nhưng yêu cầu khá cao từ người ứng tuyển, bao gồm kỹ năng giao tiếp bằng tiếng Anh và tiếng Việt lưu loát, nhiều năm kinh nghiệm ở vị trí tương đương… trong đó vị trí quản lý cấp cao vận hành sản xuất yêu cầu ứng viên phải có 15 năm kinh nghiệm chuyên môn và 5 năm kinh nghiệm quản lý.\n\nTheo các chuyên gia công nghệ, đây là cơ hội để cho các kỹ sư công nghệ, nhân tài Việt Nam thỏa sức và phát huy hết khả năng sáng tạo, trí tuệ của mình.\n\n(Báo Người Lao Động, Nvidia bắt đầu tuyển dụng hàng loạt nhân sự tại Việt Nam)",
         "questions": [
           {
             "number": 26,
@@ -362,7 +362,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 29,
-            "question": "Nếu Nvidia yêu cầu 15 năm kinh nghiệm chuyên môn và 5 năm kinh nghiệm quản lý cho vị\ntrí cấp cao vận hành sản xuất, điều này phản ánh điều gì về chiến lược nhân sự của công ty tại Việt\nNam?",
+            "question": "Nếu Nvidia yêu cầu 15 năm kinh nghiệm chuyên môn và 5 năm kinh nghiệm quản lý cho vị trí cấp cao vận hành sản xuất, điều này phản ánh điều gì về chiến lược nhân sự của công ty tại Việt Nam?",
             "options": {
               "A": "Nvidia muốn tuyển dụng ứng viên có năng lực vượt trội để nhanh chóng nắm bắt và quản lý dự án tại địa phương.",
               "B": "Nvidia ưu tiên ứng viên trẻ tuổi, ít kinh nghiệm nhưng sáng tạo.",
@@ -374,7 +374,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 30,
-            "question": "Tại sao các tập đoàn công nghệ lớn như Nvidia chọn Việt Nam làm điểm đến mở rộng thay\nvì các quốc gia khác trong khu vực?",
+            "question": "Tại sao các tập đoàn công nghệ lớn như Nvidia chọn Việt Nam làm điểm đến mở rộng thay vì các quốc gia khác trong khu vực?",
             "options": {
               "A": "Vì Việt Nam có chi phí nhân công rẻ nhất trong khu vực Đông Nam Á.",
               "B": "Vì Việt Nam đang trở thành trung tâm công nghệ tiềm năng với nguồn nhân lực chất lượng và ổn định chính trị.",
@@ -395,11 +395,11 @@ export const SAMPLE_EXAMS = [
     "durationMinutes": 40,
     "isPublished": true,
     "createdAt": "2026-11-19T14:00:00.000Z",
-    "updatedAt": "2026-11-19T20:30:00.000Z",
+    "updatedAt": "2026-11-20T20:40:00.000Z",
     "singleQuestions": [
       {
         "number": 1,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Khi địa cầu mới hình thành, nó là một nơi yên tĩnh và không có con người sinh sống. Một hôm, Nữ\nOa tình cờ bắt gặp một dòng sông hiền hòa. Bị thu hút bởi làn nước lấp lánh, bà đã dừng chân ngắm\nnhìn thật lâu bóng mình phản chiếu trên mặt nước. Trong thoáng chốc, Nữ Oa chợt nhận ra thế giới\nhoang sơ thiếu vắng một thứ gì đó. Nữ Oa cúi xuống, nhặt lấy đất sét vàng và bắt đầu nặn ra những\nhình người tí hon giống hệt như bà. Những hình người lần lượt đứng dậy và nhảy múa.”\n(Thần thoại, Nữ Oa – Nữ thần sáng tạo thế giới)\nChi tiết nào sau đây không phản ánh đúng nội dung và ý nghĩa của đoạn trích trên?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Khi địa cầu mới hình thành, nó là một nơi yên tĩnh và không có con người sinh sống. Một hôm, Nữ Oa tình cờ bắt gặp một dòng sông hiền hòa. Bị thu hút bởi làn nước lấp lánh, bà đã dừng chân ngắm nhìn thật lâu bóng mình phản chiếu trên mặt nước. Trong thoáng chốc, Nữ Oa chợt nhận ra thế giới hoang sơ thiếu vắng một thứ gì đó. Nữ Oa cúi xuống, nhặt lấy đất sét vàng và bắt đầu nặn ra những hình người tí hon giống hệt như bà. Những hình người lần lượt đứng dậy và nhảy múa.”\n\n(Thần thoại, Nữ Oa – Nữ thần sáng tạo thế giới)\n\nChi tiết nào sau đây không phản ánh đúng nội dung và ý nghĩa của đoạn trích trên?",
         "options": {
           "A": "Nữ Oa nhận thấy thế giới thiếu vắng con người và quyết định sáng tạo ra họ.",
           "B": "Những hình người do Nữ Oa tạo ra từ đất sét vàng đã đứng dậy và biểu hiện sức sống.",
@@ -411,7 +411,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 2,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Sự nhốn nháo của bọn Luận khiến Khải ngạc nhiên. Anh nhướng mắt dòm vào trong lớp. Thấy Nga\nvà Quỳnh đang ngồi cúi đầu chịu trận, Khải sực hiểu, anh liền quay phắt lại phía Luận, mặt cau lại.\nNhưng lời phàn nàn chưa kịp thốt ra, Khải bỗng nhíu mày nghĩ ngợi một thoáng rồi lặng lẽ bỏ đi,\nkhông nói một tiếng nào.”\n(Nguyễn Nhật Ánh, Thằng quỷ nhỏ)\nHành động của Khải trong đoạn trích thể hiện điều gì về thái độ của anh?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Sự nhốn nháo của bọn Luận khiến Khải ngạc nhiên. Anh nhướng mắt dòm vào trong lớp. Thấy Nga và Quỳnh đang ngồi cúi đầu chịu trận, Khải sực hiểu, anh liền quay phắt lại phía Luận, mặt cau lại. Nhưng lời phàn nàn chưa kịp thốt ra, Khải bỗng nhíu mày nghĩ ngợi một thoáng rồi lặng lẽ bỏ đi, không nói một tiếng nào.”\n\n(Nguyễn Nhật Ánh, Thằng quỷ nhỏ)\n\nHành động của Khải trong đoạn trích thể hiện điều gì về thái độ của anh?",
         "options": {
           "A": "Sự kiềm chế và chín chắn khi đối diện với tình huống khó xử.",
           "B": "Sự thờ ơ, không muốn can thiệp vào việc của người khác.",
@@ -423,7 +423,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 3,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Kiên nhớ là lần ấy trung đoàn bộ bị oanh tạc. Nhiều người chết và bị thương. Riêng Tùng hoàn toàn\nlành lặn. Chỉ có điều là Tùng kêu đau đầu lắm. Y tá cho thuốc cảm, chẳng thuyên giảm, càng đau.\nRồi một buổi đêm các lán của cả trung đoàn bộ bị lay thức vì tiếng cười của Tùng. Phải rồi, chuyện\nđó xảy ra ở vùng này đây. Mọi người tổ chức vây lùng để đưa Tùng về cứu chữa. Nhưng người bệnh\nlẩn tránh rất tài. Thỉnh thoảng từ một lùm cây anh ta bật cười như để chọc giỡn mọi người, nhưng mà\ntiếng cười ảo não và thương tâm vô cùng. Vờn đuổi, truy sục cả tháng trời rồi đơn vị đế mất dấu tích\ncủa Tùng. Cậu ta mất hút vào rừng thẳm. Người ta bảo rằng, viên bi đã không chịu nằm yên ở một\ngóc não mà trườn chạy, luồn lách đưa cơn điên vào tất cả những ngõ ngách trong đầu óc Tùng. . .”\n(Bảo Ninh, Nỗi buồn chiến tranh)\nHình ảnh tiếng cười của Tùng trong đoạn trích mang ý nghĩa gì?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Kiên nhớ là lần ấy trung đoàn bộ bị oanh tạc. Nhiều người chết và bị thương. Riêng Tùng hoàn toàn lành lặn. Chỉ có điều là Tùng kêu đau đầu lắm. Y tá cho thuốc cảm, chẳng thuyên giảm, càng đau. Rồi một buổi đêm các lán của cả trung đoàn bộ bị lay thức vì tiếng cười của Tùng. Phải rồi, chuyện đó xảy ra ở vùng này đây. Mọi người tổ chức vây lùng để đưa Tùng về cứu chữa. Nhưng người bệnh lẩn tránh rất tài. Thỉnh thoảng từ một lùm cây anh ta bật cười như để chọc giỡn mọi người, nhưng mà tiếng cười ảo não và thương tâm vô cùng. Vờn đuổi, truy sục cả tháng trời rồi đơn vị đế mất dấu tích của Tùng. Cậu ta mất hút vào rừng thẳm. Người ta bảo rằng, viên bi đã không chịu nằm yên ở một góc não mà trườn chạy, luồn lách đưa cơn điên vào tất cả những ngõ ngách trong đầu óc Tùng. . .”\n\n(Bảo Ninh, Nỗi buồn chiến tranh)\n\nHình ảnh tiếng cười của Tùng trong đoạn trích mang ý nghĩa gì?",
         "options": {
           "A": "Tiếng cười thể hiện sự giễu cợt với những nỗ lực tìm kiếm của đồng đội.",
           "B": "Tiếng cười là biểu tượng của nỗi đau tinh thần và sự mất mát do chiến tranh gây ra.",
@@ -435,7 +435,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 4,
-        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n“Ngọc thiện trân tu đã đủ mùi,\nGia hào thêm có cỗ đầu người.\nNem công chả phượng còn thua béo,\nThịt gấu gân lân hẳn kém tươi.\nCá lối Lộc minh so cũng một,\nVật bày thỏ thủ bội hơn mười.\nKìa kìa ngon ngọt tày vai lợn,\nTráng sĩ như Phàn tiếng để đời!”\n(Nguyễn Biểu, Ăn cỗ đầu người)\nXác định thể thơ của đoạn thơ trên?",
+        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n\n“Ngọc thiện trân tu đã đủ mùi,\nGia hào thêm có cỗ đầu người.\nNem công chả phượng còn thua béo,\nThịt gấu gân lân hẳn kém tươi.\nCá lối Lộc minh so cũng một,\nVật bày thỏ thủ bội hơn mười.\nKìa kìa ngon ngọt tày vai lợn,\nTráng sĩ như Phàn tiếng để đời!”\n\n(Nguyễn Biểu, Ăn cỗ đầu người)\n\nXác định thể thơ của đoạn thơ trên?",
         "options": {
           "A": "Ngũ ngôn bát cú.",
           "B": "Ngũ ngôn tứ tuyệt.",
@@ -447,7 +447,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 5,
-        "question": "Đọc đoạn thơ sau và trả lời câu hỏi:\n“Một gánh kiền khôn quẩy tếch ngàn,\nHỏi chi bán đó, dạ rằng than.\nÍt nhiều miễn được đồng tiền tốt,\nHơn thiệt nài bao gốc củi tàn.\nỞ với lửa hương cho vẹn kiếp,\nThử xem sắt đá có bền gan.\nNghĩ mình lem luốc toan nghề khác,\nNhưng sợ trời kia lắm kẻ hàn.;\n(Trần Khánh Dư, Bán than)\nCâu nào sau đây không phản ánh đúng tâm trạng của nhân vật “tôi” trong bài thơ “Bán than” của\nTrần Khánh Dư?",
+        "question": "Đọc đoạn thơ sau và trả lời câu hỏi:\n\n“Một gánh kiền khôn quẩy tếch ngàn,\nHỏi chi bán đó, dạ rằng than.\nÍt nhiều miễn được đồng tiền tốt,\nHơn thiệt nài bao gốc củi tàn.\nỞ với lửa hương cho vẹn kiếp,\nThử xem sắt đá có bền gan.\nNghĩ mình lem luốc toan nghề khác,\nNhưng sợ trời kia lắm kẻ hàn.;\n\n(Trần Khánh Dư, Bán than)\n\nCâu nào sau đây không phản ánh đúng tâm trạng của nhân vật “tôi” trong bài thơ “Bán than” của Trần Khánh Dư?",
         "options": {
           "A": "Người bán than cảm thấy buồn tủi vì công việc nặng nhọc và thấp hèn.",
           "B": "Người bán than chấp nhận vất vả nhưng mong nhận được đồng tiền xứng đáng.",
@@ -459,19 +459,19 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 6,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Keitai là gì vậy?\nTừ này viết bằng chữ cứng, tôi tưởng đó là từ ngoại lai nên tra thử nhưng không thấy. Nếu là từ tiếng\nAnh, tôi đoán sẽ đánh vần là ‘catie’ hoặc ‘katy’ nhưng không phải. Từ này không phải tiếng Anh ạ?”\n(Higashino Keigo, Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA)\nQua đoạn trích, từ “keitai” mang ý nghĩa gì và cách nó được nhân vật “tôi” tiếp cận cho thấy điều gì\nvề mối quan hệ giữa ngôn ngữ và văn hóa?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Keitai là gì vậy?\n\nTừ này viết bằng chữ cứng, tôi tưởng đó là từ ngoại lai nên tra thử nhưng không thấy. Nếu là từ tiếng Anh, tôi đoán sẽ đánh vần là ‘catie’ hoặc ‘katy’ nhưng không phải. Từ này không phải tiếng Anh ạ?”\n\n(Higashino Keigo, Điều Kỳ Diệu Của Tiệm Tạp Hóa NAMIYA)\n\nQua đoạn trích, từ “keitai” mang ý nghĩa gì và cách nó được nhân vật “tôi” tiếp cận cho thấy điều gì về mối quan hệ giữa ngôn ngữ và văn hóa?",
         "options": {
+          "D": "“Keitai” là một thuật ngữ phức tạp, khiến nhân vật “tôi” gặp khó khăn trong việc hiểu rõ ý nghĩa.",
           "A": "“Keitai” là một từ ngoại lai, và nhân vật “tôi” thể hiện sự tò mò về các từ ngữ mới trong xã hội hiện đại.",
           "B": "“Keitai” là một từ mang tính biểu tượng, cho thấy sự khác biệt giữa tiếng Nhật và tiếng Anh trong ngôn ngữ đời sống.",
-          "C": "“Keitai” là một ví dụ về cách các từ ngữ ngoại lai được tiếp nhận và biến đổi trong văn hóa Nhật Bản.",
-          "D": "“Keitai” là một thuật ngữ phức tạp, khiến nhân vật “tôi” gặp khó khăn trong việc hiểu rõ ý nghĩa."
+          "C": "“Keitai” là một ví dụ về cách các từ ngữ ngoại lai được tiếp nhận và biến đổi trong văn hóa Nhật Bản."
         },
         "correctAnswer": "C",
         "explanation": ""
       },
       {
         "number": 7,
-        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n“Cánh cò bay lả trên đồng,\nBóng chiều in đậm màu ______ quê xưa.\nNgười đi năm tháng chẳng vừa,\nNhớ quê nhà cũ, bóng thưa vẫn ______.\nTrăng lên đỉnh núi lưng đèo,\nKhói lam nhè nhẹ in vèo dòng sông.\nChốn đây người cũ ngóng trông,\nTìm về cố quận, tình nồng chẳng phai.”\n(Nguyễn Trãi, Quốc Âm Thi Tập)",
+        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n\n“Cánh cò bay lả trên đồng,\nBóng chiều in đậm màu ______ quê xưa.\nNgười đi năm tháng chẳng vừa,\nNhớ quê nhà cũ, bóng thưa vẫn ______.\nTrăng lên đỉnh núi lưng đèo,\nKhói lam nhè nhẹ in vèo dòng sông.\nChốn đây người cũ ngóng trông,\nTìm về cố quận, tình nồng chẳng phai.”\n\n(Nguyễn Trãi, Quốc Âm Thi Tập)",
         "options": {
           "A": "Mộng/ xanh.",
           "B": "Mờ/ chờ.",
@@ -483,7 +483,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 8,
-        "question": "Đọc đoạn trích trên và trả lời câu hỏi:\n“Hình như bà lão đốc chứng chết thật và tỏ ra sung sướng vì cuối cùng đã vĩnh viễn rời khỏi cái nhà\nnày, thoát khỏi đống quan tài và khỏi Iakov... Bà nhìn lên trần, đôi môi động đậy, nét mặt của bà thật\nhạnh phúc, như thể bà đã nhìn thấy cái chết, người giải thoát cho bà, và đang thầm thì với nó.”\n(Anton Pavlovich Chekhov, Cây vĩ cầm cho Rothschild)\nXác định biện pháp nghệ thuật dùng trong đoạn trích trên?",
+        "question": "Đọc đoạn trích trên và trả lời câu hỏi:\n\n“Hình như bà lão đốc chứng chết thật và tỏ ra sung sướng vì cuối cùng đã vĩnh viễn rời khỏi cái nhà này, thoát khỏi đống quan tài và khỏi Iakov... Bà nhìn lên trần, đôi môi động đậy, nét mặt của bà thật hạnh phúc, như thể bà đã nhìn thấy cái chết, người giải thoát cho bà, và đang thầm thì với nó.”\n\n(Anton Pavlovich Chekhov, Cây vĩ cầm cho Rothschild)\n\nXác định biện pháp nghệ thuật dùng trong đoạn trích trên?",
         "options": {
           "A": "So sánh, nhân hóa.",
           "B": "Ẩn dụ, phóng đại.",
@@ -495,7 +495,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 9,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Bá quyền hiện hữu từ rất lâu trong thế giới con người. Nhưng việc Mỹ xuất hiện nhanh chóng, giữ\nuy quyền toàn cầu và cách nước này thực thi bá quyền là điểm khác biệt giữa thế lực toàn cầu hiện\ntại này so với trước đây. Chỉ trong vòng một thế kỷ, Mỹ đã tự biến chuyển – và cũng bị biến đổi theo\ncùng những động lực thúc đẩy từ bên ngoài – để từ một đất nước tương đối biệt lập ở Tây Bán cầu\nthành một cường quốc có phạm vi và tầm vóc quyền lực mà toàn bộ lịch sử thế giới chưa từng có.”\n(Zbigniew Brzezinski, Bàn Cờ Lớn)\nĐiều gì làm cho bá quyền của Mỹ khác biệt so với các thế lực toàn cầu trước đây?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Bá quyền hiện hữu từ rất lâu trong thế giới con người. Nhưng việc Mỹ xuất hiện nhanh chóng, giữ uy quyền toàn cầu và cách nước này thực thi bá quyền là điểm khác biệt giữa thế lực toàn cầu hiện tại này so với trước đây. Chỉ trong vòng một thế kỷ, Mỹ đã tự biến chuyển – và cũng bị biến đổi theo cùng những động lực thúc đẩy từ bên ngoài – để từ một đất nước tương đối biệt lập ở Tây Bán cầu thành một cường quốc có phạm vi và tầm vóc quyền lực mà toàn bộ lịch sử thế giới chưa từng có.”\n\n(Zbigniew Brzezinski, Bàn Cờ Lớn)\n\nĐiều gì làm cho bá quyền của Mỹ khác biệt so với các thế lực toàn cầu trước đây?",
         "options": {
           "A": "Sự chuyển đổi nhanh chóng từ một quốc gia biệt lập thành một cường quốc toàn cầu.",
           "B": "Cách Mỹ duy trì vị thế bá quyền mà không cần sử dụng bạo lực.",
@@ -507,7 +507,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 10,
-        "question": "Xác định nghĩa gốc và nghĩa chuyển của từ “sáng” trong các câu sau:\n1. “Ánh sáng mặt trời chiếu xuống làm cả khu vườn trở nên rực rỡ.”\n2. “Cô ấy là một người rất sáng trong công việc, luôn đưa ra những ý tưởng mới mẻ và thông minh.”",
+        "question": "Xác định nghĩa gốc và nghĩa chuyển của từ “sáng” trong các câu sau:\n\n1. “Ánh sáng mặt trời chiếu xuống làm cả khu vườn trở nên rực rỡ.”\n\n2. “Cô ấy là một người rất sáng trong công việc, luôn đưa ra những ý tưởng mới mẻ và thông minh.”",
         "options": {
           "A": "Câu 1 là nghĩa gốc, câu 2 là nghĩa chuyển.",
           "B": "Câu 1 là nghĩa chuyển, câu 2 là nghĩa gốc.",
@@ -519,7 +519,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 11,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n“Chú bé này hay thật, lên ba mà chẳng nói chẳng cười! Rồi cả làng phải chép miệng: ‘Cha mẹ nó có\nphúc mà không biết hưởng, con trời gửi xuống chứ chẳng chơi!’ Nhưng khi giặc Ân tràn đến bờ cõi,\nsứ giả của nhà vua truyền lệnh tìm người cứu nước, thì chú bé ấy bất ngờ cất tiếng nói đầu tiên, đòi\năn nhiều để lớn nhanh và đánh giặc.”\n(Truyền thuyết Thánh Gióng)\nÝ nghĩa của chi tiết Thánh Gióng lên ba tuổi nhưng không nói, không cười là gì?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\n“Chú bé này hay thật, lên ba mà chẳng nói chẳng cười! Rồi cả làng phải chép miệng: ‘Cha mẹ nó có phúc mà không biết hưởng, con trời gửi xuống chứ chẳng chơi!’ Nhưng khi giặc Ân tràn đến bờ cõi, sứ giả của nhà vua truyền lệnh tìm người cứu nước, thì chú bé ấy bất ngờ cất tiếng nói đầu tiên, đòi ăn nhiều để lớn nhanh và đánh giặc.”\n\n(Truyền thuyết Thánh Gióng)\n\nÝ nghĩa của chi tiết Thánh Gióng lên ba tuổi nhưng không nói, không cười là gì?",
         "options": {
           "A": "Tượng trưng cho sự lạ thường của một người anh hùng mang nguồn gốc thần thánh.",
           "B": "Thể hiện cuộc sống khó khăn, vất vả của gia đình khi nuôi một đứa trẻ đặc biệt.",
@@ -531,7 +531,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 12,
-        "question": "Dựa vào đoạn trích sau:\n“Anh Tâm là người làm ăn chân chính, luôn giữ uy tín, nhưng lần này anh rơi vào một tình huống\nkhó xử. Trước đây, trong lúc khó khăn, anh đã vay một khoản tiền lớn từ ông Phong, một thương\nnhân nổi tiếng trong vùng, để cứu lấy cửa hàng. Nhờ sự giúp đỡ ấy, công việc làm ăn của anh dần ổn\nđịnh trở lại. Tuy nhiên, gần đây, ông Phong nhờ anh giúp che giấu một lô hàng không rõ nguồn gốc.\nBiết rõ việc này là sai trái, nhưng Tâm đành miễn cưỡng gật đầu vì nghĩ đến khoản nợ ngày trước.\n“Há miệng mắc quai” – anh nghĩ thầm, lòng trĩu nặng. Mỗi lần đứng trước tấm gương trong văn\nphòng, anh lại cảm thấy khó chịu với bản thân. Lời nhờ vả của ông Phong chẳng khác nào sợi dây\nbuộc chặt anh, khiến anh không thể từ chối dù biết mình đang tự đặt bản thân vào tình thế nguy hiểm.”\nThành ngữ “Há miệng mắc quai” trong đoạn văn trên thể hiện điều gì?",
+        "question": "Dựa vào đoạn trích sau:\n\n“Anh Tâm là người làm ăn chân chính, luôn giữ uy tín, nhưng lần này anh rơi vào một tình huống khó xử. Trước đây, trong lúc khó khăn, anh đã vay một khoản tiền lớn từ ông Phong, một thương nhân nổi tiếng trong vùng, để cứu lấy cửa hàng. Nhờ sự giúp đỡ ấy, công việc làm ăn của anh dần ổn định trở lại. Tuy nhiên, gần đây, ông Phong nhờ anh giúp che giấu một lô hàng không rõ nguồn gốc. Biết rõ việc này là sai trái, nhưng Tâm đành miễn cưỡng gật đầu vì nghĩ đến khoản nợ ngày trước. “Há miệng mắc quai” – anh nghĩ thầm, lòng trĩu nặng. Mỗi lần đứng trước tấm gương trong văn phòng, anh lại cảm thấy khó chịu với bản thân. Lời nhờ vả của ông Phong chẳng khác nào sợi dây buộc chặt anh, khiến anh không thể từ chối dù biết mình đang tự đặt bản thân vào tình thế nguy hiểm.”\n\nThành ngữ “Há miệng mắc quai” trong đoạn văn trên thể hiện điều gì?",
         "options": {
           "A": "Sự hối hận khi giúp đỡ người khác mà không suy nghĩ đến hậu quả.",
           "B": "Việc bị ràng buộc và không thể tự do hành động do những cam kết hoặc ân tình trước đó.",
@@ -567,7 +567,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 15,
-        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n“Ở trung hạ lưu sông Nin có một dải đất hẹp mà dài, rộng từ 3 đến 16 km bắt đầu từ biên giới phía\nnam Ai Cập hiện nay chạy thẳng tới vùng kế cận Thủ đô Ai Cập Cairô thì dần dần mở rộng ra.”",
+        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n\n“Ở trung hạ lưu sông Nin có một dải đất hẹp mà dài, rộng từ 3 đến 16 km bắt đầu từ biên giới phía nam Ai Cập hiện nay chạy thẳng tới vùng kế cận Thủ đô Ai Cập Cairô thì dần dần mở rộng ra.”",
         "options": {
           "A": "Hạ lưu.",
           "B": "Biên giới.",
@@ -579,12 +579,12 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 16,
-        "question": "Câu nào dưới đây mắc lỗi tương tự câu sau?\n“Trong phòng khách rộng rãi, những bức tranh treo trên tường.”",
+        "question": "Câu nào dưới đây mắc lỗi tương tự câu sau?\n\n“Trong phòng khách rộng rãi, những bức tranh treo trên tường.”",
         "options": {
-          "A": "“Trên bàn học, những cuốn sách dày cộm.”",
-          "B": "“Ở góc bếp nhỏ, ánh sáng từ cửa sổ chiếu vào thật ấm áp.”",
           "C": "“Những cánh diều bay cao trên bầu trời xanh thẳm.”",
-          "D": "“Khi mùa xuân đến, khắp nơi rực rỡ sắc hoa.”"
+          "D": "“Khi mùa xuân đến, khắp nơi rực rỡ sắc hoa.”",
+          "A": "“Trên bàn học, những cuốn sách dày cộm.”",
+          "B": "“Ở góc bếp nhỏ, ánh sáng từ cửa sổ chiếu vào thật ấm áp.”"
         },
         "correctAnswer": "A",
         "explanation": ""
@@ -615,7 +615,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 19,
-        "question": "Tác phẩm “Chí Phèo” của Nam Cao là một câu chuyện về tình yêu ngọt ngào, tươi sáng giữa\nnhững con người nghèo khổ ở làng Vũ Đại.",
+        "question": "Tác phẩm “Chí Phèo” của Nam Cao là một câu chuyện về tình yêu ngọt ngào, tươi sáng giữa những con người nghèo khổ ở làng Vũ Đại.",
         "options": {
           "A": "Chí Phèo.",
           "B": "Tình yêu ngọt ngào.",
@@ -643,7 +643,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_1",
         "title": "Nhóm đọc hiểu 1 (Câu 21 – 25)",
         "passageTitle": "",
-        "passage": "Sau khi vua Gia Long vừa thống nhất trong nước xong, tức thời gươm giáo xếp xó, thi phú lên đàn.\nVua quan làm gương và khuyến khích dân: luôn mấy triều Minh Mạng, Thiệu Trị, Tự Đức, toàn là\nThiên tử thi phú; bầy tôi danh vọng như Hà Tôn Quyền, Doãn Uẩu, toàn là quần thần từ chương. Vua\ntôi chỉ tưởng trong nước có bờ cõi, có nhân dân, thế là trời Nam định phận, không biết bên ngoài có\ncường lân, có địch quốc, thường để mắt đến ta. Mọi việc khư khư chẳng chịu cải cách. Quan ải không\nkhai, cửa bể đóng chặt, thời thế chẳng hiểu, võ bị lôi thôi, triều đình chỉ lo ngâm thi đặt phú với nhau,\ntưởng đâu “mấy vần thi phú” cho hay, đủ sức trị dân giữ nước. Kén người, thì khinh võ bời mà trọng\nvăn chương. Dạy dân, thì bỏ thực học mà chuộng khoa cử. Bởi thế, người đời ấy ai không học từ\nchương không nên người, học mà không thi đậu cũng không nên người, thi đậu mà không được làm\nquan cũng không nên người.\nGiữa lúc thiên hạ đâu đó thông minh tiến hoá rầm rầm, kẻ thì đang ra tay chinh phục đất xa, người\nthì biết lo thân tự cường cải cách, thế mà ở nước mình, vua quan vẫn kềm giữ nhân dân ở chặt trong\nvòng học cũ thói xưa. Người ta lo mở mang những thương mãi, những công nghệ, những cơ khí,\nnhững khoa học, còn mình đây thì khi đứng khi ngồi, khi tỉnh khi mê, chỉ lo có một việc từ chương\nkhoa cử.\nChính nhà vua có trách nhiệm sửa nước dạy dân, ôm giữ mãi chế độ từ chương khoa cử, buộc dân\nphải theo đó mà đi, bảo rằng ai đi đến chỗ “khoa hoạn” mới là tới mục đích nhân sinh, hễ ai đi trái\ncon đường ấy, thì không ngõ xuất thân nào khác. Tự nhiên, những người ở dưới cái chế độ giáo hoá\nđó, bao nhiêu tư tưởng, bao nhiêu hy vọng, bao nhiêu chí khí, đều quanh quất sa đà, ở trong có bốn\nchữ; bốn chữ ấy chia ra làm hai đoạn, là: thi đậu và làm quan.\nCụ Phan, sinh ra nhằm giữa hoàn cảnh như thế, thì cách lập chí xuất thân của cụ trừ khoa cử ra, không\ncó con đường nào hơn, vậy ta thấy cụ có cái chí “học quyết khoa”, chẳng nên lấy gì làm lạ. Vì lập chí\nmai sau phải chiếm được giải khôi nguyên, cho khỏi phụ lời mình đã nói cứng cáp, đến nỗi có một\nphen Phùng đã liều chết.\n(Đào Trinh Nhất, Phan Đình Phùng)",
+        "passage": "Sau khi vua Gia Long vừa thống nhất trong nước xong, tức thời gươm giáo xếp xó, thi phú lên đàn. Vua quan làm gương và khuyến khích dân: luôn mấy triều Minh Mạng, Thiệu Trị, Tự Đức, toàn là Thiên tử thi phú; bầy tôi danh vọng như Hà Tôn Quyền, Doãn Uẩu, toàn là quần thần từ chương. Vua tôi chỉ tưởng trong nước có bờ cõi, có nhân dân, thế là trời Nam định phận, không biết bên ngoài có cường lân, có địch quốc, thường để mắt đến ta. Mọi việc khư khư chẳng chịu cải cách. Quan ải không khai, cửa bể đóng chặt, thời thế chẳng hiểu, võ bị lôi thôi, triều đình chỉ lo ngâm thi đặt phú với nhau, tưởng đâu “mấy vần thi phú” cho hay, đủ sức trị dân giữ nước. Kén người, thì khinh võ bời mà trọng văn chương. Dạy dân, thì bỏ thực học mà chuộng khoa cử. Bởi thế, người đời ấy ai không học từ chương không nên người, học mà không thi đậu cũng không nên người, thi đậu mà không được làm quan cũng không nên người.\n\nGiữa lúc thiên hạ đâu đó thông minh tiến hoá rầm rầm, kẻ thì đang ra tay chinh phục đất xa, người thì biết lo thân tự cường cải cách, thế mà ở nước mình, vua quan vẫn kềm giữ nhân dân ở chặt trong vòng học cũ thói xưa. Người ta lo mở mang những thương mãi, những công nghệ, những cơ khí, những khoa học, còn mình đây thì khi đứng khi ngồi, khi tỉnh khi mê, chỉ lo có một việc từ chương khoa cử.\n\nChính nhà vua có trách nhiệm sửa nước dạy dân, ôm giữ mãi chế độ từ chương khoa cử, buộc dân phải theo đó mà đi, bảo rằng ai đi đến chỗ “khoa hoạn” mới là tới mục đích nhân sinh, hễ ai đi trái con đường ấy, thì không ngõ xuất thân nào khác. Tự nhiên, những người ở dưới cái chế độ giáo hoá đó, bao nhiêu tư tưởng, bao nhiêu hy vọng, bao nhiêu chí khí, đều quanh quất sa đà, ở trong có bốn chữ; bốn chữ ấy chia ra làm hai đoạn, là: thi đậu và làm quan.\n\nCụ Phan, sinh ra nhằm giữa hoàn cảnh như thế, thì cách lập chí xuất thân của cụ trừ khoa cử ra, không có con đường nào hơn, vậy ta thấy cụ có cái chí “học quyết khoa”, chẳng nên lấy gì làm lạ. Vì lập chí mai sau phải chiếm được giải khôi nguyên, cho khỏi phụ lời mình đã nói cứng cáp, đến nỗi có một phen Phùng đã liều chết.\n\n(Đào Trinh Nhất, Phan Đình Phùng)",
         "questions": [
           {
             "number": 21,
@@ -711,7 +711,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_2",
         "title": "Nhóm đọc hiểu 2 (Câu 26 – 30)",
         "passageTitle": "",
-        "passage": "Các báo hôm sau đăng đầy những bài viết về “vụ án bí ẩn ở Brixton”. Dưới đây là nội dung tóm tắt\ncủa một số bài.\nTờ “Tin điện hằng ngày” nhận xét:\n“Trong lịch sử khoa hình sự, chưa mấy khi xảy ra một tấn bi kịch với những tình tiết kỳ quặc hơn thế.\nNạn nhân mang tên Đức, những chữ bằng máu trên tường, động cơ ám sát không có. Tất cả những\nchi tiết ấy cho thấy án mạng này là do những kẻ tị nạn chính trị và những kẻ hoạt động xã hội gây ra.\nCác đảng phái cấp tiến có nhiều chi nhánh hoạt động tại Mỹ, và nạn nhân có lẽ đã vi phạm các luật\nlệ không thành văn của các đảng phái ấy nên đã bị trừng trị”.\nBài báo kết thúc bằng lời khiển trách chính phủ và yêu cầu chính phủ giám sát chặt chẽ hơn các ngoại\nkiều trú ngụ trên đất Anh.\nTờ “Lá Cờ” bình luận:\n“Những vụ trọng án như vụ này đã diễn ra dưới một chính thể tự do. Chúng sinh ra từ sự hỗn tạp\ntrong dân chúng và sự suy yếu của chính quyền. Nạn nhân là một người Mỹ đã sinh sống ít lâu tại\nLondon. Ông ta đã ở trọ một thời gian tại nhà bà Charpentier khu Camberwell. Thư ký riêng của ông\nta là Stangerson đã cùng đi với ông ta trong các chuyến đi. Hai người đã từ biệt bà chủ trọ hôm thứ\nba, ngày mồng 4 tháng này và đã đi ra ga Euston để đáp chuyến tàu tốc hành đi Liverpool. Sau đó ít\nlâu, người ta thấy hai người đứng với nhau trên sân ga. Sau nữa thì không biết gì về họ cho đến khi\nngười ta tìm thấy xác ông Drebber trong một ngôi nhà bỏ trống trên đường Brixton cách nhà ga\nEuston hàng mấy dặm đường. Nạn nhân đã đến đây bằng cách nào và đã chết như thế nào? Những\ncâu hỏi này hãy còn nằm trong màn bí mật. Chúng tôi vui mừng được biết các thanh tra Gregson và\nLestrade đã cùng bắt tay vào vụ án và tin rằng hai quan chức mẫn cán và tài năng ấy sẽ sớm rọi sáng\nvào vụ khó hiểu này “.\nTờ “Tin Hàng Ngày” kết luận:\n“Không còn nghi ngờ gì nữa, đây là một vụ án chính trị. Sự chuyên chế của chính quyền các nước ở\nlục địa châu Âu đã xua đuổi về bờ biển nước ta nhiều người có thể trở thành những công dân tốt nếu\nhọ không bị ám ảnh kích động bởi những ký ức về những nỗi đau khổ và gian truân của họ. Trong\nđám người ấy có một luật lệ hết sức nghiêm ngặt, nó kết án tử cho bất cứ ai vi phạm nó. Cần phải tìm\ncho ra viên thư ký Staggerson để hỏi một số chi tiết liên quan đến nạn nhân. Cuộc điều tra đã tiến\nđược một bước khi tìm ra được địa chỉ nhà trọ của nạn nhân. Sự khám phá ấy hoàn toàn nhờ tài năng\ncủa ông Gregson”.\nHolmes và tôi rất buồn cười khi đọc những dòng này.\n(Arthur Conan Doyle, Chiếc nhẫn tình cờ)",
+        "passage": "Các báo hôm sau đăng đầy những bài viết về “vụ án bí ẩn ở Brixton”. Dưới đây là nội dung tóm tắt của một số bài.\n\nTờ “Tin điện hằng ngày” nhận xét:\n\n“Trong lịch sử khoa hình sự, chưa mấy khi xảy ra một tấn bi kịch với những tình tiết kỳ quặc hơn thế. Nạn nhân mang tên Đức, những chữ bằng máu trên tường, động cơ ám sát không có. Tất cả những chi tiết ấy cho thấy án mạng này là do những kẻ tị nạn chính trị và những kẻ hoạt động xã hội gây ra. Các đảng phái cấp tiến có nhiều chi nhánh hoạt động tại Mỹ, và nạn nhân có lẽ đã vi phạm các luật lệ không thành văn của các đảng phái ấy nên đã bị trừng trị”.\n\nBài báo kết thúc bằng lời khiển trách chính phủ và yêu cầu chính phủ giám sát chặt chẽ hơn các ngoại kiều trú ngụ trên đất Anh.\n\nTờ “Lá Cờ” bình luận:\n\n“Những vụ trọng án như vụ này đã diễn ra dưới một chính thể tự do. Chúng sinh ra từ sự hỗn tạp trong dân chúng và sự suy yếu của chính quyền. Nạn nhân là một người Mỹ đã sinh sống ít lâu tại London. Ông ta đã ở trọ một thời gian tại nhà bà Charpentier khu Camberwell. Thư ký riêng của ông ta là Stangerson đã cùng đi với ông ta trong các chuyến đi. Hai người đã từ biệt bà chủ trọ hôm thứ ba, ngày mồng 4 tháng này và đã đi ra ga Euston để đáp chuyến tàu tốc hành đi Liverpool. Sau đó ít lâu, người ta thấy hai người đứng với nhau trên sân ga. Sau nữa thì không biết gì về họ cho đến khi người ta tìm thấy xác ông Drebber trong một ngôi nhà bỏ trống trên đường Brixton cách nhà ga Euston hàng mấy dặm đường. Nạn nhân đã đến đây bằng cách nào và đã chết như thế nào? Những câu hỏi này hãy còn nằm trong màn bí mật. Chúng tôi vui mừng được biết các thanh tra Gregson và Lestrade đã cùng bắt tay vào vụ án và tin rằng hai quan chức mẫn cán và tài năng ấy sẽ sớm rọi sáng vào vụ khó hiểu này “.\n\nTờ “Tin Hàng Ngày” kết luận:\n\n“Không còn nghi ngờ gì nữa, đây là một vụ án chính trị. Sự chuyên chế của chính quyền các nước ở lục địa châu Âu đã xua đuổi về bờ biển nước ta nhiều người có thể trở thành những công dân tốt nếu họ không bị ám ảnh kích động bởi những ký ức về những nỗi đau khổ và gian truân của họ. Trong đám người ấy có một luật lệ hết sức nghiêm ngặt, nó kết án tử cho bất cứ ai vi phạm nó. Cần phải tìm cho ra viên thư ký Staggerson để hỏi một số chi tiết liên quan đến nạn nhân. Cuộc điều tra đã tiến được một bước khi tìm ra được địa chỉ nhà trọ của nạn nhân. Sự khám phá ấy hoàn toàn nhờ tài năng của ông Gregson”.\n\nHolmes và tôi rất buồn cười khi đọc những dòng này.\n\n(Arthur Conan Doyle, Chiếc nhẫn tình cờ)",
         "questions": [
           {
             "number": 26,
@@ -763,7 +763,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 30,
-            "question": "Qua phản ứng của Holmes và Watson, đoạn trích phản ánh điều gì về tính khách quan của\nbáo chí?",
+            "question": "Qua phản ứng của Holmes và Watson, đoạn trích phản ánh điều gì về tính khách quan của báo chí?",
             "options": {
               "A": "Báo chí thường đưa tin thiếu cơ sở và không đi sâu vào bản chất của vụ việc.",
               "B": "Báo chí luôn cố gắng đưa ra các góc nhìn đa chiều về một vụ án phức tạp.",
@@ -784,11 +784,11 @@ export const SAMPLE_EXAMS = [
     "durationMinutes": 40,
     "isPublished": true,
     "createdAt": "2026-11-19T13:00:00.000Z",
-    "updatedAt": "2026-11-19T20:30:00.000Z",
+    "updatedAt": "2026-11-20T20:40:00.000Z",
     "singleQuestions": [
       {
         "number": 1,
-        "question": "Ngày xưa, Thần Trụ Trời là vị thần khổng lồ, được giao nhiệm vụ xây dựng thế giới. Ngài đã dùng\nđất đá để đắp thành một trụ lớn, chống đỡ bầu trời và chia cắt trời đất. Khi công việc hoàn thành,\nThần Trụ Trời đẩy bầu trời lên cao, tạo nên không gian rộng lớn giữa trời và đất. Sau đó, ngài phá\nhủy cây trụ để đất đá rơi xuống, hình thành núi non, sông suối, đồng bằng, và biển cả. Từ đó, trời đất\ntrở nên hài hòa, và muôn loài bắt đầu sinh sôi, nảy nở.\n(Thần thoại Việt Nam, thần Trụ Trời)\nTheo thần thoại Việt Nam, Thần Trụ Trời đã làm gì để phân chia trời và đất?",
+        "question": "Ngày xưa, Thần Trụ Trời là vị thần khổng lồ, được giao nhiệm vụ xây dựng thế giới. Ngài đã dùng đất đá để đắp thành một trụ lớn, chống đỡ bầu trời và chia cắt trời đất. Khi công việc hoàn thành, Thần Trụ Trời đẩy bầu trời lên cao, tạo nên không gian rộng lớn giữa trời và đất. Sau đó, ngài phá hủy cây trụ để đất đá rơi xuống, hình thành núi non, sông suối, đồng bằng, và biển cả. Từ đó, trời đất trở nên hài hòa, và muôn loài bắt đầu sinh sôi, nảy nở.\n\n(Thần thoại Việt Nam, thần Trụ Trời)\n\nTheo thần thoại Việt Nam, Thần Trụ Trời đã làm gì để phân chia trời và đất?",
         "options": {
           "A": "Sử dụng phép thuật để tạo ra khoảng cách giữa trời và đất.",
           "B": "Đắp một trụ lớn để chống đỡ bầu trời và đẩy bầu trời lên cao.",
@@ -800,7 +800,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 2,
-        "question": "Tuy nó chỉ là chuyện “phùng trường tác hỉ”, chàng không chung tình với một người nào, nhưng trước\nnhững cuộc rượu nồng, dê béo, chàng vẫn được phần đông chị em để vào mắt xanh. Họ trọng chàng\nlà hạng học trò có tiếng, họ thích chàng ăn nói có duyên, nhất là họ yêu ngón chầu của chàng nhiều\ntiếng tài tình trác lạc.\n(Ngô Tất Tố, Lều chõng)\nCụm từ “phùng trường tác hỉ” trong đoạn trích có nghĩa là gì?",
+        "question": "Tuy nó chỉ là chuyện “phùng trường tác hỉ”, chàng không chung tình với một người nào, nhưng trước những cuộc rượu nồng, dê béo, chàng vẫn được phần đông chị em để vào mắt xanh. Họ trọng chàng là hạng học trò có tiếng, họ thích chàng ăn nói có duyên, nhất là họ yêu ngón chầu của chàng nhiều tiếng tài tình trác lạc.\n\n(Ngô Tất Tố, Lều chõng)\n\nCụm từ “phùng trường tác hỉ” trong đoạn trích có nghĩa là gì?",
         "options": {
           "A": "Học trò tài năng luôn mang lại niềm vui cho mọi người.",
           "B": "Vui vẻ, hòa nhã để làm hài lòng người khác trong những dịp gặp gỡ.",
@@ -812,7 +812,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 3,
-        "question": "Đám khách người nhà tử sĩ đứng ngồi rải rác, mỗi góc một vài người. Trông bề ngoài, tôi biết có ít\nnhất hai ba người ở một tỉnh nào đó tận ngoài miền Bắc vào, trong đó có một bà già, chắc hẳn là một\nngười mẹ, mặc tấm áo dài nâu tứ thân, nét mặt hiền dịu, nỗi đau khổ sâu sắc cũng kín đáo, bà thường\nđưa mắt kín đáo nhìn ra ngoài cánh rừng lau trải dài bạt ngàn vô tận với một vẻ như đang muốn tìm\nai. Tất cả ba gian nhà đất vẫn lặng thinh, chẳng ai nói ai rằng, đến cả một người đàn ông, chắc là một\nông bố miền Trung, tay cầm một tàu lá thuốc đầu quấn khăn đầu riu đang ngồi trên chiếc ghế đẩu duy\nnhất trong nhà ngay trước mặt tôi cũng mang một vẻ mặt đầy chịu đựng.\n(Nguyễn Minh Châu, Cỏ Lau)\nChi tiết nào sau đây không xuất hiện trong đoạn trích?",
+        "question": "Đám khách người nhà tử sĩ đứng ngồi rải rác, mỗi góc một vài người. Trông bề ngoài, tôi biết có ít nhất hai ba người ở một tỉnh nào đó tận ngoài miền Bắc vào, trong đó có một bà già, chắc hẳn là một người mẹ, mặc tấm áo dài nâu tứ thân, nét mặt hiền dịu, nỗi đau khổ sâu sắc cũng kín đáo, bà thường đưa mắt kín đáo nhìn ra ngoài cánh rừng lau trải dài bạt ngàn vô tận với một vẻ như đang muốn tìm ai. Tất cả ba gian nhà đất vẫn lặng thinh, chẳng ai nói ai rằng, đến cả một người đàn ông, chắc là một ông bố miền Trung, tay cầm một tàu lá thuốc đầu quấn khăn đầu riu đang ngồi trên chiếc ghế đẩu duy nhất trong nhà ngay trước mặt tôi cũng mang một vẻ mặt đầy chịu đựng.\n\n(Nguyễn Minh Châu, Cỏ Lau)\n\nChi tiết nào sau đây không xuất hiện trong đoạn trích?",
         "options": {
           "A": "Một bà già mặc áo dài nâu tứ thân, đôi mắt kín đáo nhìn ra cánh rừng lau trải dài bạt ngàn.",
           "B": "Một người đàn ông miền Trung, tay cầm tàu lá thuốc, đầu quấn khăn đầu rìu, ngồi lặng lẽ trên ghế đẩu.",
@@ -824,7 +824,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 4,
-        "question": "Sống trên đời cũng đừng quá so đo tính toán. Cổ ngữ nói: “Trăm sự do tâm khởi, nụ cười giải ngàn\nsầu”. Tâm tính tốt là người bạn tốt nhất trong cuộc đời, nó khiến người ta sống sung sướng, thoải mái\nvà bình an, khoẻ mạnh.\n(thivien.net)\n“Cổ ngữ nói: 'Trăm sự do tâm khởi, nụ cười giải ngàn sầu.'“\nBiện pháp nghệ thuật nào được sử dụng để làm nổi bật ý nghĩa của câu?",
+        "question": "Sống trên đời cũng đừng quá so đo tính toán. Cổ ngữ nói: “Trăm sự do tâm khởi, nụ cười giải ngàn sầu”. Tâm tính tốt là người bạn tốt nhất trong cuộc đời, nó khiến người ta sống sung sướng, thoải mái và bình an, khoẻ mạnh.\n\n(thivien.net)\n\n“Cổ ngữ nói: 'Trăm sự do tâm khởi, nụ cười giải ngàn sầu.'“\n\nBiện pháp nghệ thuật nào được sử dụng để làm nổi bật ý nghĩa của câu?",
         "options": {
           "A": "Lấy cảnh ngụ tình.",
           "B": "Sử dụng điển tích, điển cố.",
@@ -836,7 +836,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 5,
-        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\nGió hiu hắt, phòng tiêu lạnh lẽo,\nTrước thềm lan hoa héo ron ron!\nCầu Tiên khói toả đỉnh non,\nXe rồng thăm thẳm, bóng loan rầu rầu!\nNỗi lai lịch dễ hầu than thở,\nTrách nhân duyên mờ lỡ cớ sao?\nSầu sầu, thảm thảm xiết bao,\nSầu đầy giạt bể, thảm cao ngất trời!\n…\n(Ngọc Hân công chúa, Ai tư vãn)\nXác định thể thơ của đoạn thơ?",
+        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n\nGió hiu hắt, phòng tiêu lạnh lẽo,\nTrước thềm lan hoa héo ron ron!\nCầu Tiên khói toả đỉnh non,\nXe rồng thăm thẳm, bóng loan rầu rầu!\nNỗi lai lịch dễ hầu than thở,\nTrách nhân duyên mờ lỡ cớ sao?\nSầu sầu, thảm thảm xiết bao,\nSầu đầy giạt bể, thảm cao ngất trời!\n…\n\n(Ngọc Hân công chúa, Ai tư vãn)\n\nXác định thể thơ của đoạn thơ?",
         "options": {
           "A": "Lục bát.",
           "B": "Song thất lục bát.",
@@ -848,7 +848,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 6,
-        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n“Chiều buông nhạt nắng mờ sông,\nThuyền ai thấp thoáng giữa lòng ______ loang.\nMây bay che khuất trời vàng,\nLặng nghe tiếng suối bên đàng ______ vang.\nGió thu thổi lạnh sương tan,\nNhớ người xưa cũ, miên man bóng mờ.\nLệ rơi đẫm ướt đôi bờ,\nLòng đau day dứt đợi chờ ai đây?”\n(Hồ Xuân Hương, Thu Cảnh)",
+        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n\n“Chiều buông nhạt nắng mờ sông,\nThuyền ai thấp thoáng giữa lòng ______ loang.\nMây bay che khuất trời vàng,\nLặng nghe tiếng suối bên đàng ______ vang.\nGió thu thổi lạnh sương tan,\nNhớ người xưa cũ, miên man bóng mờ.\nLệ rơi đẫm ướt đôi bờ,\nLòng đau day dứt đợi chờ ai đây?”\n\n(Hồ Xuân Hương, Thu Cảnh)",
         "options": {
           "A": "Trăng/ chuông.",
           "B": "Sông/ vọng.",
@@ -860,7 +860,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 7,
-        "question": "Dựa vào đoạn trích sau:\nLần đầu bà Lan ra chợ mua đồ, ai cũng tò mò vì nghe nói bà rất kỹ tính. Bà ghé gian hàng nào cũng\nthử đủ cách, từ vải vóc đến dao kéo. Đến hàng vải, bà cầm một miếng lụa bóng loáng lên, thử cắt\nbằng kéo mới nhưng lại không nói gì. Đến hàng dao, bà mua ngay một con dao sáng bóng mà chẳng\ncần thử thêm. Người bán vải tò mò hỏi: “Sao bà không mua kéo chỗ tôi? Lụa sô mà cắt không được\nthì thử làm gì?” Bà Lan cười: “Dao thử trầu héo, kéo thử lụa sô. Thứ gì không xài được ngay cả với\ncái dễ, sao dám dùng cho cái khó hơn?” Câu nói của bà khiến người bán im lặng, còn mấy người khác\nthì gật gù đồng tình.\nTrong câu chuyện, câu thành ngữ “Dao thử trầu héo, kéo thử lụa sô” được hiểu như thế nào?",
+        "question": "Dựa vào đoạn trích sau:\n\nLần đầu bà Lan ra chợ mua đồ, ai cũng tò mò vì nghe nói bà rất kỹ tính. Bà ghé gian hàng nào cũng thử đủ cách, từ vải vóc đến dao kéo. Đến hàng vải, bà cầm một miếng lụa bóng loáng lên, thử cắt bằng kéo mới nhưng lại không nói gì. Đến hàng dao, bà mua ngay một con dao sáng bóng mà chẳng cần thử thêm. Người bán vải tò mò hỏi: “Sao bà không mua kéo chỗ tôi? Lụa sô mà cắt không được thì thử làm gì?” Bà Lan cười: “Dao thử trầu héo, kéo thử lụa sô. Thứ gì không xài được ngay cả với cái dễ, sao dám dùng cho cái khó hơn?” Câu nói của bà khiến người bán im lặng, còn mấy người khác thì gật gù đồng tình.\n\nTrong câu chuyện, câu thành ngữ “Dao thử trầu héo, kéo thử lụa sô” được hiểu như thế nào?",
         "options": {
           "A": "Chỉ việc thử nghiệm một vật hoặc đánh giá con người bằng cách kiểm tra qua những tình huống cơ bản và dễ dàng nhất.",
           "B": "Chỉ sự cần thiết của việc đánh giá người hoặc vật qua các thử thách lớn và phức tạp.",
@@ -872,7 +872,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 8,
-        "question": "Trẻ con thôn quê là bạn của các con vật. Con trâu, con bò, con chó, con mèo, các loại chim chóc và\ncác loại côn trùng. Tôi cũng thế. Tôi có những hộp diêm và những hộp các-tông dùng để nhốt dế,\ncánh quýt, ve sầu và bọ rầy. Nhưng tôi khác thằng Tường. Tường hồn nhiên chơi với cả kiến, chuồn\nchuồn, châu chấu, nhền nhện, sâu cuốn chiếu và sâu róm, hiện nay lại đang nuôi một con cóc dưới\ngầm giường.\n(Nguyễn Nhật Ánh, Tôi thấy hoa vàng trên cỏ xanh)\nQua đoạn trích, sự khác biệt giữa nhân vật “tôi” và Tường trong cách chơi với các con vật cho thấy\nđiều gì?",
+        "question": "Trẻ con thôn quê là bạn của các con vật. Con trâu, con bò, con chó, con mèo, các loại chim chóc và các loại côn trùng. Tôi cũng thế. Tôi có những hộp diêm và những hộp các-tông dùng để nhốt dế, cánh quýt, ve sầu và bọ rầy. Nhưng tôi khác thằng Tường. Tường hồn nhiên chơi với cả kiến, chuồn chuồn, châu chấu, nhền nhện, sâu cuốn chiếu và sâu róm, hiện nay lại đang nuôi một con cóc dưới gầm giường.\n\n(Nguyễn Nhật Ánh, Tôi thấy hoa vàng trên cỏ xanh)\n\nQua đoạn trích, sự khác biệt giữa nhân vật “tôi” và Tường trong cách chơi với các con vật cho thấy điều gì?",
         "options": {
           "A": "Tường có tâm hồn hồn nhiên và tình yêu thiên nhiên mạnh mẽ hơn so với nhân vật “tôi.”",
           "B": "Nhân vật “tôi” thích sự ngăn nắp và chỉ chơi với những loài vật dễ chăm sóc.",
@@ -884,7 +884,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 9,
-        "question": "Xác định nghĩa gốc và nghĩa chuyển của từ “lên” trong các câu sau:\n1. “Chúng tôi quyết định lên núi để thư giãn cuối tuần.”\n2. “Giá cổ phiếu của công ty này đã lên rất cao trong tháng qua.”\n3. “Anh ấy là người lên tiếng giúp tôi khi tôi gặp khó khăn.”\n4. “Khi bắt đầu, dự án vẫn còn lên trong giai đoạn thí nghiệm.”",
+        "question": "Xác định nghĩa gốc và nghĩa chuyển của từ “lên” trong các câu sau:\n\n1. “Chúng tôi quyết định lên núi để thư giãn cuối tuần.”\n\n2. “Giá cổ phiếu của công ty này đã lên rất cao trong tháng qua.”\n\n3. “Anh ấy là người lên tiếng giúp tôi khi tôi gặp khó khăn.”\n\n4. “Khi bắt đầu, dự án vẫn còn lên trong giai đoạn thí nghiệm.”",
         "options": {
           "A": "Câu 1 và 4 là nghĩa gốc, câu 2 và 3 là nghĩa chuyển.",
           "B": "Câu 1 và 2 là nghĩa gốc, câu 3 và 4 là nghĩa chuyển.",
@@ -896,7 +896,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 10,
-        "question": "Đông A âm vị nhi truyền\nNam phương kỳ mộc bỗng liền lại sinh\nChấn cung hiện nhật quang minh\nSóng lay khôn chống trường thành bền cho\nĐoài cung vẻ rạng trăng thu\n(Nguyễn Bỉnh Khiêm, Bản quốc ngữ Sở Cuồng)\n“Đông A” gợi nhắc đến triều đại phong kiến nào tại Việt Nam?",
+        "question": "Đông A âm vị nhi truyền\nNam phương kỳ mộc bỗng liền lại sinh\nChấn cung hiện nhật quang minh\nSóng lay khôn chống trường thành bền cho\nĐoài cung vẻ rạng trăng thu\n\n(Nguyễn Bỉnh Khiêm, Bản quốc ngữ Sở Cuồng)\n\n“Đông A” gợi nhắc đến triều đại phong kiến nào tại Việt Nam?",
         "options": {
           "A": "Nhà Lý.",
           "B": "Nhà Trần.",
@@ -908,7 +908,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 11,
-        "question": "“Đúng là ác mộng!” Sheridan Bromleigh hét lên trước sự ngạc nhiên của cậu bé chạy việc trên tàu,\nngười vừa quay lại để nói với nàng lần thứ hai về “một quý ông” đang đợi nàng trên bến cảng - một\nquý ông mà nàng đương nhiên ngầm hiểu là Ngài Burleton. “Nói ông ta đợi đi. Nói rằng tôi chết rồi.\nKhông, bảo với ông ta rằng chúng tôi vẫn chưa sẵn sàng”. Nàng đóng sầm cửa lại, cài then, và tựa\nlưng vào cửa, cái nhìn của nàng phóng về phía người hầu gái đang khiếp đảm, cô ta đang ngồi ở mép\ngiường trong cái cabin mà cả hai phải ở chung, vo tròn cái khăn tay trong bàn tay mũm mĩm của cô.\n“Đây chỉ là ác mộng, và khi tôi thức dậy vào buổi sáng, chuyện này sẽ qua đi, phải không Meg?”\n(Judith McNaught, Từ khi có em (Until you))\nNhân vật chính trong đoạn trích là ai?",
+        "question": "“Đúng là ác mộng!” Sheridan Bromleigh hét lên trước sự ngạc nhiên của cậu bé chạy việc trên tàu, người vừa quay lại để nói với nàng lần thứ hai về “một quý ông” đang đợi nàng trên bến cảng - một quý ông mà nàng đương nhiên ngầm hiểu là Ngài Burleton. “Nói ông ta đợi đi. Nói rằng tôi chết rồi. Không, bảo với ông ta rằng chúng tôi vẫn chưa sẵn sàng”. Nàng đóng sầm cửa lại, cài then, và tựa lưng vào cửa, cái nhìn của nàng phóng về phía người hầu gái đang khiếp đảm, cô ta đang ngồi ở mép giường trong cái cabin mà cả hai phải ở chung, vo tròn cái khăn tay trong bàn tay mũm mĩm của cô. “Đây chỉ là ác mộng, và khi tôi thức dậy vào buổi sáng, chuyện này sẽ qua đi, phải không Meg?”\n\n(Judith McNaught, Từ khi có em (Until you))\n\nNhân vật chính trong đoạn trích là ai?",
         "options": {
           "A": "Meg.",
           "B": "Ngài Burleton.",
@@ -920,7 +920,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 12,
-        "question": "Phong trào văn học siêu thực ra đời vào khoảng thời gian nào và chịu ảnh hưởng từ sự kiện\nhay trào lưu nào?",
+        "question": "Phong trào văn học siêu thực ra đời vào khoảng thời gian nào và chịu ảnh hưởng từ sự kiện hay trào lưu nào?",
         "options": {
           "A": "Đầu thế kỷ 20, chịu ảnh hưởng từ phong trào Tân cổ điển.",
           "B": "Thập niên 1920, chịu ảnh hưởng từ Thế chiến thứ nhất và phân tâm học của Freud.",
@@ -956,7 +956,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 15,
-        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n“Người nghệ sĩ miệt mài sáng tạo, từng nét vẽ đều chứa chan cảm xúc sâu sắc của tâm hồn.”",
+        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n\n“Người nghệ sĩ miệt mài sáng tạo, từng nét vẽ đều chứa chan cảm xúc sâu sắc của tâm hồn.”",
         "options": {
           "A": "Nghệ sĩ.",
           "B": "Miệt mài.",
@@ -982,17 +982,17 @@ export const SAMPLE_EXAMS = [
         "number": 17,
         "question": "Câu nào sau đây mắc lỗi sai ngữ nghĩa?",
         "options": {
+          "D": "“Anh ấy đã đọc cuốn sách này từ đầu đến chân một cách say mê.”",
           "A": "“Học sinh cần nỗ lực học tập để đạt được kết quả cao trong kỳ thi.”",
           "B": "“Cô ấy đã chuẩn bị bánh kem ngọt và chua cho bữa tiệc sinh nhật.”",
-          "C": "“Mùa đông đến, những hàng cây bàng rụng lá trơ trọi dưới bầu trời u ám.”",
-          "D": "“Anh ấy đã đọc cuốn sách này từ đầu đến chân một cách say mê.”"
+          "C": "“Mùa đông đến, những hàng cây bàng rụng lá trơ trọi dưới bầu trời u ám.”"
         },
         "correctAnswer": "D",
         "explanation": ""
       },
       {
         "number": 18,
-        "question": "Dựa vào cấu tạo câu, xác định kiểu câu trong câu sau?\n“Vào một buổi sáng mùa xuân trong trẻo, khi ánh nắng dịu dàng chiếu qua những tán lá xanh non\nmơn mởn, tiếng chim hót líu lo vang lên từ xa, một cậu bé nhỏ nhắn trong bộ quần áo màu vàng rực\nrỡ cẩn thận ngồi dưới gốc cây, đọc cuốn sách yêu thích của mình một cách say mê.”",
+        "question": "Dựa vào cấu tạo câu, xác định kiểu câu trong câu sau?\n\n“Vào một buổi sáng mùa xuân trong trẻo, khi ánh nắng dịu dàng chiếu qua những tán lá xanh non mơn mởn, tiếng chim hót líu lo vang lên từ xa, một cậu bé nhỏ nhắn trong bộ quần áo màu vàng rực rỡ cẩn thận ngồi dưới gốc cây, đọc cuốn sách yêu thích của mình một cách say mê.”",
         "options": {
           "A": "Câu đơn.",
           "B": "Câu tường thuật.",
@@ -1016,7 +1016,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 20,
-        "question": "Xác định lỗi sai trong câu sau?\n“Sau buổi đi chơi ngày 13/12/2024 – hôm sinh nhật của Phạm Quang Linh team Châu Phi.”",
+        "question": "Xác định lỗi sai trong câu sau?\n\n“Sau buổi đi chơi ngày 13/12/2024 – hôm sinh nhật của Phạm Quang Linh team Châu Phi.”",
         "options": {
           "A": "Câu thiếu chủ ngữ.",
           "B": "Câu thiếu vị ngữ.",
@@ -1032,7 +1032,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_1",
         "title": "Nhóm đọc hiểu 1 (Câu 21 – 25)",
         "passageTitle": "",
-        "passage": "Theo Hãng thông tấn Yonhap, chỉ còn ba tháng nữa là Hàn Quốc bước vào năm học mới 2025, nhưng\ntiến trình đưa sách giáo khoa điện tử tích hợp AI vào giảng dạy vẫn còn nhiều chông gai. Hàng loạt\ngiáo viên tại Hàn Quốc lại phản đối việc tích hợp AI vào sách giáo khoa với nhiều lý do như chi phí\ncho sách vở tăng gây khó khăn cho học sinh, làm giảm tỉ lệ biết chữ, gây nghiện thiết bị thông minh\nvà nguy cơ rò rỉ thông tin cá nhân tăng.\n“Vì tiếng Hàn là môn học đòi hỏi các học sinh phải thể hiện quan điểm cá nhân, nên việc ứng dụng\ncông nghệ AI có thể ảnh hưởng đến quyền tự do được phát biểu của các em. Hơn nữa, cũng có ý kiến\ncho rằng nếu đem sách điện tử vào giảng dạy môn tiếng Hàn có thể làm giảm tỉ lệ biết chữ”, một quan\nchức Bộ Giáo dục Hàn Quốc giải thích lý do phản đối bộ sách giáo khoa điện tử tích hợp AI.\nTrước hàng loạt ý kiến trái chiều, ngày 28-11 Ủy ban Giáo dục trực thuộc Quốc hội Hàn Quốc đã\nthông qua sửa đổi từ sách giáo khoa điện tử tích hợp AI thành tài liệu học tập điện tử tích hợp AI. Dù\nvậy, việc thay đổi từ sách giáo khoa điện tử tích hợp AI thành tài liệu học tập vẫn chưa thể xoa dịu\ncác giáo viên và quan chức giáo dục. Hôm 10-12, gần 1.400 giáo viên ở tỉnh Chungcheong Nam đã\ntổ chức biểu tình phản đối bộ sách giáo khoa điện tử này.\n“Là một người làm trong ngành giáo dục, tôi không thể chấp nhận việc Bộ Giáo dục cho ra mắt bộ\nsách giáo khoa điện tử AI. Điều này sẽ phá hủy nền giáo dục của nước ta. Sách giáo khoa điện tử phải\nbị loại bỏ”, đại diện Liên minh Giáo viên và Các nhà giáo dục Hàn Quốc nhấn mạnh.\n(Báo Tuổi Trẻ, Hàn Quốc tranh cãi sách giáo khoa điện tử tích hợp công\nnghệ AI)",
+        "passage": "Theo Hãng thông tấn Yonhap, chỉ còn ba tháng nữa là Hàn Quốc bước vào năm học mới 2025, nhưng tiến trình đưa sách giáo khoa điện tử tích hợp AI vào giảng dạy vẫn còn nhiều chông gai. Hàng loạt giáo viên tại Hàn Quốc lại phản đối việc tích hợp AI vào sách giáo khoa với nhiều lý do như chi phí cho sách vở tăng gây khó khăn cho học sinh, làm giảm tỉ lệ biết chữ, gây nghiện thiết bị thông minh và nguy cơ rò rỉ thông tin cá nhân tăng.\n\n“Vì tiếng Hàn là môn học đòi hỏi các học sinh phải thể hiện quan điểm cá nhân, nên việc ứng dụng công nghệ AI có thể ảnh hưởng đến quyền tự do được phát biểu của các em. Hơn nữa, cũng có ý kiến cho rằng nếu đem sách điện tử vào giảng dạy môn tiếng Hàn có thể làm giảm tỉ lệ biết chữ”, một quan chức Bộ Giáo dục Hàn Quốc giải thích lý do phản đối bộ sách giáo khoa điện tử tích hợp AI.\n\nTrước hàng loạt ý kiến trái chiều, ngày 28-11 Ủy ban Giáo dục trực thuộc Quốc hội Hàn Quốc đã thông qua sửa đổi từ sách giáo khoa điện tử tích hợp AI thành tài liệu học tập điện tử tích hợp AI. Dù vậy, việc thay đổi từ sách giáo khoa điện tử tích hợp AI thành tài liệu học tập vẫn chưa thể xoa dịu các giáo viên và quan chức giáo dục. Hôm 10-12, gần 1.400 giáo viên ở tỉnh Chungcheong Nam đã tổ chức biểu tình phản đối bộ sách giáo khoa điện tử này.\n\n“Là một người làm trong ngành giáo dục, tôi không thể chấp nhận việc Bộ Giáo dục cho ra mắt bộ sách giáo khoa điện tử AI. Điều này sẽ phá hủy nền giáo dục của nước ta. Sách giáo khoa điện tử phải bị loại bỏ”, đại diện Liên minh Giáo viên và Các nhà giáo dục Hàn Quốc nhấn mạnh.\n\n(Báo Tuổi Trẻ, Hàn Quốc tranh cãi sách giáo khoa điện tử tích hợp công nghệ AI)",
         "questions": [
           {
             "number": 21,
@@ -1048,7 +1048,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 22,
-            "question": "Quan chức Bộ Giáo dục Hàn Quốc giải thích thế nào về lo ngại ứng dụng AI trong môn\ntiếng Hàn?",
+            "question": "Quan chức Bộ Giáo dục Hàn Quốc giải thích thế nào về lo ngại ứng dụng AI trong môn tiếng Hàn?",
             "options": {
               "A": "Ứng dụng AI làm giảm chất lượng bài giảng.",
               "B": "Ứng dụng AI làm giảm quyền tự do phát biểu và tỉ lệ biết chữ.",
@@ -1060,7 +1060,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 23,
-            "question": "Đoạn trích trên nhấn mạnh quan điểm của nhóm nào phản đối mạnh mẽ nhất sách giáo khoa\nđiện tử AI?",
+            "question": "Đoạn trích trên nhấn mạnh quan điểm của nhóm nào phản đối mạnh mẽ nhất sách giáo khoa điện tử AI?",
             "options": {
               "A": "Bộ Giáo dục Hàn Quốc.",
               "B": "Ủy ban Giáo dục Quốc hội Hàn Quốc.",
@@ -1072,7 +1072,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 24,
-            "question": "Trong đoạn trích, tác giả sử dụng thao tác lập luận nào để trình bày ý kiến của các giáo viên\nphản đối sách giáo khoa điện tử tích hợp AI?",
+            "question": "Trong đoạn trích, tác giả sử dụng thao tác lập luận nào để trình bày ý kiến của các giáo viên phản đối sách giáo khoa điện tử tích hợp AI?",
             "options": {
               "A": "Giải thích.",
               "B": "So sánh.",
@@ -1100,7 +1100,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_2",
         "title": "Nhóm đọc hiểu 2 (Câu 26 – 30)",
         "passageTitle": "",
-        "passage": "Hồng nhung hoa nở đầy sân\nTưới hoa thánh thót mưa xuân đầu cành\nĐốt hương xem chuyện nước mình\nChuyện Đinh Công Tráng, Ba Đình ngày xưa\nThuận kinh đã đổi ngọn cờ\nNước non xoay chuyển bây giờ là ai?\nNinh Bình tỉnh có một người\nLà Đinh Công Tráng tướng tài bẩm sinh\nHơn đời vũ dũng thông minh\nHoàng, Lưu môn hạ nổi danh Bắc kỳ\nGió mây rộn buổi Hàm Nghi\nBa làng Thanh Hoá thành trì đào xây\nTrước thành giữ thế ruộng lầy\nMặt thành xây đắp tre dầy bàn cao\nTrong thành khe chứa giếng đào\nSau thành có ngả sang Lào, ra Thanh\n…\n(Tản Đà, Ba Đình ký)",
+        "passage": "Hồng nhung hoa nở đầy sân\nTưới hoa thánh thót mưa xuân đầu cành\nĐốt hương xem chuyện nước mình\nChuyện Đinh Công Tráng, Ba Đình ngày xưa\nThuận kinh đã đổi ngọn cờ\nNước non xoay chuyển bây giờ là ai?\nNinh Bình tỉnh có một người\nLà Đinh Công Tráng tướng tài bẩm sinh\nHơn đời vũ dũng thông minh\nHoàng, Lưu môn hạ nổi danh Bắc kỳ\nGió mây rộn buổi Hàm Nghi\nBa làng Thanh Hoá thành trì đào xây\nTrước thành giữ thế ruộng lầy\nMặt thành xây đắp tre dầy bàn cao\nTrong thành khe chứa giếng đào\nSau thành có ngả sang Lào, ra Thanh\n…\n\n(Tản Đà, Ba Đình ký)",
         "questions": [
           {
             "number": 26,
@@ -1152,7 +1152,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 30,
-            "question": "Thành Ba Đình được xây dựng với đặc điểm nổi bật nào thể hiện tư duy chiến lược của\nngười khởi xướng?",
+            "question": "Thành Ba Đình được xây dựng với đặc điểm nổi bật nào thể hiện tư duy chiến lược của người khởi xướng?",
             "options": {
               "A": "Hệ thống phòng thủ kết hợp tự nhiên và nhân tạo, đảm bảo khả năng chiến đấu và rút lui linh hoạt.",
               "B": "Tường thành cao lớn kiên cố, bao quanh bởi hào sâu và cầu treo.",
@@ -1173,11 +1173,11 @@ export const SAMPLE_EXAMS = [
     "durationMinutes": 40,
     "isPublished": true,
     "createdAt": "2026-11-19T12:00:00.000Z",
-    "updatedAt": "2026-11-19T20:30:00.000Z",
+    "updatedAt": "2026-11-20T20:40:00.000Z",
     "singleQuestions": [
       {
         "number": 1,
-        "question": "Đọc đoạn ca dao sau và trả lời câu hỏi?\nCứng cáp đeo bao vàng,\nNón che đầu, vai gánh súng dài.\nMột tay nắm hỏa mai,\nMột tay cầm giáo, quan tài đưa xuống thuyền.\nTrống vang đánh ngũ liên,\nChân bước xuống thuyền, nước mắt như mưa.\n(Ca dao Việt Nam)\nNhân vật trong đoạn ca dao trên thể hiện điều gì?",
+        "question": "Đọc đoạn ca dao sau và trả lời câu hỏi?\n\nCứng cáp đeo bao vàng,\nNón che đầu, vai gánh súng dài.\nMột tay nắm hỏa mai,\nMột tay cầm giáo, quan tài đưa xuống thuyền.\nTrống vang đánh ngũ liên,\nChân bước xuống thuyền, nước mắt như mưa.\n\n(Ca dao Việt Nam)\n\nNhân vật trong đoạn ca dao trên thể hiện điều gì?",
         "options": {
           "A": "Tinh thần hiếu học của người dân Việt Nam.",
           "B": "Hình ảnh người phụ nữ đảm đang trong lao động.",
@@ -1189,7 +1189,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 2,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nTôi dò dẫm bước lên bậc thang, ngang qua những tấm màn che và ngủ ngay lập tức. Có những khi,\nClove, cô gái đến từ quận 2, bước vào những giấc mơ của tôi. Cô ấy đuổi theo, níu tôi ngã xuống đất\nvà rút ra một con dao rạch mặt tôi. Nó găm thật sâu vào má, tạo thành một vết rạch dài. Rồi Clove\nbắt đầu biến đổi, khuôn mặt cô ấy dài ra thành một cái mõm, lớp lông đen mọc lên từ da, móng tay\nhóa đâm ra thành những cái vuốt dài, nhưng đôi mắt thì vẫn không thay đổi. Cô ấy mang hình dạng\ncủa một con chó lai, sinh vật giống sói của Capitol đã mang đến nỗi kinh hoàng cho chúng tôi vào\nđêm cuối cùng tại đấu trường. Cô ấy quay đầu lại, hú một tràng dài để thu hút những con sói gần đó.\nRồi Clove bắt đầu liếm chỗ máu chảy ra từ vết thương của tôi, mỗi vết liếm lại mang đến một cơn\nđau đớn cắt dọc khuôn mặt. Tôi khóc nghẹn ngào và giật mình tỉnh dậy, cả thân người run lẩy bẩy và\nđổ đầy mồ hôi. Tôi đặt tay lên chỗ má bị thương, tự nhủ với chính mình rằng không phải Clove mà\nlà Thread đã làm tôi bị thương. Tôi ước gì Peeta ở đây để có thể ôm lấy tôi, cho tới khi tôi chợt nhận\nra rằng mình đã không thể hy vọng điều đó được nữa. Tôi đã chọn Gale và cuộc nổi loạn, tương lai\ncùng với Peeta chỉ là kịch bản của Capitol, không phải của tôi.\n(Suzanne Collins, Bắt lửa)\nQua đoạn trích, tâm lý của nhân vật “tôi” được thể hiện như thế nào?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nTôi dò dẫm bước lên bậc thang, ngang qua những tấm màn che và ngủ ngay lập tức. Có những khi, Clove, cô gái đến từ quận 2, bước vào những giấc mơ của tôi. Cô ấy đuổi theo, níu tôi ngã xuống đất và rút ra một con dao rạch mặt tôi. Nó găm thật sâu vào má, tạo thành một vết rạch dài. Rồi Clove bắt đầu biến đổi, khuôn mặt cô ấy dài ra thành một cái mõm, lớp lông đen mọc lên từ da, móng tay hóa đâm ra thành những cái vuốt dài, nhưng đôi mắt thì vẫn không thay đổi. Cô ấy mang hình dạng của một con chó lai, sinh vật giống sói của Capitol đã mang đến nỗi kinh hoàng cho chúng tôi vào đêm cuối cùng tại đấu trường. Cô ấy quay đầu lại, hú một tràng dài để thu hút những con sói gần đó. Rồi Clove bắt đầu liếm chỗ máu chảy ra từ vết thương của tôi, mỗi vết liếm lại mang đến một cơn đau đớn cắt dọc khuôn mặt. Tôi khóc nghẹn ngào và giật mình tỉnh dậy, cả thân người run lẩy bẩy và đổ đầy mồ hôi. Tôi đặt tay lên chỗ má bị thương, tự nhủ với chính mình rằng không phải Clove mà là Thread đã làm tôi bị thương. Tôi ước gì Peeta ở đây để có thể ôm lấy tôi, cho tới khi tôi chợt nhận ra rằng mình đã không thể hy vọng điều đó được nữa. Tôi đã chọn Gale và cuộc nổi loạn, tương lai cùng với Peeta chỉ là kịch bản của Capitol, không phải của tôi.\n\n(Suzanne Collins, Bắt lửa)\n\nQua đoạn trích, tâm lý của nhân vật “tôi” được thể hiện như thế nào?",
         "options": {
           "A": "Bị ám ảnh bởi những ký ức đau thương và cảm giác tội lỗi trong quá khứ.",
           "B": "Sợ hãi và đau đớn khi đối diện với hiện thực của cuộc nổi loạn.",
@@ -1201,7 +1201,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 3,
-        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n…\nTrộm xem thánh chúa hữu vi,\nQuảng khai ngôn lộ tình thuỳ binh dân.\nXin làm quốc ngữ phơi trần,\nDãi bề chân thực dám phần sai ngoa\nBình thì quốc chi trảo nha,\nĐêm ngày bảo vệ quốc gia vững bền.\nCan qua súng ống cung tên,\nThân nghiêm hiệu lệnh tập rèn cho mình.\n…\n(Ngô Thì Sĩ, Binh dân luận)\nXác định thể thơ của đoạn trích?",
+        "question": "Đọc đoạn thơ dưới đây và trả lời câu hỏi:\n\n…\nTrộm xem thánh chúa hữu vi,\nQuảng khai ngôn lộ tình thuỳ binh dân.\nXin làm quốc ngữ phơi trần,\nDãi bề chân thực dám phần sai ngoa\nBình thì quốc chi trảo nha,\nĐêm ngày bảo vệ quốc gia vững bền.\nCan qua súng ống cung tên,\nThân nghiêm hiệu lệnh tập rèn cho mình.\n…\n\n(Ngô Thì Sĩ, Binh dân luận)\n\nXác định thể thơ của đoạn trích?",
         "options": {
           "A": "Song thất lục bát.",
           "B": "Lục bát.",
@@ -1213,7 +1213,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 4,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nĐôi khi cầm trên tay mấy bản CV, tôi chẳng biết viết gì vào đó. Không phải vì tôi đã sống những\ntháng năm nhợt nhạt trước đó, mà đôi khi tôi cũng không hiểu hết mình, hoặc quá phức tạp, hoặc đơn\ngiản đến diệu kỳ. Điều quan trọng hơn, là tôi thấy mình chẳng có điểm nhấn nào đặc sắc trong suốt\nnhững năm đã sống trên thế gian này, đến mức nếu có ai hỏi về điều đó, chắc tôi sẽ ậm ừ cả ngày.\nCho đến khi Nhi bước vào cuộc đời tôi, có lẽ đó mới là lúc có thể la lên: “Đây, đây, chính cô ấy là\nđiểm nhấn của cuộc đời tôi!”\n(Minh Nhật, Nơi những cơn gió dừng chân)\nĐoạn trích thể hiện quan điểm của nhân vật “tôi” về điều gì?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nĐôi khi cầm trên tay mấy bản CV, tôi chẳng biết viết gì vào đó. Không phải vì tôi đã sống những tháng năm nhợt nhạt trước đó, mà đôi khi tôi cũng không hiểu hết mình, hoặc quá phức tạp, hoặc đơn giản đến diệu kỳ. Điều quan trọng hơn, là tôi thấy mình chẳng có điểm nhấn nào đặc sắc trong suốt những năm đã sống trên thế gian này, đến mức nếu có ai hỏi về điều đó, chắc tôi sẽ ậm ừ cả ngày. Cho đến khi Nhi bước vào cuộc đời tôi, có lẽ đó mới là lúc có thể la lên: “Đây, đây, chính cô ấy là điểm nhấn của cuộc đời tôi!”\n\n(Minh Nhật, Nơi những cơn gió dừng chân)\n\nĐoạn trích thể hiện quan điểm của nhân vật “tôi” về điều gì?",
         "options": {
           "A": "Tầm quan trọng của việc tự khám phá bản thân trong cuộc sống.",
           "B": "Ý nghĩa của một người đặc biệt trong việc định hình giá trị cuộc sống cá nhân.",
@@ -1225,7 +1225,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 5,
-        "question": "Theo tôi nghĩ, trong chỉ đạo chiến tranh, có ý kiến khác nhau là rất bình thường, miễn sao cùng có\nchung mục đích tìm ra phương án tối ưu để giành thắng lợi.\nNhững cuộc tranh luận như vậy là cần thiết để đi đến thống nhất, và là biểu hiện tốt của mối quan hệ\ngiữa cơ quan tham mưu chiến lược với các đồng chí có trách nhiệm ở chiến trường. Vấn đề quan\ntrọng là ở chỗ biết lắng nghe và tôn trọng ý kiến của nhau, bình tĩnh, sáng suốt thao luận trên tình\nđồng chí với tinh thần trách nhiệm cao, không chủ quan, áp đặt.\n(Võ Nguyên Giáp, Tổng Hành Dinh Trong Mùa Xuân Toàn Thắng)\nTheo đoạn văn, điều nào sau đây không được nhấn mạnh?",
+        "question": "Theo tôi nghĩ, trong chỉ đạo chiến tranh, có ý kiến khác nhau là rất bình thường, miễn sao cùng có chung mục đích tìm ra phương án tối ưu để giành thắng lợi.\n\nNhững cuộc tranh luận như vậy là cần thiết để đi đến thống nhất, và là biểu hiện tốt của mối quan hệ giữa cơ quan tham mưu chiến lược với các đồng chí có trách nhiệm ở chiến trường. Vấn đề quan trọng là ở chỗ biết lắng nghe và tôn trọng ý kiến của nhau, bình tĩnh, sáng suốt thao luận trên tình đồng chí với tinh thần trách nhiệm cao, không chủ quan, áp đặt.\n\n(Võ Nguyên Giáp, Tổng Hành Dinh Trong Mùa Xuân Toàn Thắng)\n\nTheo đoạn văn, điều nào sau đây không được nhấn mạnh?",
         "options": {
           "A": "Tôn trọng ý kiến của nhau trong thảo luận là rất quan trọng.",
           "B": "Tranh luận giúp tìm ra phương án tối ưu để giành thắng lợi.",
@@ -1237,7 +1237,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 6,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nCó ba cuộc cách mạng quan trọng định hình tiến trình lịch sử: Cách mạng Nhận thức đã khởi động\nlịch sử cách đây khoảng 70.000 năm. Cách mạng Nông nghiệp đã tăng tốc lịch sử vào khoảng 12.000\nnăm trước đây. Còn Cách mạng Khoa học, mới bắt đầu cách đây 500 năm, biết đâu sẽ kết thúc lịch\nsử và bắt đầu một thứ gì đó hoàn toàn khác biệt. Cuốn sách này kể câu chuyện về việc ba cuộc cách\nmạng đó đã tác động đến loài người và những sinh vật cùng sống với họ ra sao.\n(Yuval Noah Harari, Sapiens: Lược Sử Loài Người)\nTheo đoạn trích, tại sao tác giả cho rằng Cách mạng Khoa học “biết đâu sẽ kết thúc lịch sử và bắt đầu\nmột thứ gì đó hoàn toàn khác biệt”?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nCó ba cuộc cách mạng quan trọng định hình tiến trình lịch sử: Cách mạng Nhận thức đã khởi động lịch sử cách đây khoảng 70.000 năm. Cách mạng Nông nghiệp đã tăng tốc lịch sử vào khoảng 12.000 năm trước đây. Còn Cách mạng Khoa học, mới bắt đầu cách đây 500 năm, biết đâu sẽ kết thúc lịch sử và bắt đầu một thứ gì đó hoàn toàn khác biệt. Cuốn sách này kể câu chuyện về việc ba cuộc cách mạng đó đã tác động đến loài người và những sinh vật cùng sống với họ ra sao.\n\n(Yuval Noah Harari, Sapiens: Lược Sử Loài Người)\n\nTheo đoạn trích, tại sao tác giả cho rằng Cách mạng Khoa học “biết đâu sẽ kết thúc lịch sử và bắt đầu một thứ gì đó hoàn toàn khác biệt”?",
         "options": {
           "A": "Vì nó mang đến sự tiến bộ vượt bậc, vượt xa mọi hình thái lịch sử trước đây.",
           "B": "Vì nó có khả năng làm thay đổi bản chất của loài người và cách chúng ta sống trên hành tinh này.",
@@ -1249,7 +1249,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 7,
-        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n“Non cao nước chảy quanh co,\nBóng chiều mờ nhạt, thuyền ______ xa khơi.\nTrăng soi vằng vặc một trời,\nĐàn ai réo rắt gọi người nhớ ______.\nGió thu thổi lạnh đôi bờ,\nLá vàng rụng xuống, thẫn thờ lòng ai.\nNgựa phi lối cũ mòn dai,\nChim kêu lạc bạn miệt mài tìm nhau.\nNgười đi biệt bóng từ lâu,\nChốn xưa lặng lẽ, bạc màu thời gian.”\n(Nguyễn Du, Truyện Kiều)",
+        "question": "Điền từ thích hợp vào các chỗ trống trong đoạn thơ sau:\n\n“Non cao nước chảy quanh co,\nBóng chiều mờ nhạt, thuyền ______ xa khơi.\nTrăng soi vằng vặc một trời,\nĐàn ai réo rắt gọi người nhớ ______.\nGió thu thổi lạnh đôi bờ,\nLá vàng rụng xuống, thẫn thờ lòng ai.\nNgựa phi lối cũ mòn dai,\nChim kêu lạc bạn miệt mài tìm nhau.\nNgười đi biệt bóng từ lâu,\nChốn xưa lặng lẽ, bạc màu thời gian.”\n\n(Nguyễn Du, Truyện Kiều)",
         "options": {
           "A": "Nhỏ/ mộng.",
           "B": "Lặng/ trăng.",
@@ -1261,7 +1261,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 8,
-        "question": "Bà Varvara nói thực: bà không bao giờ chịu để cho cái gì làm hại đến Dasa. Thực ra bà cảm thấy\nmình rất rộng lượng đối với cô gái. Sự bực tức của bà rất mực cao cả và đạo nghĩa ngay khi vắt chiếc\nkhăn lên vai bà bắt gặp tia nhìn bối rối và nghi ngại của Dasa. Bà thành thực ưa Dasa ngay từ lúc cô\ncòn là một đứa bé con, và bà Drozdova đã nói đúng khi bà gọi cô gái kia là “cục cưng” của bà Varvara.\nBà Varvara đã quyết định một lần và dứt khoát rằng Dasa không giống anh cô là Ivan Satov chút nào;\nrằng cô tính tình trầm lặng, hiền dịu, có thể hy sinh lớn và rất tận tụy với bà, cực kỳ khiêm tốn, hiểu\nthiệt hơn và nhất là biết ơn. Cho đến nay, Dasa dường như minh chứng cho điều suy đoán này của\nbà.\n(Fyodor Dostoevsky, Lũ Người Quỷ Ám)\nTrong đoạn trích, biện pháp nghệ thuật nào được sử dụng để khắc họa mối quan hệ giữa bà Varvara\nvà Dasa?",
+        "question": "Bà Varvara nói thực: bà không bao giờ chịu để cho cái gì làm hại đến Dasa. Thực ra bà cảm thấy mình rất rộng lượng đối với cô gái. Sự bực tức của bà rất mực cao cả và đạo nghĩa ngay khi vắt chiếc khăn lên vai bà bắt gặp tia nhìn bối rối và nghi ngại của Dasa. Bà thành thực ưa Dasa ngay từ lúc cô còn là một đứa bé con, và bà Drozdova đã nói đúng khi bà gọi cô gái kia là “cục cưng” của bà Varvara. Bà Varvara đã quyết định một lần và dứt khoát rằng Dasa không giống anh cô là Ivan Satov chút nào; rằng cô tính tình trầm lặng, hiền dịu, có thể hy sinh lớn và rất tận tụy với bà, cực kỳ khiêm tốn, hiểu thiệt hơn và nhất là biết ơn. Cho đến nay, Dasa dường như minh chứng cho điều suy đoán này của bà.\n\n(Fyodor Dostoevsky, Lũ Người Quỷ Ám)\n\nTrong đoạn trích, biện pháp nghệ thuật nào được sử dụng để khắc họa mối quan hệ giữa bà Varvara và Dasa?",
         "options": {
           "A": "So sánh để nhấn mạnh tính cách của Dasa.",
           "B": "Ẩn dụ để thể hiện sự phức tạp trong suy nghĩ của bà Varvara.",
@@ -1273,7 +1273,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 9,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nRừng, hồ, sông ngòi, lãnh nguyên đóng băng, thảo nguyên, rừng taiga và vùng núi của nước Nga, tất\nthảy đều mênh mông. Kích thước này đã hằn sâu trong nhận thức tập thể của chúng ta. Dù chúng ta\ncó ở nơi đâu, thì nước Nga vẫn luôn ở đó, có thể nằm về phía đông, phía tây, phía bắc hay phía nam\n– nhưng luôn luôn có Gấu Nga vĩ đại.\n(Tim Marshall, Những Tù Nhân Của Địa Lý)\nHình ảnh “Gấu Nga vĩ đại” trong đoạn trích mang ý nghĩa ẩn dụ gì về nước Nga?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nRừng, hồ, sông ngòi, lãnh nguyên đóng băng, thảo nguyên, rừng taiga và vùng núi của nước Nga, tất thảy đều mênh mông. Kích thước này đã hằn sâu trong nhận thức tập thể của chúng ta. Dù chúng ta có ở nơi đâu, thì nước Nga vẫn luôn ở đó, có thể nằm về phía đông, phía tây, phía bắc hay phía nam – nhưng luôn luôn có Gấu Nga vĩ đại.\n\n(Tim Marshall, Những Tù Nhân Của Địa Lý)\n\nHình ảnh “Gấu Nga vĩ đại” trong đoạn trích mang ý nghĩa ẩn dụ gì về nước Nga?",
         "options": {
           "A": "Sự gắn bó mật thiết giữa người dân Nga và thiên nhiên rộng lớn.",
           "B": "Sức mạnh và tầm ảnh hưởng to lớn của nước Nga trên bản đồ thế giới.",
@@ -1285,7 +1285,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 10,
-        "question": "Trong đoạn hội thoại sau, nhân vật nào đã vi phạm phương châm về lượng?\nA: “Cậu biết hôm nay có bài kiểm tra không?”\nB: “Có chứ. Hôm qua tôi đã chuẩn bị rất kỹ bài tập, bài làm và cả phần ôn luyện chương trước.”",
+        "question": "Trong đoạn hội thoại sau, nhân vật nào đã vi phạm phương châm về lượng?\n\nA: “Cậu biết hôm nay có bài kiểm tra không?”\n\nB: “Có chứ. Hôm qua tôi đã chuẩn bị rất kỹ bài tập, bài làm và cả phần ôn luyện chương trước.”",
         "options": {
           "A": "Nhân vật A.",
           "B": "Nhân vật B.",
@@ -1297,7 +1297,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 11,
-        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\nBây giờ thì Du về rồi. Chiều hôm qua con người phóng đãng ấy đã khệ nệ xách cái vali rất nặng bước\nvào sân, miệng mỉm cười và mặt đỏ. Cái nhà tranh, mấy cây cau hình như vừa đúng thẳng hơn lên để\nchào chàng. Rồi đến lũ em ầm ỹ đẩy mành chạy òa ra, và bà mẹ mừng quá cười và khóc. Nhưng kẻ\nlên tiếng trước nhất là con Mực. Con chó già nua ấy rít lên cái thứ tiếng gà gáy của nó và chạy lại\nDu. Bà mẹ thét lên và lũ em chửi những câu thô tục. Du bỡ ngỡ nhìn mọi người.\n(Nam Cao, Cái chết của con Mực)\nHình ảnh Du trở về trong đoạn trích phản ánh điều gì về mối quan hệ giữa nhân vật và gia đình?",
+        "question": "Đọc đoạn trích sau và trả lời câu hỏi:\n\nBây giờ thì Du về rồi. Chiều hôm qua con người phóng đãng ấy đã khệ nệ xách cái vali rất nặng bước vào sân, miệng mỉm cười và mặt đỏ. Cái nhà tranh, mấy cây cau hình như vừa đúng thẳng hơn lên để chào chàng. Rồi đến lũ em ầm ỹ đẩy mành chạy òa ra, và bà mẹ mừng quá cười và khóc. Nhưng kẻ lên tiếng trước nhất là con Mực. Con chó già nua ấy rít lên cái thứ tiếng gà gáy của nó và chạy lại Du. Bà mẹ thét lên và lũ em chửi những câu thô tục. Du bỡ ngỡ nhìn mọi người.\n\n(Nam Cao, Cái chết của con Mực)\n\nHình ảnh Du trở về trong đoạn trích phản ánh điều gì về mối quan hệ giữa nhân vật và gia đình?",
         "options": {
           "A": "Sự đoàn tụ cảm động nhưng có phần xa cách, gượng gạo.",
           "B": "Niềm vui trọn vẹn của gia đình khi chào đón người con trở về.",
@@ -1309,7 +1309,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 12,
-        "question": "Dựa vào đoạn trích sau:\nTrong cuộc sống, có những người thường mang thói quen “bới bèo ra bọ”, chỉ cần một chuyện nhỏ\nnhặt cũng bị họ soi mói, phóng đại thành vấn đề to tát. Điều này không chỉ làm mọi người xung quanh\nkhó chịu mà còn tạo ra bầu không khí căng thẳng, thiếu thoải mái trong các mối quan hệ. Ví dụ, khi\nđi làm nhóm, một người đồng đội chỉ vô tình trễ hẹn vài phút, thay vì cảm thông và động viên, họ lại\nnhấn mạnh, phê phán, thậm chí đổ lỗi rằng việc đó sẽ làm ảnh hưởng nghiêm trọng đến cả nhóm. Hay\ntrong gia đình, thay vì tập trung vào niềm vui, họ lại chăm chăm tìm ra khuyết điểm của người khác\nđể chỉ trích. Những hành động này, về lâu dài, không chỉ khiến họ trở nên cô lập mà còn làm mất đi\nsự tôn trọng từ mọi người. Vì thế, học cách bao dung, thấu hiểu và tập trung vào những điều tích cực\ntrong cuộc sống sẽ giúp ta tránh thói quen “bới bèo ra bọ”, xây dựng được những mối quan hệ hòa\nhợp và đáng quý hơn.\nThành ngữ “Bới bèo ra bọ” được hiểu như thế nào trong các tình huống sau đây?",
+        "question": "Dựa vào đoạn trích sau:\n\nTrong cuộc sống, có những người thường mang thói quen “bới bèo ra bọ”, chỉ cần một chuyện nhỏ nhặt cũng bị họ soi mói, phóng đại thành vấn đề to tát. Điều này không chỉ làm mọi người xung quanh khó chịu mà còn tạo ra bầu không khí căng thẳng, thiếu thoải mái trong các mối quan hệ. Ví dụ, khi đi làm nhóm, một người đồng đội chỉ vô tình trễ hẹn vài phút, thay vì cảm thông và động viên, họ lại nhấn mạnh, phê phán, thậm chí đổ lỗi rằng việc đó sẽ làm ảnh hưởng nghiêm trọng đến cả nhóm. Hay trong gia đình, thay vì tập trung vào niềm vui, họ lại chăm chăm tìm ra khuyết điểm của người khác để chỉ trích. Những hành động này, về lâu dài, không chỉ khiến họ trở nên cô lập mà còn làm mất đi sự tôn trọng từ mọi người. Vì thế, học cách bao dung, thấu hiểu và tập trung vào những điều tích cực trong cuộc sống sẽ giúp ta tránh thói quen “bới bèo ra bọ”, xây dựng được những mối quan hệ hòa hợp và đáng quý hơn.\n\nThành ngữ “Bới bèo ra bọ” được hiểu như thế nào trong các tình huống sau đây?",
         "options": {
           "A": "Chỉ việc cố ý tìm ra lỗi lầm hoặc vấn đề dù rất nhỏ để phóng đại và chỉ trích.",
           "B": "Miêu tả sự kiên nhẫn và cẩn thận trong việc giải quyết công việc.",
@@ -1345,7 +1345,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 15,
-        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n“Ánh đèn vàng le lói chiếu vào căn phòng, tạo nên cảm giác ấm cúng và u sầu.”",
+        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n\n“Ánh đèn vàng le lói chiếu vào căn phòng, tạo nên cảm giác ấm cúng và u sầu.”",
         "options": {
           "A": "Ánh đèn.",
           "B": "Le lói.",
@@ -1357,7 +1357,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 16,
-        "question": "Câu dưới đây mắc lỗi sai nào?\n“Để giảm cân hiệu quả, chúng ta cần kết hợp chế độ ăn uống khoa học, tập thể dục đều đặn, và đặc\nbiệt là giữ một tinh thần thư giãn, thoải mái, đừng bị căng thẳng nhe.”",
+        "question": "Câu dưới đây mắc lỗi sai nào?\n\n“Để giảm cân hiệu quả, chúng ta cần kết hợp chế độ ăn uống khoa học, tập thể dục đều đặn, và đặc biệt là giữ một tinh thần thư giãn, thoải mái, đừng bị căng thẳng nhe.”",
         "options": {
           "A": "Câu sai phong cách.",
           "B": "Câu sai logic.",
@@ -1405,7 +1405,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 20,
-        "question": "Câu nào dưới đây có chứa cụm từ không chính xác về khoa học?\n“Hố đen là một hiện tượng không gian đặc biệt, nơi mà các hành tinh, ánh  sáng, và thậm chí cả thời\ngian đều bị hút vào và phá hủy bởi lực hấp dẫn khổng lồ.”",
+        "question": "Câu nào dưới đây có chứa cụm từ không chính xác về khoa học?\n\n“Hố đen là một hiện tượng không gian đặc biệt, nơi mà các hành tinh, ánh sáng, và thậm chí cả thời gian đều bị hút vào và phá hủy bởi lực hấp dẫn khổng lồ.”",
         "options": {
           "A": "Hố đen là một hiện tượng không gian.",
           "B": "Các hành tinh, ánh sáng, bị hút vào.",
@@ -1421,7 +1421,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_1",
         "title": "Nhóm đọc hiểu 1 (Câu 21 – 25)",
         "passageTitle": "",
-        "passage": "Chính tên chị là An. Mẹ tôi gọi tránh ra là Yên. Yên là con nuôi mẹ tôi, nuôi để thay cho người nhà,\nđể có ai hỏi thì bảo: nó là con nuôi tôi. Mẹ tôi thường kể lại rằng mua chị ta với cái giá hai quan tiền\nvào một năm lụt lội, đói kém. Yên như biết phận mình là con nuôi, nên không bao giờ lên mặt với tôi\nhết. Ngày tôi còn nhỏ, Yên trông nom tôi. Đó là người bạn gái ngày xưa, để sau này thành một người\nchị rất tốt. Kể ra, đối với Yên, tôi chịu lỗi nhiều lắm. Lòng tử tế, trung thành của Yên, mỗi lần nhắc\nđến, tôi không khỏi ngậm ngùi. Ngày nay, tuy Yên không còn sống chung với tôi trên quả đất này\nnữa, nhưng hình ảnh Yên vẫn theo tôi bên những hình ảnh thân mến khác.\nChị Yên có một thân hình gầy nhẳng, trái hẳn lại với cái sức dai dẳng của chị. Cái nghệ thuật độc\nnhất, cái nghệ thuật đạt được đến độ tối cao của Yên, là bổ hết năm tạ củi trong một ngày liền. Mẹ\ntôi đảm đang là thế mà vẫn phải lắc đầu, mỗi lần thuật lại cái kỳ công ấy.\nMột hôm, chị Yên cầm dao rựa bổ củi, vô ý để lưỡi dao phập vào đầu ngón chân cái bắn ra cách đấy\nvài thước. Không một tiếng kêu, chị lấy vạt áo bịt ngay chỗ máu chảy, lê dần nhặt đầu ngón chân lìa\nra kia, chắp lại. Tuy bị thương, chị vẫn bổ củi, với một vẻ điềm tĩnh không hai.\nKhông phải chị Yên bị mẹ tôi bạc đãi, nhưng vì tính chị thích làm, nên Yên tự muốn đầy đọa mình\nluôn. Người con gái ấy, suốt trong mười mấy năm trời, đã chứng kiến cảnh lên xuống của gia đình\ntôi, đã chia chung niềm vui vẻ, nỗi nghèo khổ với mọi người trong nhà. Ngày hai lượt, chị gánh hàng\ncho mẹ tôi đi, về chợ, tiếng kẽo kẹt của chiếc đòn tre trên vai, bình yên nhịp với tháng ngày âm u,\nvắng mọi xa hoa của một người đàn bà Việt Nam chân chính.\nChị Yên của tôi không đẹp, nhưng có duyên. Chị ăn trầu cắn chỉ và vá vai một cách tài tình. Đôi khi\ncó ai giễu cợt chị, chị chỉ yên lặng. Tôi không hiểu có phải vì chịu thương chịu khó như vậy mà đời\nYên chỉ là một chuỗi ngày đau khổ, nó thu ngắn cuộc sống của Yên lại không?\n(Hồ Dzếnh, Chân trời cũ)",
+        "passage": "Chính tên chị là An. Mẹ tôi gọi tránh ra là Yên. Yên là con nuôi mẹ tôi, nuôi để thay cho người nhà, để có ai hỏi thì bảo: nó là con nuôi tôi. Mẹ tôi thường kể lại rằng mua chị ta với cái giá hai quan tiền vào một năm lụt lội, đói kém. Yên như biết phận mình là con nuôi, nên không bao giờ lên mặt với tôi hết. Ngày tôi còn nhỏ, Yên trông nom tôi. Đó là người bạn gái ngày xưa, để sau này thành một người chị rất tốt. Kể ra, đối với Yên, tôi chịu lỗi nhiều lắm. Lòng tử tế, trung thành của Yên, mỗi lần nhắc đến, tôi không khỏi ngậm ngùi. Ngày nay, tuy Yên không còn sống chung với tôi trên quả đất này nữa, nhưng hình ảnh Yên vẫn theo tôi bên những hình ảnh thân mến khác.\n\nChị Yên có một thân hình gầy nhẳng, trái hẳn lại với cái sức dai dẳng của chị. Cái nghệ thuật độc nhất, cái nghệ thuật đạt được đến độ tối cao của Yên, là bổ hết năm tạ củi trong một ngày liền. Mẹ tôi đảm đang là thế mà vẫn phải lắc đầu, mỗi lần thuật lại cái kỳ công ấy.\n\nMột hôm, chị Yên cầm dao rựa bổ củi, vô ý để lưỡi dao phập vào đầu ngón chân cái bắn ra cách đấy vài thước. Không một tiếng kêu, chị lấy vạt áo bịt ngay chỗ máu chảy, lê dần nhặt đầu ngón chân lìa ra kia, chắp lại. Tuy bị thương, chị vẫn bổ củi, với một vẻ điềm tĩnh không hai.\n\nKhông phải chị Yên bị mẹ tôi bạc đãi, nhưng vì tính chị thích làm, nên Yên tự muốn đầy đọa mình luôn. Người con gái ấy, suốt trong mười mấy năm trời, đã chứng kiến cảnh lên xuống của gia đình tôi, đã chia chung niềm vui vẻ, nỗi nghèo khổ với mọi người trong nhà. Ngày hai lượt, chị gánh hàng cho mẹ tôi đi, về chợ, tiếng kẽo kẹt của chiếc đòn tre trên vai, bình yên nhịp với tháng ngày âm u, vắng mọi xa hoa của một người đàn bà Việt Nam chân chính.\n\nChị Yên của tôi không đẹp, nhưng có duyên. Chị ăn trầu cắn chỉ và vá vai một cách tài tình. Đôi khi có ai giễu cợt chị, chị chỉ yên lặng. Tôi không hiểu có phải vì chịu thương chịu khó như vậy mà đời Yên chỉ là một chuỗi ngày đau khổ, nó thu ngắn cuộc sống của Yên lại không?\n\n(Hồ Dzếnh, Chân trời cũ)",
         "questions": [
           {
             "number": 21,
@@ -1463,10 +1463,10 @@ export const SAMPLE_EXAMS = [
             "number": 24,
             "question": "Ý nghĩa của hình ảnh “tiếng kẽo kẹt của chiếc đòn tre trên vai” trong đoạn trích là gì?",
             "options": {
-              "A": "Gợi lên sự mệt mỏi, nặng nhọc trong công việc hàng ngày của chị Yên.",
-              "B": "Thể hiện sự đều đặn và bền bỉ trong cuộc sống lao động của chị Yên.",
               "C": "Miêu tả cuộc sống nghèo khó, thiếu thốn của gia đình người kể chuyện.",
-              "D": "Chỉ ra sự lặng lẽ và nhẫn nhịn của chị Yên trong cuộc sống."
+              "D": "Chỉ ra sự lặng lẽ và nhẫn nhịn của chị Yên trong cuộc sống.",
+              "A": "Gợi lên sự mệt mỏi, nặng nhọc trong công việc hàng ngày của chị Yên.",
+              "B": "Thể hiện sự đều đặn và bền bỉ trong cuộc sống lao động của chị Yên."
             },
             "correctAnswer": "B",
             "explanation": ""
@@ -1488,8 +1488,8 @@ export const SAMPLE_EXAMS = [
       {
         "id": "group_2",
         "title": "Nhóm đọc hiểu 2 (Câu 26 – 30)",
-        "passageTitle": "",
-        "passage": "Trang phục nam giới Bru - Vân Kiều\nTrang phục nam giới không có gì đặc biệt. Nam để tóc dài, búi tóc, ở trần, đóng khố và quấn khăn.\nTrong vài chục năm gần đây, họ mặc quần áo như người Kinh.\nKhố: Được may bằng một tấm vải khổ rộng 40cm, trên trang trí nhiều hoa văn. Theo chiều dọc của\nkhố, người ta dệt 3 dải hoa văn bằng chỉ khác màu như đỏ, trắng, vàng...; các mô típ hoa văn hình\nthoi kép chạy liên tiếp ở giữa, hình chân chim, mũi lao... Hai đầu khố có ba dải hoa văn ngang và tua\nrua ngắn để tiện trong sinh hoạt thường ngày.\nKhăn pa hum xla cơ tao: Được dệt bằng sợi tơ tằm, nền khăn màu tím (dấu châu) hai đầu khăn dài\n47cm, hai mép của khăn có hai dọc màu xanh lá cây (ra muống) tạo thành đường viền với hai dãy\nhoa văn hình quả trám nổi nhau liên tiếp chạy dọc theo chiều khăn (cơ tao - lá mía).\nNgoài ra, chiếc khăn đam dùng quấn thành nhiều vòng trên đầu rồi thả sau gáy cũng là trang phục\ntruyền thống của đàn ông. Khăn được dệt bằng vải có dải ngang, hai đầu có xúc tua, dài khoảng gần\n1 mét, thường có màu sắc sặc sỡ.\n(Đăng Trường – Hoài Thu, Trang Phục Truyền Thống Của Các Dân Tộc Việt Nam)",
+        "passageTitle": "Trang phục nam giới Bru - Vân Kiều",
+        "passage": "Trang phục nam giới không có gì đặc biệt. Nam để tóc dài, búi tóc, ở trần, đóng khố và quấn khăn. Trong vài chục năm gần đây, họ mặc quần áo như người Kinh.\n\nKhố: Được may bằng một tấm vải khổ rộng 40cm, trên trang trí nhiều hoa văn. Theo chiều dọc của khố, người ta dệt 3 dải hoa văn bằng chỉ khác màu như đỏ, trắng, vàng...; các mô típ hoa văn hình thoi kép chạy liên tiếp ở giữa, hình chân chim, mũi lao... Hai đầu khố có ba dải hoa văn ngang và tua rua ngắn để tiện trong sinh hoạt thường ngày.\n\nKhăn pa hum xla cơ tao: Được dệt bằng sợi tơ tằm, nền khăn màu tím (dấu châu) hai đầu khăn dài 47cm, hai mép của khăn có hai dọc màu xanh lá cây (ra muống) tạo thành đường viền với hai dãy hoa văn hình quả trám nổi nhau liên tiếp chạy dọc theo chiều khăn (cơ tao - lá mía).\n\nNgoài ra, chiếc khăn đam dùng quấn thành nhiều vòng trên đầu rồi thả sau gáy cũng là trang phục truyền thống của đàn ông. Khăn được dệt bằng vải có dải ngang, hai đầu có xúc tua, dài khoảng gần 1 mét, thường có màu sắc sặc sỡ.\n\n(Đăng Trường – Hoài Thu, Trang Phục Truyền Thống Của Các Dân Tộc Việt Nam)",
         "questions": [
           {
             "number": 26,
@@ -1505,7 +1505,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 27,
-            "question": "Hoa văn hình “chân chim” và “mũi lao” trên khố của nam giới Bru - Vân Kiều có ý nghĩa\ngì trong văn hóa của họ?",
+            "question": "Hoa văn hình “chân chim” và “mũi lao” trên khố của nam giới Bru - Vân Kiều có ý nghĩa gì trong văn hóa của họ?",
             "options": {
               "A": "Thể hiện sự mạnh mẽ và bản lĩnh của người đàn ông.",
               "B": "Minh họa cảnh thiên nhiên xung quanh họ.",
@@ -1531,17 +1531,17 @@ export const SAMPLE_EXAMS = [
             "number": 29,
             "question": "Tại sao chất liệu tơ tằm được sử dụng để dệt khăn pa hum xla cơ tao?",
             "options": {
+              "D": "Vì tơ tằm là nguyên liệu duy nhất người Bru - Vân Kiều sử dụng.",
               "A": "Vì tơ tằm nhẹ, mềm mại và dễ tạo hình hoa văn.",
               "B": "Vì tơ tằm bền chắc hơn sợi bông hoặc sợi khác.",
-              "C": "Vì tơ tằm có thể giữ được màu sắc lâu hơn.",
-              "D": "Vì tơ tằm là nguyên liệu duy nhất người Bru - Vân Kiều sử dụng."
+              "C": "Vì tơ tằm có thể giữ được màu sắc lâu hơn."
             },
             "correctAnswer": "A",
             "explanation": ""
           },
           {
             "number": 30,
-            "question": "Qua đoạn văn, có thể suy ra điều gì về ý nghĩa văn hóa của trang phục nam giới Bru - Vân\nKiều?",
+            "question": "Qua đoạn văn, có thể suy ra điều gì về ý nghĩa văn hóa của trang phục nam giới Bru - Vân Kiều?",
             "options": {
               "A": "Trang phục thể hiện sự sáng tạo và tài năng thủ công của họ.",
               "B": "Trang phục chủ yếu mang tính thực dụng, không có giá trị văn hóa sâu sắc.",
@@ -1562,11 +1562,11 @@ export const SAMPLE_EXAMS = [
     "durationMinutes": 40,
     "isPublished": true,
     "createdAt": "2026-11-19T11:00:00.000Z",
-    "updatedAt": "2026-11-19T20:30:00.000Z",
+    "updatedAt": "2026-11-20T20:40:00.000Z",
     "singleQuestions": [
       {
         "number": 1,
-        "question": "“Ngày xửa ngày xưa, có hai vợ chồng đi rừng, bắt được một con dúi. Dúi lạy van xin tha, hứa sẽ nói\nmột điều bí mật. Hai vợ chồng thương tình tha cho. Dúi báo sắp có mưa to gió lớn làm ngập lụt khắp\nnơi. Nó khuyên họ lấy khúc gỗ to, khoét rỗng, chuẩn bị thức ăn đầy đủ bảy ngày, bảy đêm, rồi chui\nvào đó, bịt kín miệng gỗ bằng sáp ong, hết hạn bảy ngày hãy chui ra”.\n(Truyện cổ tích, Chuyện quả bầu)\nCon dúi khuyên hai vợ chồng nên làm gì để tránh nạn lụt sắp tới?",
+        "question": "“Ngày xửa ngày xưa, có hai vợ chồng đi rừng, bắt được một con dúi. Dúi lạy van xin tha, hứa sẽ nói một điều bí mật. Hai vợ chồng thương tình tha cho. Dúi báo sắp có mưa to gió lớn làm ngập lụt khắp nơi. Nó khuyên họ lấy khúc gỗ to, khoét rỗng, chuẩn bị thức ăn đầy đủ bảy ngày, bảy đêm, rồi chui vào đó, bịt kín miệng gỗ bằng sáp ong, hết hạn bảy ngày hãy chui ra”.\n\n(Truyện cổ tích, Chuyện quả bầu)\n\nCon dúi khuyên hai vợ chồng nên làm gì để tránh nạn lụt sắp tới?",
         "options": {
           "A": "Chạy lên núi cao để tránh lụt.",
           "B": "Xây một ngôi nhà kiên cố để chống lụt.",
@@ -1578,7 +1578,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 2,
-        "question": "“Thân em như cá trong lờ,\nHết phương vùng vẫy biết nhờ nơi đâu”.\n(Ca dao)\nTrong câu ca dao trên, hình ảnh “cá trong lờ” biểu trưng cho điều gì?",
+        "question": "“Thân em như cá trong lờ,\nHết phương vùng vẫy biết nhờ nơi đâu”.\n\n(Ca dao)\n\nTrong câu ca dao trên, hình ảnh “cá trong lờ” biểu trưng cho điều gì?",
         "options": {
           "A": "Sự tự do và phóng khoáng.",
           "B": "Sự bị giam cầm và phụ thuộc.",
@@ -1590,7 +1590,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 3,
-        "question": "“Ba vua năm đế dấu vừa qua,\nNối đạo trời rao đức thánh ta.\nHai chữ can thường dằn các nước,\nMột câu trung hiếu dựng muôn nhà.\nChở bao nhiêu đạo thuyền không khẳm,\nĐâm mấy thằng gian bút chẳng tà.\nCăm lấy lòng nhơ mong thói bạc,\nTrời gần chẳng gánh gánh trời xa”.\n(Nguyễn Đình Chiểu, Than đạo)\nTrong bài thơ “Than đạo”, Nguyễn Đình Chiểu sử dụng hình ảnh “thuyền” để biểu trưng cho điều gì?",
+        "question": "“Ba vua năm đế dấu vừa qua,\nNối đạo trời rao đức thánh ta.\nHai chữ can thường dằn các nước,\nMột câu trung hiếu dựng muôn nhà.\nChở bao nhiêu đạo thuyền không khẳm,\nĐâm mấy thằng gian bút chẳng tà.\nCăm lấy lòng nhơ mong thói bạc,\nTrời gần chẳng gánh gánh trời xa”.\n\n(Nguyễn Đình Chiểu, Than đạo)\n\nTrong bài thơ “Than đạo”, Nguyễn Đình Chiểu sử dụng hình ảnh “thuyền” để biểu trưng cho điều gì?",
         "options": {
           "A": "Cuộc đời con người.",
           "B": "Văn chương nghệ thuật.",
@@ -1602,7 +1602,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 4,
-        "question": "“Chơi một mình, buồn lắm. Hồng ngơ ngẩn. Hồng tiếc những ngày xưa cũ quá. Những ngày xưa cũ\nchỉ cách đây hơn nửa tháng. Chị Thảo chưa về. Chị Thảo bế em Thiên. Hồng lẽo đẽo theo sau. Chúng\nđi chơi khắp xóm. Ngày ấy, Hồng có biết bao nhiêu là bạn! Thằng Hỉ đỏ mũi, thằng Hân cởi truồng,\nthằng Tảo đầu trọc như quả bưởi và mắt trố như hai con ốc nhồi, với cái Như, cái Mùi, cái Vót...\nChúng chơi với nhau vui lắm, vui lắm! Bây giờ Hồng chỉ còn được chơi với cây soan, cây chuối, cây\ncam. Hồng gọi chúng là bác soan, bác chuối, bác cam”.\n(Nam Cao, Bài học quét nhà)\nTrong đoạn trích, Hồng cảm thấy buồn vì lý do nào?",
+        "question": "“Chơi một mình, buồn lắm. Hồng ngơ ngẩn. Hồng tiếc những ngày xưa cũ quá. Những ngày xưa cũ chỉ cách đây hơn nửa tháng. Chị Thảo chưa về. Chị Thảo bế em Thiên. Hồng lẽo đẽo theo sau. Chúng đi chơi khắp xóm. Ngày ấy, Hồng có biết bao nhiêu là bạn! Thằng Hỉ đỏ mũi, thằng Hân cởi truồng, thằng Tảo đầu trọc như quả bưởi và mắt trố như hai con ốc nhồi, với cái Như, cái Mùi, cái Vót... Chúng chơi với nhau vui lắm, vui lắm! Bây giờ Hồng chỉ còn được chơi với cây soan, cây chuối, cây cam. Hồng gọi chúng là bác soan, bác chuối, bác cam”.\n\n(Nam Cao, Bài học quét nhà)\n\nTrong đoạn trích, Hồng cảm thấy buồn vì lý do nào?",
         "options": {
           "A": "Chị Thảo chưa về.",
           "B": "Không có bạn chơi.",
@@ -1614,7 +1614,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 5,
-        "question": "“Đời hỏi gì ta trên đảo vắng?\nMắt xanh hiu hắt gió thời gian\nĐời hỏi gì ta trên biển nắng?\nHồn xanh cuồn cuộn suối khơi ngàn.\nĐời hỏi gì ta? Hồn ta đây!\nNhìn đêm mắt rụng hay sao bay?\nTa đến đây đất trời hưng thịnh\nĐời hỏi gì ta trong ánh ngày?”\n(Huy Cận, Đời hỏi gì ta)\nTrong đoạn thơ trên, tác giả thể hiện tâm trạng gì?",
+        "question": "“Đời hỏi gì ta trên đảo vắng?\nMắt xanh hiu hắt gió thời gian\nĐời hỏi gì ta trên biển nắng?\nHồn xanh cuồn cuộn suối khơi ngàn.\nĐời hỏi gì ta? Hồn ta đây!\nNhìn đêm mắt rụng hay sao bay?\nTa đến đây đất trời hưng thịnh\nĐời hỏi gì ta trong ánh ngày?”\n(Huy Cận, Đời hỏi gì ta)\n\nTrong đoạn thơ trên, tác giả thể hiện tâm trạng gì?",
         "options": {
           "A": "Lạc quan, hy vọng.",
           "B": "Bâng khuâng, tự vấn.",
@@ -1626,7 +1626,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 6,
-        "question": "“Chàng trai tên là Santiago. Bụi rơi lả chả khi chàng trai cùng đàn cừu tiến vào một ngôi nhà thờ bỏ\nhoang. Mái nhà đã rơi rớt từ lâu, một cây sung dâu to lớn đã mọc nơi mà tượng thánh từng ngự chốn\nấy. Chàng ta quyết định dừng chân nơi đây một đêm. Chàng trai đã nhìn để chắc là cả đàn cừu đã đi\nvào qua cánh cổng đổ nát, rồi thì dựng một vài thanh gỗ chắn ngang để phòng ngừa những con cừu\nchạy lạc trong đêm. Không có những con cáo ở trong vùng này, nhưng đã một lần có những con cừu\nlạc mất trong đêm, và chàng trai ta phải mất cả ngày hôm sau để tìm chúng”.\n(Paulo Coelho, Nhà giả kim)\nTrong đoạn trích từ “Nhà giả kim”, chàng trai quyết định dừng chân nơi đâu để nghỉ ngơi?",
+        "question": "“Chàng trai tên là Santiago. Bụi rơi lả chả khi chàng trai cùng đàn cừu tiến vào một ngôi nhà thờ bỏ hoang. Mái nhà đã rơi rớt từ lâu, một cây sung dâu to lớn đã mọc nơi mà tượng thánh từng ngự chốn ấy. Chàng ta quyết định dừng chân nơi đây một đêm. Chàng trai đã nhìn để chắc là cả đàn cừu đã đi vào qua cánh cổng đổ nát, rồi thì dựng một vài thanh gỗ chắn ngang để phòng ngừa những con cừu chạy lạc trong đêm. Không có những con cáo ở trong vùng này, nhưng đã một lần có những con cừu lạc mất trong đêm, và chàng trai ta phải mất cả ngày hôm sau để tìm chúng”.\n\n(Paulo Coelho, Nhà giả kim)\n\nTrong đoạn trích từ “Nhà giả kim”, chàng trai quyết định dừng chân nơi đâu để nghỉ ngơi?",
         "options": {
           "A": "Một ngôi nhà thờ bỏ hoang.",
           "B": "Một hang động trên núi.",
@@ -1638,19 +1638,19 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 7,
-        "question": "“Long Môn hoành dã đoạn,\nDịch thụ xuất thành lai.\nKhí sắc hoàng cư cận,\nKim ngân phật tự khai.\nVãng hoàn thì lũ cải,\nXuyên thuỷ nhật du tai.\nTương duyệt chinh đồ thượng,\nSinh nhai tận kỷ hồi?”\n(Đỗ Phủ, Long môn)\nTrong bài thơ “Long môn” của Đỗ Phủ, hình ảnh “Long Môn hoành dã đoạn” biểu thị điều gì?",
+        "question": "“Long Môn hoành dã đoạn,\nDịch thụ xuất thành lai.\nKhí sắc hoàng cư cận,\nKim ngân phật tự khai.\nVãng hoàn thì lũ cải,\nXuyên thuỷ nhật du tai.\nTương duyệt chinh đồ thượng,\nSinh nhai tận kỷ hồi?”\n(Đỗ Phủ, Long môn)\n\nTrong bài thơ “Long môn” của Đỗ Phủ, hình ảnh “Long Môn hoành dã đoạn” biểu thị điều gì?",
         "options": {
-          "A": "Con đường Long Môn bị chặn lại.",
-          "B": "Dòng sông Long Môn bị cạn kiệt.",
           "C": "Dãy núi Long Môn bị chia cắt.",
-          "D": "Cửa ải Long Môn bị đóng kín."
+          "D": "Cửa ải Long Môn bị đóng kín.",
+          "A": "Con đường Long Môn bị chặn lại.",
+          "B": "Dòng sông Long Môn bị cạn kiệt."
         },
         "correctAnswer": "C",
         "explanation": ""
       },
       {
         "number": 8,
-        "question": "“Khi ngước mắt lên, tôi nhận ra bầu trời đã đầy sao. Những vì sao chi chít chiếm hết mọi khoảng\ntrống và mỗi lúc một tỏa sáng. Trong khi đó, dường như có ai đã tắt bớt những ngọn đèn dầu lung\nlinh trong chợ. Một số hàng quán đã dọn về nhà, chỉ còn trơ lại những chiếc chõng tre đang sút dần\nnhững sợi mây buộc”.\n(Nguyễn Nhật Ánh, Mắt biếc)\nTrong đoạn trích sau từ “Mắt biếc” của Nguyễn Nhật Ánh, hình ảnh nào không được đề cập?",
+        "question": "“Khi ngước mắt lên, tôi nhận ra bầu trời đã đầy sao. Những vì sao chi chít chiếm hết mọi khoảng trống và mỗi lúc một tỏa sáng. Trong khi đó, dường như có ai đã tắt bớt những ngọn đèn dầu lung linh trong chợ. Một số hàng quán đã dọn về nhà, chỉ còn trơ lại những chiếc chõng tre đang sút dần những sợi mây buộc”.\n\n(Nguyễn Nhật Ánh, Mắt biếc)\n\nTrong đoạn trích sau từ “Mắt biếc” của Nguyễn Nhật Ánh, hình ảnh nào không được đề cập?",
         "options": {
           "A": "Bầu trời đầy sao.",
           "B": "Ngọn đèn dầu lung linh trong chợ.",
@@ -1662,7 +1662,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 9,
-        "question": "“Em ơi đã đến lúc rồi\nTim anh mong sống một đời yên thân\nNgày ngày tiếp nối bay dần\nMỗi ngày đem mất một phần đời ta,\nHai ta đang sống đây mà…\nNhưng như đã chết, thân ra bụi rồi\nCó đâu hạnh phúc em ơi,\nCòn chăng yên tĩnh và đời tự do.\nTừ lâu anh chỉ trông chờ\nNhư người kiệt sức, mong giờ thoát thân\nKiếm nơi yên ổn làm ăn\nVới bao tình cảm trong ngần chở che”.\n(Pushkin, Em ơi đã đến lúc rồi)\nTrong đoạn trích, tác giả bày tỏ mong muốn gì?",
+        "question": "“Em ơi đã đến lúc rồi\nTim anh mong sống một đời yên thân\nNgày ngày tiếp nối bay dần\nMỗi ngày đem mất một phần đời ta,\nHai ta đang sống đây mà…\nNhưng như đã chết, thân ra bụi rồi\nCó đâu hạnh phúc em ơi,\nCòn chăng yên tĩnh và đời tự do.\nTừ lâu anh chỉ trông chờ\nNhư người kiệt sức, mong giờ thoát thân\nKiếm nơi yên ổn làm ăn\nVới bao tình cảm trong ngần chở che”.\n\n(Pushkin, Em ơi đã đến lúc rồi)\n\nTrong đoạn trích, tác giả bày tỏ mong muốn gì?",
         "options": {
           "A": "Tìm kiếm hạnh phúc và tự do.",
           "B": "Trở về quê hương.",
@@ -1674,7 +1674,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 10,
-        "question": "“Giữa đám quần sơn lô xô ấy, là giấc ngủ nghìn năm của những vua chúa được phong kín trong lòng\nnhững rừng thông u tịch và niềm kiêu hãnh âm u của những lăng tẩm đồ sộ toả lan khắp cả một vùng\nthượng lưu “Bốn bề núi phủ mây phong - Mảnh trăng thiên cổ bóng tùng Vạn Niên”. Đó là vẻ đẹp\ntrầm mặc nhất của sông Hương, như triết lí, như cổ thi, kéo dài mãi đến lúc mặt nước phẳng lặng của\nnó gặp tiếng chuông chùa Thiên Mụ ngân nga tận bờ bên kia, ...”\n(Hoàng Phủ Ngọc Tường, Ai đã đặt tên cho dòng sông)\nTrong đoạn trích sau từ “Ai đã đặt tên cho dòng sông” của Hoàng Phủ Ngọc Tường, hình ảnh nào\nkhông được đề cập?",
+        "question": "“Giữa đám quần sơn lô xô ấy, là giấc ngủ nghìn năm của những vua chúa được phong kín trong lòng những rừng thông u tịch và niềm kiêu hãnh âm u của những lăng tẩm đồ sộ toả lan khắp cả một vùng thượng lưu “Bốn bề núi phủ mây phong - Mảnh trăng thiên cổ bóng tùng Vạn Niên”. Đó là vẻ đẹp trầm mặc nhất của sông Hương, như triết lí, như cổ thi, kéo dài mãi đến lúc mặt nước phẳng lặng của nó gặp tiếng chuông chùa Thiên Mụ ngân nga tận bờ bên kia, ...”\n\n(Hoàng Phủ Ngọc Tường, Ai đã đặt tên cho dòng sông)\n\nTrong đoạn trích sau từ “Ai đã đặt tên cho dòng sông” của Hoàng Phủ Ngọc Tường, hình ảnh nào không được đề cập?",
         "options": {
           "A": "Rừng thông u tịch.",
           "B": "Lăng tẩm đồ sộ.",
@@ -1686,7 +1686,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 11,
-        "question": "“Gậm một khối căm hờn trong cũi sắt,\nTa nằm dài, trông ngày tháng dần qua,\nKhinh lũ người kia ngạo mạn, ngẩn ngơ,\nGiương mắt bé giễu oai linh rừng thẳm,\nNay sa cơ, bị nhục nhằn tù hãm,\nĐể làm trò lạ mắt, thứ đồ chơi.\nChịu ngang bầy cùng bọn gấu dở hơi,\nVới cặp báo chuồng bên vô tư lự”.\n(Thế Lữ, Nhớ rừng)\nĐoạn thơ “Nhớ rừng” của Thế Lữ được viết theo thể thơ nào?",
+        "question": "“Gậm một khối căm hờn trong cũi sắt,\nTa nằm dài, trông ngày tháng dần qua,\nKhinh lũ người kia ngạo mạn, ngẩn ngơ,\nGiương mắt bé giễu oai linh rừng thẳm,\nNay sa cơ, bị nhục nhằn tù hãm,\nĐể làm trò lạ mắt, thứ đồ chơi.\nChịu ngang bầy cùng bọn gấu dở hơi,\nVới cặp báo chuồng bên vô tư lự”.\n(Thế Lữ, Nhớ rừng)\n\nĐoạn thơ “Nhớ rừng” của Thế Lữ được viết theo thể thơ nào?",
         "options": {
           "A": "Thơ lục bát.",
           "B": "Thơ năm chữ.",
@@ -1710,7 +1710,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 13,
-        "question": "“Buồn trông nội cỏ rầu rầu\nChân mây mặt đất một màu xanh xanh”\n(Nguyễn Du, Truyện Kiều)\nTừ nào trong câu thơ trên được dùng với nghĩa chuyển?",
+        "question": "“Buồn trông nội cỏ rầu rầu\nChân mây mặt đất một màu xanh xanh”\n\n(Nguyễn Du, Truyện Kiều)\n\nTừ nào trong câu thơ trên được dùng với nghĩa chuyển?",
         "options": {
           "A": "Nội cỏ.",
           "B": "Rầu rầu.",
@@ -1734,7 +1734,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 15,
-        "question": "“Dưới mái trường thân yêu, có biết bao kỷ niệm vui buồn cùng nhau sau những tiết học dài”.\nXác định lỗi sai trong câu?",
+        "question": "“Dưới mái trường thân yêu, có biết bao kỷ niệm vui buồn cùng nhau sau những tiết học dài”. Xác định lỗi sai trong câu?",
         "options": {
           "A": "Thiếu trạng ngữ.",
           "B": "Thiếu chủ ngữ.",
@@ -1760,17 +1760,17 @@ export const SAMPLE_EXAMS = [
         "number": 17,
         "question": "Câu nào dưới đây là câu ghép đẳng lập?",
         "options": {
-          "A": "Tôi thích đọc sách và bạn tôi cũng vậy.",
           "B": "Tôi thích đọc sách vì nó giúp tôi thư giãn.",
           "C": "Mặc dù trời mưa, nhưng chúng tôi vẫn đi học.",
-          "D": "Anh ấy thích chơi thể thao, còn chị ấy yêu thích âm nhạc."
+          "D": "Anh ấy thích chơi thể thao, còn chị ấy yêu thích âm nhạc.",
+          "A": "Tôi thích đọc sách và bạn tôi cũng vậy."
         },
         "correctAnswer": "D",
         "explanation": ""
       },
       {
         "number": 18,
-        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n“Anh ấy có nội tâm rất đẹp, luôn sẵn sàng giúp đỡ người khác khi cần”.",
+        "question": "Xác định từ sai ngữ nghĩa trong câu sau:\n\n“Anh ấy có nội tâm rất đẹp, luôn sẵn sàng giúp đỡ người khác khi cần”.",
         "options": {
           "A": "Nội tâm.",
           "B": "Đẹp.",
@@ -1782,7 +1782,7 @@ export const SAMPLE_EXAMS = [
       },
       {
         "number": 19,
-        "question": "“Người viết đã lấy các ví dụ trong thơ Nôm của Nguyễn Trãi, Hồ Xuân Hương, Truyện Kiều\nđể chứng minh cho nhận định này”. Xác định lỗi sai của câu:",
+        "question": "“Người viết đã lấy các ví dụ trong thơ Nôm của Nguyễn Trãi, Hồ Xuân Hương, Truyện Kiều để chứng minh cho nhận định này”. Xác định lỗi sai của câu:",
         "options": {
           "A": "Sai logic.",
           "B": "Sai quy chiếu.",
@@ -1810,11 +1810,11 @@ export const SAMPLE_EXAMS = [
         "id": "group_1",
         "title": "Nhóm đọc hiểu 1 (Câu 21 – 25)",
         "passageTitle": "",
-        "passage": "“Phòng bên là phòng khách riêng của Hảo, nhỏ chỉ bằng một phần tư phòng khách chính và bài trí\nngược hẳn. Một đàng tham bác lẫn Tây, Tàu, Nhật và An Nam: bên bộ tủ chè, sập gụ khảm, bên một\nbộ salon gỗ trắc kiểu Louis XV. Trên tường đĩa cổ treo nhan nhản cùng với đôi kiếm và đôi quất vỏ\nkhảm xà cừ; dưới đất, sát chân tường đặt ngổn ngang những chậu, thống, đòn và chóe đời Minh Thanh\nHóa, Gia Tinh và đời Thanh Khang Hy, Càn Long. Hai bên sập và đứng đối nhau một tủ rượu kiểu\nNhật và một cái giá gỗ giả trúc, kiểu Tàu. Trong tủ và trên giá bầy rất nhiều những vật báu: ngọc, ngà\nvà sứ. Giữa nhà, treo trên tủ chè bức ảnh phóng đại một vị quan già vận trào phục. Sau hết, ở ngay\ncửa vào, đặt ngang một cái giá lộ bộ với đủ các đồ binh khí thời xưa: chùy, phủ, việt, kích, thương,\nbát xà mâu, thanh long đao.\nCòn một đàng thì hoàn toàn bài trí theo Âu Mỹ: ghế dựa gỗ lát đánh bóng, thấp rộng và có nệm lò\nxo; thảm Ba Tư cổ; trên tường treo bức vẽ chính Hảo đứng bên bình hoa sen. Ở một góc phòng, một\ncái lọ men xanh với những hoa lay-ơn màu trắng. Tất cả mọi vật đều dịu dàng và nhịp nhàng dưới\nlàn ánh sáng tản mạn của những ngọn đèn điện ẩn khuất trong tường”.\n(Khái Hưng, Băn khoăn)",
+        "passage": "“Phòng bên là phòng khách riêng của Hảo, nhỏ chỉ bằng một phần tư phòng khách chính và bài trí ngược hẳn. Một đàng tham bác lẫn Tây, Tàu, Nhật và An Nam: bên bộ tủ chè, sập gụ khảm, bên một bộ salon gỗ trắc kiểu Louis XV. Trên tường đĩa cổ treo nhan nhản cùng với đôi kiếm và đôi quất vỏ khảm xà cừ; dưới đất, sát chân tường đặt ngổn ngang những chậu, thống, đòn và chóe đời Minh Thanh Hóa, Gia Tinh và đời Thanh Khang Hy, Càn Long. Hai bên sập và đứng đối nhau một tủ rượu kiểu Nhật và một cái giá gỗ giả trúc, kiểu Tàu. Trong tủ và trên giá bầy rất nhiều những vật báu: ngọc, ngà và sứ. Giữa nhà, treo trên tủ chè bức ảnh phóng đại một vị quan già vận trào phục. Sau hết, ở ngay cửa vào, đặt ngang một cái giá lộ bộ với đủ các đồ binh khí thời xưa: chùy, phủ, việt, kích, thương, bát xà mâu, thanh long đao.\n\nCòn một đàng thì hoàn toàn bài trí theo Âu Mỹ: ghế dựa gỗ lát đánh bóng, thấp rộng và có nệm lò xo; thảm Ba Tư cổ; trên tường treo bức vẽ chính Hảo đứng bên bình hoa sen. Ở một góc phòng, một cái lọ men xanh với những hoa lay-ơn màu trắng. Tất cả mọi vật đều dịu dàng và nhịp nhàng dưới làn ánh sáng tản mạn của những ngọn đèn điện ẩn khuất trong tường”.\n\n(Khái Hưng, Băn khoăn)",
         "questions": [
           {
             "number": 21,
-            "question": "Đoạn trích sử dụng biện pháp nghệ thuật nào để miêu tả sự pha trộn giữa các phong cách bài\ntrí trong phòng khách của Hảo?",
+            "question": "Đoạn trích sử dụng biện pháp nghệ thuật nào để miêu tả sự pha trộn giữa các phong cách bài trí trong phòng khách của Hảo?",
             "options": {
               "A": "So sánh và ẩn dụ.",
               "B": "Liệt kê và đối lập.",
@@ -1838,19 +1838,19 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 23,
-            "question": "Tại sao tác giả lại đặt hai kiểu bài trí “tham bác lẫn Tây, Tàu, Nhật và An Nam” và “hoàn\ntoàn bài trí theo Âu Mỹ” trong cùng một không gian?",
+            "question": "Tại sao tác giả lại đặt hai kiểu bài trí “tham bác lẫn Tây, Tàu, Nhật và An Nam” và “hoàn toàn bài trí theo Âu Mỹ” trong cùng một không gian?",
             "options": {
-              "A": "Để phê phán sự vay mượn văn hóa thiếu chọn lọc.",
-              "B": "Để thể hiện sự đa dạng trong gu thẩm mỹ của nhân vật Hảo.",
               "C": "Để làm nổi bật sự xung đột văn hóa trong bối cảnh hiện đại.",
-              "D": "Để phản ánh sự hòa quyện văn hóa trong xã hội đương thời."
+              "D": "Để phản ánh sự hòa quyện văn hóa trong xã hội đương thời.",
+              "A": "Để phê phán sự vay mượn văn hóa thiếu chọn lọc.",
+              "B": "Để thể hiện sự đa dạng trong gu thẩm mỹ của nhân vật Hảo."
             },
             "correctAnswer": "C",
             "explanation": ""
           },
           {
             "number": 24,
-            "question": "Từ “tham bác” trong câu “Một đàng tham bác lẫn Tây, Tàu, Nhật và An Nam” có nghĩa gần\nnhất là gì?",
+            "question": "Từ “tham bác” trong câu “Một đàng tham bác lẫn Tây, Tàu, Nhật và An Nam” có nghĩa gần nhất là gì?",
             "options": {
               "A": "Tham khảo và chọn lọc.",
               "B": "Thu nhặt và pha trộn.",
@@ -1878,7 +1878,7 @@ export const SAMPLE_EXAMS = [
         "id": "group_2",
         "title": "Nhóm đọc hiểu 2 (Câu 26 – 30)",
         "passageTitle": "",
-        "passage": "“PGS-TS Đoàn Lê Giang, Trưởng ban tổ chức hội thảo, cho biết: “Đối với Việt Nam, sự giao lưu với\nthế giới đầu tiên chính là giao lưu với phương Đông. Sự giao lưu thúc đẩy những đổi mới nhận thức\nvề thế giới để từ đó Việt Nam bước ra khỏi khu vực chật hẹp của mình, vươn ra năm châu. “Việt Nam\n- Giao lưu văn hóa tư tưởng phương Đông” là một chủ đề lớn, hứa hẹn nhiều phát hiện thú vị”.\nTheo PGS-TS Đoàn Lê Giang, hội thảo hướng tới nghiên cứu 3 vấn đề lớn: Thứ nhất, các vấn đề tổng\nquát trong giao lưu văn hóa Việt Nam - phương Đông, được thể hiện qua nguồn thư tịch giao lưu văn\nhóa thời tiền cận đại với các quốc gia Đông Á, sự tiếp biến các tôn giáo Ấn Độ ở Việt Nam, vấn đề\nbá quyền văn hóa và quan niệm về Hoa - Di trong thơ bang giao Việt - Trung… Thứ hai, Phật giáo\nViệt Nam trong giao lưu văn hóa tư tưởng phương Đông. Ở nhóm vấn đề này, hội thảo sẽ thảo luận\nvề hành trạng các nhà sư gốc Ấn trong việc truyền bá đạo Phật ở Việt Nam thời kỳ đầu, vai trò của\nPhật giáo nguyên thủy với tiếp biến văn hóa Nam Á, Đông Nam Á… Thứ ba, hội thảo nghiên cứu\nsâu về thơ văn bang giao đi sứ, thơ văn du ký trong văn học cổ điển Việt Nam, thơ tiếp sứ Trung Hoa\nthời Lý - Trần, Lê - Trịnh và nhà Nguyễn”.\n(Phiên An, Hội thảo “Việt Nam - Giao lưu văn hóa tư tưởng phương Đông”)",
+        "passage": "“PGS-TS Đoàn Lê Giang, Trưởng ban tổ chức hội thảo, cho biết: “Đối với Việt Nam, sự giao lưu với thế giới đầu tiên chính là giao lưu với phương Đông. Sự giao lưu thúc đẩy những đổi mới nhận thức về thế giới để từ đó Việt Nam bước ra khỏi khu vực chật hẹp của mình, vươn ra năm châu. “Việt Nam - Giao lưu văn hóa tư tưởng phương Đông” là một chủ đề lớn, hứa hẹn nhiều phát hiện thú vị”.\n\nTheo PGS-TS Đoàn Lê Giang, hội thảo hướng tới nghiên cứu 3 vấn đề lớn: Thứ nhất, các vấn đề tổng quát trong giao lưu văn hóa Việt Nam - phương Đông, được thể hiện qua nguồn thư tịch giao lưu văn hóa thời tiền cận đại với các quốc gia Đông Á, sự tiếp biến các tôn giáo Ấn Độ ở Việt Nam, vấn đề bá quyền văn hóa và quan niệm về Hoa - Di trong thơ bang giao Việt - Trung… Thứ hai, Phật giáo Việt Nam trong giao lưu văn hóa tư tưởng phương Đông. Ở nhóm vấn đề này, hội thảo sẽ thảo luận về hành trạng các nhà sư gốc Ấn trong việc truyền bá đạo Phật ở Việt Nam thời kỳ đầu, vai trò của Phật giáo nguyên thủy với tiếp biến văn hóa Nam Á, Đông Nam Á… Thứ ba, hội thảo nghiên cứu sâu về thơ văn bang giao đi sứ, thơ văn du ký trong văn học cổ điển Việt Nam, thơ tiếp sứ Trung Hoa thời Lý - Trần, Lê - Trịnh và nhà Nguyễn”.\n\n(Phiên An, Hội thảo “Việt Nam - Giao lưu văn hóa tư tưởng phương Đông”)",
         "questions": [
           {
             "number": 26,
@@ -1930,7 +1930,7 @@ export const SAMPLE_EXAMS = [
           },
           {
             "number": 30,
-            "question": "Trong đoạn trích, lý do PGS-TS Đoàn Lê Giang nhấn mạnh vai trò của Phật giáo trong giao\nlưu văn hóa tư tưởng phương Đông là gì?",
+            "question": "Trong đoạn trích, lý do PGS-TS Đoàn Lê Giang nhấn mạnh vai trò của Phật giáo trong giao lưu văn hóa tư tưởng phương Đông là gì?",
             "options": {
               "A": "Phật giáo là tôn giáo phổ biến nhất tại Việt Nam.",
               "B": "Phật giáo có ảnh hưởng sâu rộng trong lịch sử văn hóa và tư tưởng Việt Nam.",

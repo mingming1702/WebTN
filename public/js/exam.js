@@ -153,6 +153,58 @@ function shouldShowQuestionInReview(qNumber) {
   return true;
 }
 
+function isSourceLine(text) {
+  const trimmed = text.trim();
+  return trimmed.startsWith('(') && trimmed.endsWith(')') && !trimmed.includes('\n');
+}
+
+function formatPassageHtml(passageText) {
+  const blocks = String(passageText || '')
+    .split(/\n{2,}/)
+    .map((b) => b.trim())
+    .filter(Boolean);
+
+  return blocks
+    .map((block) => {
+      if (isSourceLine(block)) {
+        return `<p class="passage-source">${escapeHtml(block)}</p>`;
+      }
+      if (block.includes('\n')) {
+        return `<div class="passage-poem">${escapeHtml(block)}</div>`;
+      }
+      return `<p class="passage-para">${escapeHtml(block)}</p>`;
+    })
+    .join('');
+}
+
+function formatQuestionHtml(questionText) {
+  const blocks = String(questionText || '')
+    .split(/\n{2,}/)
+    .map((b) => b.trim())
+    .filter(Boolean);
+
+  if (blocks.length <= 1 && !String(questionText || '').includes('\n')) {
+    return escapeHtml(questionText);
+  }
+
+  return blocks
+    .map((block, idx) => {
+      const isLast = idx === blocks.length - 1;
+      if (isSourceLine(block)) {
+        return `<div class="q-source">${escapeHtml(block)}</div>`;
+      }
+      if (block.includes('\n')) {
+        return `<div class="q-poem">${escapeHtml(block)}</div>`;
+      }
+      // Câu hỏi chính ở cuối hoặc dòng dẫn ngắn kết thúc bằng ":" không lùi đầu dòng
+      if (isLast || (block.length < 90 && block.endsWith(':'))) {
+        return `<p class="q-prompt">${escapeHtml(block)}</p>`;
+      }
+      return `<p class="q-para">${escapeHtml(block)}</p>`;
+    })
+    .join('');
+}
+
 function renderQuestionCard(q) {
   const qKey = String(q.number);
   const selected = answers[qKey] || '';
@@ -225,7 +277,7 @@ function renderQuestionCard(q) {
     <article id="question-${q.number}" class="question-card ${cardStatusClass}">
       <div class="question-head">
         <span class="question-num">Câu ${q.number}</span>
-        <div class="question-text">${escapeHtml(q.question)}</div>
+        <div class="question-text">${formatQuestionHtml(q.question)}</div>
         ${rightActionHtml}
       </div>
       <div class="options-list">
@@ -279,7 +331,7 @@ function renderQuestions() {
           <div class="passage-card">
             <span class="passage-label">Ngữ liệu đọc hiểu • Câu ${startNum}–${endNum}</span>
             ${group.passageTitle ? `<h3 class="passage-title">${escapeHtml(group.passageTitle)}</h3>` : ''}
-            <div class="passage-content">${escapeHtml(group.passage || '')}</div>
+            <div class="passage-content">${formatPassageHtml(group.passage || '')}</div>
           </div>
           <div>
             ${groupCards || '<div class="card"><div class="card-body">Không có câu nào trong bộ lọc này ở nhóm này.</div></div>'}
