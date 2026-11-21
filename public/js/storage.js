@@ -3,6 +3,7 @@ import { SAMPLE_EXAMS, SAMPLE_SUBMISSIONS } from './sample-data.js';
 const STORAGE_KEYS = {
   EXAMS: 'tv_exams_v1',
   SUBMISSIONS: 'tv_submissions_v1',
+  MY_SUBMISSION_IDS: 'tv_my_submission_ids_v1',
   DEMO_SEED_VERSION: 'tv_demo_seed_version',
   DELETED_SAMPLE_IDS: 'tv_deleted_sample_ids_v1',
   TEACHER_PIN: 'tv_teacher_pin_v1',
@@ -362,6 +363,32 @@ export async function listSubmissions({ examId = '' } = {}) {
   return list;
 }
 
+export function isMySubmission(subId) {
+  if (!subId) return false;
+  const ids = readLocalJson(STORAGE_KEYS.MY_SUBMISSION_IDS, []);
+  return Array.isArray(ids) && ids.includes(subId);
+}
+
+function addMySubmissionId(subId) {
+  if (!subId) return;
+  const ids = readLocalJson(STORAGE_KEYS.MY_SUBMISSION_IDS, []);
+  const list = Array.isArray(ids) ? ids : [];
+  if (!list.includes(subId)) {
+    list.unshift(subId);
+    writeLocalJson(STORAGE_KEYS.MY_SUBMISSION_IDS, list.slice(0, 100));
+  }
+}
+
+export async function listMySubmissions({ examId = '' } = {}) {
+  const ids = readLocalJson(STORAGE_KEYS.MY_SUBMISSION_IDS, []);
+  if (!Array.isArray(ids) || ids.length === 0) {
+    return [];
+  }
+  const mySet = new Set(ids);
+  const all = await listSubmissions({ examId });
+  return all.filter((s) => mySet.has(s.id));
+}
+
 export async function getSubmissionById(subId) {
   const list = await listSubmissions();
   return list.find((s) => s.id === subId) || null;
@@ -374,6 +401,7 @@ export async function saveSubmission(submission) {
       method: 'POST',
       body: JSON.stringify(mapAppSubmissionToDb(submission))
     });
+    addMySubmissionId(submission.id);
     return submission;
   }
 
@@ -381,6 +409,7 @@ export async function saveSubmission(submission) {
   const list = readLocalJson(STORAGE_KEYS.SUBMISSIONS, []);
   list.unshift(submission);
   writeLocalJson(STORAGE_KEYS.SUBMISSIONS, list);
+  addMySubmissionId(submission.id);
   return submission;
 }
 

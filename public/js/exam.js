@@ -2,6 +2,7 @@ import {
   clearExamDraft,
   getExamById,
   getSubmissionById,
+  isMySubmission,
   loadExamDraft,
   saveExamDraft,
   saveSubmission
@@ -535,7 +536,11 @@ function syncReviewFilterButtons() {
 function beginExamSession() {
   gateSection.classList.add('hidden');
   examWorkspace.classList.remove('hidden');
-  demoAutoFillBtn.classList.remove('hidden');
+  if (sessionStorage.getItem('tv_teacher_unlocked') === '1') {
+    demoAutoFillBtn.classList.remove('hidden');
+  } else {
+    demoAutoFillBtn.classList.add('hidden');
+  }
   topbarStudentInfo.textContent = studentClass
     ? `Thí sinh: ${studentName} • Lớp: ${studentClass}`
     : `Thí sinh: ${studentName}`;
@@ -606,6 +611,11 @@ async function init() {
     gateExamName.textContent = `${currentExam.title} • ${Number(currentExam.durationMinutes) || 40} phút • 30 câu`;
 
     if (reviewSubId) {
+      const isTeacher = sessionStorage.getItem('tv_teacher_unlocked') === '1';
+      if (!isTeacher && !isMySubmission(reviewSubId)) {
+        showError('Chỉ giáo viên hoặc chính học sinh đã làm bài mới được xem lại bài làm và đáp án này.');
+        return;
+      }
       const sub = await getSubmissionById(reviewSubId);
       if (!sub) {
         showError('Không tìm thấy lịch sử bài làm này.');

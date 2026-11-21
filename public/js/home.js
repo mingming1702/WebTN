@@ -1,4 +1,4 @@
-import { listExams, listSubmissions } from './storage.js';
+import { listExams, listMySubmissions } from './storage.js';
 import {
   SCORE_SCALE,
   escapeHtml,
@@ -155,7 +155,7 @@ async function init() {
     allExams = await listExams({ includeUnpublished: false });
     renderExams(allExams);
 
-    const submissions = await listSubmissions();
+    const submissions = await listMySubmissions();
     renderRecentHistory(submissions);
   } catch (err) {
     examListContainer.innerHTML = `
