@@ -3,51 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khu Vực Giáo Viên – Quản Lý Đề &amp; Điểm</title>
+  <title>Khu Vực Giáo Viên – Giao Bài Tập &amp; Quản Lý Điểm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/teacher.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="/" class="brand">
-        <div class="brand-logo">GV</div>
+        <div class="brand-logo teacher">GV</div>
         <div>
           <div class="brand-title">Khu Vực Giáo Viên</div>
-          <div class="brand-sub">Soạn đề 30 câu • Quản lý đáp án • Xem điểm học sinh</div>
+          <div class="brand-sub">Soạn từng câu hỏi 30 câu • Giao bài tập • Theo dõi điểm học sinh</div>
         </div>
       </a>
       <nav class="nav-actions">
         <span id="teacherStorageBadge" class="badge badge-blue">Đang kiểm tra...</span>
-        <a href="/" class="btn btn-outline">Xem trang Học sinh</a>
+        <button id="lockTeacherBtn" type="button" class="btn btn-outline btn-sm hidden">Khóa phiên</button>
+        <a href="/" class="btn btn-outline btn-sm">Trang Học sinh</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" style="padding-top:22px; padding-bottom:48px;">
+  <main class="container" style="padding-top:20px; padding-bottom:52px;">
     <!-- Màn hình nhập mã PIN giáo viên -->
-    <section id="pinGateSection" class="card" style="max-width:450px; margin:36px auto;">
+    <section id="pinGateSection" class="card" style="max-width:440px; margin:36px auto;">
       <div class="card-body">
         <h2 style="margin:0 0 8px;">Đăng nhập Giáo viên</h2>
         <p style="margin:0 0 16px; color:var(--text-secondary); font-size:14px;">
-          Nhập mã PIN để quản lý đề thi và xem bảng điểm học sinh. Mã PIN mặc định ban đầu là <strong>1234</strong> (có thể đổi trong mục Cài đặt).
+          Nhập mã PIN để soạn bài tập, chỉnh sửa đáp án và xem bảng điểm học sinh. (Mã PIN mặc định ban đầu là <strong>1234</strong>, có thể đổi trong Cài đặt).
         </p>
         <form id="pinForm">
           <div class="form-group">
             <label class="form-label" for="pinInput">Mã PIN giáo viên</label>
-            <input id="pinInput" type="password" class="form-control" required placeholder="Nhập mã PIN (mặc định: 1234)" />
+            <input id="pinInput" type="password" class="form-control" required placeholder="Nhập mã PIN..." autocomplete="current-password" />
           </div>
-          <div id="pinError" class="alert alert-warning hidden" style="margin-bottom:14px;">
-            <span>Mã PIN chưa đúng. Vui lòng thử lại.</span>
-          </div>
-          <div style="display:grid; gap:10px;">
-            <button type="submit" class="btn btn-primary" style="width:100%;">Mở trang quản lý</button>
-            <button id="demoQuickLoginBtn" type="button" class="btn btn-soft" style="width:100%;">
-              ⚡ Đăng nhập nhanh Demo (PIN mặc định)
-            </button>
-          </div>
+          <div id="pinError" class="alert alert-warning hidden" style="margin-bottom:14px;"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Mở bảng điều khiển</button>
         </form>
       </div>
     </section>
@@ -56,100 +52,160 @@
     <section id="teacherApp" class="hidden">
       <div id="localModeNotice" class="alert alert-info hidden" style="margin-bottom:16px;">
         <div>
-          <strong>Chế độ Lưu cục bộ (LocalStorage):</strong> Web đã nạp sẵn <strong>5 đề Tiếng Việt (Đề 11 – Đề 15, 30 câu/đề)</strong> trên trình duyệt này.
-          Để học sinh thi từ máy khác và tự gửi điểm về giáo viên, hãy kết nối <strong>Supabase miễn phí</strong> trong tab <em>Cài đặt &amp; Đồng bộ</em>.
+          <strong>Chế độ Lưu cục bộ (LocalStorage):</strong> Web đã nạp sẵn <strong>5 bộ đề Tiếng Việt (Đề 11 – Đề 15)</strong> trên trình duyệt này.
+          Để giao bài tập cho học sinh làm từ thiết bị khác và nhận điểm về máy giáo viên, hãy kết nối <strong>Supabase miễn phí</strong> trong tab <em>Cài đặt &amp; Đồng bộ</em>.
         </div>
       </div>
 
       <div class="tabs">
-        <button type="button" class="tab-btn active" data-main-tab="exams">Quản lý &amp; Nhập đề thi</button>
+        <button type="button" class="tab-btn active" data-main-tab="exams">Bài tập &amp; Soạn đề</button>
         <button type="button" class="tab-btn" data-main-tab="scores">Bảng điểm học sinh</button>
         <button type="button" class="tab-btn" data-main-tab="settings">Cài đặt &amp; Đồng bộ</button>
       </div>
 
-      <!-- TAB 1: QUẢN LÝ ĐỀ THI -->
+      <!-- TAB 1: QUẢN LÝ & SOẠN BÀI TẬP -->
       <div id="tabExams">
         <div id="examListPanel">
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
             <div>
-              <h2 style="margin:0;">Danh sách đề thi</h2>
+              <h2 style="margin:0;">Danh sách bài tập giao online</h2>
               <p style="margin:4px 0 0; color:var(--text-secondary); font-size:14px;">
-                Mỗi đề gồm 30 câu (20 câu đơn 1–20 + 2 nhóm đọc hiểu 21–25 &amp; 26–30), thời gian 40 phút.
+                Chuẩn 30 câu (20 câu đơn + 2 nhóm đọc hiểu). Có thể lưu nháp khi đang soạn dở và thêm từng câu một.
               </p>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <label class="btn btn-outline" style="cursor:pointer;">
-                Nhập từ file JSON
+                Nhập file JSON
                 <input id="importJsonFileInput" type="file" accept=".json,application/json" class="hidden" />
               </label>
-              <button id="createExamBtn" type="button" class="btn btn-primary">+ Tạo đề mới (30 câu)</button>
+              <button id="createExamBtn" type="button" class="btn btn-primary">+ Tạo bài tập mới</button>
             </div>
           </div>
 
-          <div id="teacherExamList" class="grid-exams"></div>
+          <div id="teacherExamList" class="teacher-exams-grid"></div>
         </div>
 
-        <!-- TRÌNH SOẠN ĐỀ 30 CÂU -->
+        <!-- TRÌNH SOẠN TỪNG CÂU HỎI & ĐÁP ÁN -->
         <div id="examEditorPanel" class="hidden">
-          <div class="card">
-            <div class="card-body">
-              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
-                <div>
-                  <h2 id="editorHeading" style="margin:0;">Soạn đề thi mới (30 câu)</h2>
-                  <p style="margin:4px 0 0; color:var(--text-secondary); font-size:13.5px;">
-                    Nhập trực tiếp nội dung câu hỏi, 4 phương án A/B/C/D và chọn đáp án đúng bằng nút tròn bên trái mỗi ô.
-                  </p>
-                </div>
-                <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                  <span id="editorCompletionBadge" class="badge badge-blue">Hoàn thành: 0 / 30 câu</span>
-                  <button id="backToExamListBtn" type="button" class="btn btn-outline">← Quay lại danh sách</button>
+          <div class="card editor-topbar-card">
+            <div style="flex:1 1 320px;">
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+                <span id="editorModeLabel" class="badge badge-blue">Bài tập mới</span>
+                <span id="editorCompletionBadge" class="badge badge-blue">0 / 30 câu</span>
+                <span id="editorStatusNotice" class="badge badge-green hidden"></span>
+              </div>
+              <input id="editorTitle" type="text" class="form-control editor-title-input" placeholder="Nhập tên bài tập... (VD: Bài tập Tiếng Việt – Tuần 12)" />
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <button id="backToExamListBtn" type="button" class="btn btn-outline">← Danh sách</button>
+              <button id="saveDraftBtn" type="button" class="btn btn-soft">Lưu nháp</button>
+              <button id="savePublishBtn" type="button" class="btn btn-success">Lưu &amp; Giao bài (30 câu)</button>
+            </div>
+          </div>
+
+          <div id="editorErrorBox" class="alert alert-warning hidden" style="margin-bottom:14px;"></div>
+
+          <div class="builder-layout">
+            <!-- CỘT TRÁI: THÔNG TIN CHUNG + CẤU TRÚC 3 PHẦN & DANH SÁCH CÂU -->
+            <div class="builder-outline">
+              <div class="card">
+                <div class="card-body" style="padding:16px 18px;">
+                  <div class="form-row">
+                    <div class="form-group" style="margin-bottom:10px;">
+                      <label class="form-label" for="editorDuration">Thời gian gợi ý (phút)</label>
+                      <input id="editorDuration" type="number" min="1" max="180" value="40" class="form-control" />
+                    </div>
+                    <div class="form-group" style="margin-bottom:10px; display:flex; align-items:flex-end;">
+                      <label style="display:flex; align-items:center; gap:8px; cursor:pointer; padding-bottom:8px;">
+                        <input id="editorPublished" type="checkbox" style="width:18px; height:18px;" />
+                        <span style="font-weight:600; font-size:13.5px;">Mở ngay cho học sinh</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group" style="margin-bottom:12px;">
+                    <label class="form-label" for="editorDesc">Mô tả / Hướng dẫn học sinh</label>
+                    <input id="editorDesc" type="text" class="form-control" placeholder="Ví dụ: Ôn tập biện pháp tu từ, ngữ nghĩa và đọc hiểu" />
+                  </div>
+                  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <button id="openQuickImportBtn" type="button" class="btn btn-soft btn-sm">Nhập nhanh từ văn bản</button>
+                    <button id="fillSampleMissingBtn" type="button" class="btn btn-outline btn-sm">Điền mẫu câu còn thiếu</button>
+                  </div>
                 </div>
               </div>
 
-              <div class="form-row">
+              <div class="card">
+                <div class="card-body" style="padding:16px 18px;">
+                  <div id="builderSectionTabs" class="builder-section-tabs">
+                    <button type="button" class="builder-sec-btn active" data-builder-section="single">
+                      Phần I: Câu đơn
+                      <span class="builder-sec-count" id="secCountSingle">0 / 20</span>
+                    </button>
+                    <button type="button" class="builder-sec-btn" data-builder-section="group1">
+                      Phần II: Đọc hiểu 1
+                      <span class="builder-sec-count" id="secCountGroup1">0 / 5</span>
+                    </button>
+                    <button type="button" class="builder-sec-btn" data-builder-section="group2">
+                      Phần III: Đọc hiểu 2
+                      <span class="builder-sec-count" id="secCountGroup2">0 / 5</span>
+                    </button>
+                  </div>
+
+                  <div id="passageEditorWrap" class="passage-editor-box hidden" style="margin-top:12px;">
+                    <div class="form-group" style="margin-bottom:10px;">
+                      <label class="form-label" for="passageTitleInput">Tiêu đề ngữ liệu (không bắt buộc)</label>
+                      <input id="passageTitleInput" type="text" class="form-control" placeholder="Ví dụ: Kỷ niệm mùa thu đến trường" />
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                      <label class="form-label" for="passageTextInput">Nội dung đoạn ngữ liệu đọc hiểu *</label>
+                      <textarea id="passageTextInput" class="form-control" style="min-height:120px;" placeholder="Dán hoặc nhập đoạn văn bản đọc hiểu cho nhóm câu này..."></textarea>
+                    </div>
+                  </div>
+
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin:14px 0 10px;">
+                    <strong id="outlineListHeading" style="font-size:14px;">Danh sách câu đã thêm</strong>
+                    <button id="addNewQuestionBtn" type="button" class="btn btn-primary btn-sm">+ Thêm câu hỏi</button>
+                  </div>
+
+                  <div id="outlineQuestionList" class="outline-question-list"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CỘT PHẢI: KHUNG SOẠN TỪNG CÂU HỎI & ĐÁP ÁN -->
+            <div class="card builder-studio">
+              <div class="card-body">
+                <div class="studio-header">
+                  <div>
+                    <span id="studioTargetBadge" class="badge badge-blue">Đang thêm Câu 1</span>
+                    <span id="studioSectionLabel" style="font-size:13px; color:var(--text-muted); margin-left:6px;">Phần I • Câu đơn</span>
+                  </div>
+                  <button id="studioDeleteBtn" type="button" class="btn btn-danger-soft btn-sm hidden">Xóa câu này</button>
+                </div>
+
+                <div id="questionFormErrorBox" class="alert alert-warning hidden" style="margin-bottom:14px;"></div>
+
                 <div class="form-group">
-                  <label class="form-label" for="editorTitle">Tên đề thi *</label>
-                  <input id="editorTitle" type="text" class="form-control" placeholder="Ví dụ: Đề kiểm tra Tiếng Việt – Tuần 12" />
+                  <label class="form-label" for="qTextInput">Nội dung câu hỏi *</label>
+                  <textarea id="qTextInput" class="form-control" style="min-height:110px;" placeholder="Nhập câu hỏi trắc nghiệm... (xuống 2 dòng để tách đoạn văn bản hoặc trích dẫn thơ)"></textarea>
                 </div>
+
                 <div class="form-group">
-                  <label class="form-label" for="editorDuration">Thời gian làm bài (phút) *</label>
-                  <input id="editorDuration" type="number" min="1" max="180" value="40" class="form-control" />
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+                    <span class="form-label" style="margin-bottom:0;">4 Phương án trắc nghiệm &amp; Đáp án đúng *</span>
+                    <span style="font-size:12px; color:var(--text-muted);">Chọn nút tròn để đánh dấu đáp án đúng</span>
+                  </div>
+                  <div id="studioOptionsGrid" class="studio-options-grid"></div>
                 </div>
-              </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="editorDesc">Mô tả ngắn</label>
-                  <input id="editorDesc" type="text" class="form-control" placeholder="Ví dụ: Ôn tập từ loại, câu ghép và đọc hiểu" />
+                <div class="form-group" style="margin-bottom:0;">
+                  <label class="form-label" for="qExplanationInput">Giải thích đáp án (khuyên dùng để học sinh tự học)</label>
+                  <textarea id="qExplanationInput" class="form-control" style="min-height:70px;" placeholder="Giải thích ngắn vì sao đáp án này đúng (hiển thị khi học sinh kiểm tra câu hoặc xem lại bài)..."></textarea>
                 </div>
-                <div class="form-group" style="display:flex; align-items:flex-end;">
-                  <label style="display:flex; align-items:center; gap:8px; cursor:pointer; padding-bottom:10px;">
-                    <input id="editorPublished" type="checkbox" checked style="width:18px; height:18px;" />
-                    <span style="font-weight:600; font-size:14px;">Hiển thị ngay cho học sinh làm bài</span>
-                  </label>
+
+                <div class="studio-footer-actions">
+                  <button id="commitQuestionBtn" type="button" class="btn btn-outline">Lưu câu này</button>
+                  <button id="commitAndNextBtn" type="button" class="btn btn-primary">Lưu &amp; Thêm câu tiếp theo →</button>
                 </div>
-              </div>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; padding:12px; background:var(--surface-soft); border:1px solid var(--border); border-radius:12px; margin-bottom:16px;">
-                <button id="openQuickImportBtn" type="button" class="btn btn-soft btn-sm">Nhập nhanh từ văn bản (Copy/Paste)</button>
-                <button id="fillSampleMissingBtn" type="button" class="btn btn-outline btn-sm">Điền nhanh mẫu cho các câu còn trống</button>
-              </div>
-
-              <div id="editorErrorBox" class="alert alert-warning hidden" style="margin-bottom:14px;"></div>
-
-              <div class="tabs">
-                <button type="button" class="tab-btn active" data-editor-tab="part1">Phần I: Câu 1 – 20 (Câu đơn)</button>
-                <button type="button" class="tab-btn" data-editor-tab="part2">Phần II: Câu 21 – 25 (Nhóm 1)</button>
-                <button type="button" class="tab-btn" data-editor-tab="part3">Phần III: Câu 26 – 30 (Nhóm 2)</button>
-              </div>
-
-              <div id="editorPart1"></div>
-              <div id="editorPart2" class="hidden"></div>
-              <div id="editorPart3" class="hidden"></div>
-
-              <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:20px; padding-top:16px; border-top:1px solid var(--border);">
-                <button id="cancelEditorBtn" type="button" class="btn btn-outline">Hủy</button>
-                <button id="saveExamBtn" type="button" class="btn btn-success btn-lg">Lưu đề thi (30 câu)</button>
               </div>
             </div>
           </div>
@@ -164,24 +220,24 @@
           <div class="card-body">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
               <h3 style="margin:0; font-size:16px;">Top câu hỏi học sinh hay sai nhất</h3>
-              <span class="badge badge-amber">Thống kê từ các lượt nộp bài</span>
+              <span class="badge badge-amber">Gợi ý nội dung cần chữa trên lớp</span>
             </div>
             <div id="wrongStatsGrid" class="wrong-stat-grid"></div>
           </div>
         </div>
 
         <div class="card" style="margin-bottom:18px;">
-          <div class="card-body" style="padding:16px 22px;">
+          <div class="card-body" style="padding:16px 20px;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
               <div style="display:flex; gap:10px; flex-wrap:wrap; flex:1;">
                 <select id="filterScoreExam" class="form-control" style="max-width:300px;">
-                  <option value="">Tất cả đề thi</option>
+                  <option value="">Tất cả bài tập</option>
                 </select>
                 <input id="searchScoreStudent" type="search" class="form-control" style="max-width:260px;" placeholder="Tìm tên học sinh..." />
               </div>
               <div style="display:flex; gap:10px;">
                 <button id="refreshScoresBtn" type="button" class="btn btn-outline">Làm mới</button>
-                <button id="exportCsvBtn" type="button" class="btn btn-primary">Xuất bảng điểm CSV</button>
+                <button id="exportCsvBtn" type="button" class="btn btn-primary">Xuất CSV</button>
               </div>
             </div>
           </div>
@@ -197,7 +253,7 @@
             <div class="card-body">
               <h3 style="margin-top:0;">Đồng bộ đa thiết bị (Supabase)</h3>
               <p style="font-size:14px; color:var(--text-secondary);">
-                Mặc định web lưu trên trình duyệt. Nếu muốn <strong>giáo viên nhập đề trên máy tính, học sinh làm bài trên điện thoại và điểm tự gửi về giáo viên</strong>, hãy tạo project Supabase miễn phí, chạy file <code>supabase/schema.sql</code> rồi điền thông tin bên dưới (hoặc khai báo trong Vercel Environment Variables).
+                Kết nối project Supabase (sau khi chạy <code>supabase/schema.sql</code>) để giáo viên giao bài từ máy tính và tự động thu kết quả của học sinh làm trên điện thoại.
               </p>
               <form id="cloudConfigForm">
                 <div class="form-group">
@@ -219,9 +275,9 @@
 
           <div class="card">
             <div class="card-body">
-              <h3 style="margin-top:0;">Bảo mật &amp; Dữ liệu Demo</h3>
+              <h3 style="margin-top:0;">Bảo mật &amp; Dữ liệu mẫu</h3>
               <p style="font-size:14px; color:var(--text-secondary);">
-                Đổi mã PIN để học sinh không tự ý vào xem đáp án hoặc chỉnh sửa đề thi.
+                Đổi mã PIN giáo viên để hạn chế học sinh tự ý mở trang quản lý đáp án và chỉnh sửa bài tập.
               </p>
               <form id="changePinForm">
                 <div class="form-group">
@@ -251,14 +307,14 @@
   <div id="quickImportModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
     <div class="modal-box wide">
       <div class="modal-header">
-        <h3>Nhập nhanh đề thi từ văn bản</h3>
+        <h3>Nhập nhanh bài tập từ văn bản</h3>
         <button id="closeQuickImport" type="button" class="btn btn-outline btn-sm">Đóng</button>
       </div>
       <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
         <p style="margin:0; font-size:13.5px; color:var(--text-secondary);">
-          Hỗ trợ dán <code>Câu 1: ... A. ... B. ... C. ... D. ... Đáp án: A</code> và thẻ <code>[NGỮ LIỆU 1]</code>, <code>[NGỮ LIỆU 2]</code>.
+          Hỗ trợ dán <code>Câu 1: ... A. ... B. ... C. ... D. ... Đáp án: A</code> (có thể thêm <code>Giải thích: ...</code>) và thẻ <code>[NGỮ LIỆU 1]</code>, <code>[NGỮ LIỆU 2]</code>.
         </p>
-        <button id="insertQuickSampleBtn" type="button" class="btn btn-soft btn-sm">Chèn mẫu văn bản 30 câu để thử</button>
+        <button id="insertQuickSampleBtn" type="button" class="btn btn-soft btn-sm">Chèn mẫu văn bản 30 câu</button>
       </div>
       <textarea id="quickImportTextarea" class="form-control" style="min-height:260px; font-family:monospace; font-size:13px;" placeholder="Câu 1: Từ nào viết đúng chính tả?
 A. Sáng sủa
@@ -266,6 +322,7 @@ B. Sáng xủa
 C. Xáng sủa
 D. Xáng xủa
 Đáp án: A
+Giải thích: Sáng sủa viết với âm s.
 
 [NGỮ LIỆU 1]
 Tiêu đề: Buổi sáng trên quê hương
@@ -274,7 +331,7 @@ Tiêu đề: Buổi sáng trên quê hương
 Câu 21: ..."></textarea>
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:14px;">
         <button id="cancelQuickImport" type="button" class="btn btn-outline">Hủy</button>
-        <button id="applyQuickImport" type="button" class="btn btn-primary">Điền vào biểu mẫu</button>
+        <button id="applyQuickImport" type="button" class="btn btn-primary">Điền vào bài tập</button>
       </div>
     </div>
   </div>
@@ -290,6 +347,6 @@ Câu 21: ..."></textarea>
     </div>
   </div>
 
-  <script type="module" src="/js/teacher.js"></script>
+  <script type="module" src="/js/pages/teacher.page.js"></script>
 </body>
 </html>

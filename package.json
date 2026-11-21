@@ -1,9 +1,10 @@
 {
   "name": "web-trac-nghiem-tieng-viet",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Web trắc nghiệm Tiếng Việt 30 câu (20 câu đơn + 2 nhóm đọc hiểu), 40 phút, hỗ trợ giáo viên nhập đề và ghi nhận điểm học sinh.",
+  "description": "Web giao bài tập và ôn thi trắc nghiệm Tiếng Việt 30 câu (MVVM, hỗ trợ soạn từng câu hỏi & đáp án, chế độ ôn luyện/thi thử).",
   "scripts": {
-    "dev": "python -m http.server 3000 --directory public"
+    "dev": "python -m http.server 3000 --directory public",
+    "test": "node --test tests/*.test.mjs"
   }
 }

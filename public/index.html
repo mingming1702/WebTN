@@ -7,7 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/home.css" />
 </head>
 <body>
   <header class="topbar">
@@ -15,7 +17,8 @@
       <a href="/" class="brand">
         <div class="brand-logo">TV</div>
         <div>
-          <div class="brand-title">Trắc nghiệm: Tiếng Việt - VACT 2026</div>
+          <div class="brand-title">Trắc nghiệm Tiếng Việt – VACT 2026</div>
+          <div class="brand-sub">Giao bài tập online • Ôn luyện 30 câu theo chuẩn ĐGNL</div>
         </div>
       </a>
       <nav class="nav-actions">
@@ -25,53 +28,84 @@
   </header>
 
   <main class="container">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:24px;">
-      <h2 style="margin:0; font-size:20px;">Danh sách đề thi hiện có</h2>
-      <div style="min-width:240px; flex:0 1 300px;">
-        <input id="searchExamInput" type="search" class="form-control" placeholder="Tìm theo tên đề thi..." />
+    <section class="study-hero">
+      <div class="study-hero-copy">
+        <div class="study-hero-kicker">Không gian ôn luyện &amp; bài tập</div>
+        <h1>Làm bài tập Tiếng Việt mọi lúc, xem giải thích tức thì</h1>
+        <p>
+          Chọn bài tập được giao bên dưới để làm theo tốc độ của bạn (có thể kiểm tra đáp án từng câu khi ôn tập) hoặc bật chế độ thi thử 40 phút.
+        </p>
+      </div>
+      <div id="heroMetrics" class="study-hero-metrics"></div>
+    </section>
+
+    <div class="toolbar-row">
+      <h2 style="margin:0; font-size:19px;">Danh sách bài tập &amp; đề luyện</h2>
+      <div class="toolbar-controls">
+        <div id="statusFilterChips" class="chip-group" role="group" aria-label="Lọc trạng thái">
+          <button type="button" class="chip-btn active" data-status-filter="all">Tất cả</button>
+          <button type="button" class="chip-btn" data-status-filter="todo">Chưa làm</button>
+          <button type="button" class="chip-btn" data-status-filter="done">Đã làm</button>
+        </div>
+        <input id="searchExamInput" type="search" class="form-control toolbar-search" placeholder="Tìm tên hoặc nội dung bài tập..." />
       </div>
     </div>
 
     <div id="examListContainer" class="grid-exams"></div>
 
     <section id="recentHistorySection" class="history-section hidden">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div class="toolbar-row" style="margin-top:8px;">
         <div>
-          <h2 style="margin:0; font-size:20px;">Lịch sử bài làm gần đây</h2>
-          <p style="margin:4px 0 0; color:var(--text-secondary); font-size:13.5px;">
-            Xem lại điểm số, bài làm đã chọn và đáp án đúng của các lượt thi gần nhất.
+          <h2 style="margin:0; font-size:19px;">Lịch sử bài làm gần đây</h2>
+          <p style="margin:3px 0 0; color:var(--text-secondary); font-size:13.5px;">
+            Xem lại điểm số, câu đã chọn và đáp án đúng để rút kinh nghiệm.
           </p>
         </div>
+        <div id="historyScopeChips" class="chip-group hidden">
+          <button type="button" class="chip-btn active" data-history-scope="mine">Bài của tôi</button>
+          <button type="button" class="chip-btn" data-history-scope="all">Tất cả học sinh</button>
+        </div>
       </div>
-      <div id="recentHistoryList" class="history-list"></div>
+      <div id="recentHistoryList"></div>
     </section>
   </main>
 
-  <!-- Modal nhập thông tin học sinh trước khi thi -->
+  <!-- Modal bắt đầu làm bài -->
   <div id="startModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
     <div class="modal-box">
       <div class="modal-header">
-        <h3>Thông tin thí sinh</h3>
+        <h3>Bắt đầu bài tập</h3>
         <button id="closeStartModal" type="button" class="btn btn-outline btn-sm">Đóng</button>
       </div>
-      <p id="modalExamTitle" style="margin:0 0 14px; font-weight:600; color:var(--primary-hover);"></p>
+      <p id="modalExamTitle" style="margin:0 0 14px; font-weight:700; color:var(--primary-hover);"></p>
       <form id="startExamForm">
-        <input type="hidden" id="selectedExamId" />
         <div class="form-group">
           <label class="form-label" for="studentNameInput">Họ và tên học sinh *</label>
           <input id="studentNameInput" type="text" class="form-control" required placeholder="Ví dụ: Nguyễn Minh Anh" />
         </div>
-        <div class="alert alert-info" style="margin-bottom:16px;">
-          <span>Thời gian làm bài là <strong>40 phút</strong> cho <strong>30 câu hỏi</strong>. Đồng hồ sẽ bắt đầu đếm ngược ngay khi vào làm bài.</span>
+
+        <div class="form-group">
+          <span class="form-label">Chọn hình thức làm bài</span>
+          <div class="mode-selector">
+            <button type="button" class="mode-option active" data-start-mode="practice">
+              <div class="mode-option-title">Ôn luyện / Bài tập</div>
+              <div class="mode-option-desc">Không ép nộp khi hết giờ, có thể kiểm tra đáp án &amp; giải thích ngay từng câu.</div>
+            </button>
+            <button type="button" class="mode-option" data-start-mode="timed">
+              <div class="mode-option-title">Thi thử bấm giờ</div>
+              <div class="mode-option-desc">Đếm ngược theo thời gian đề (40 phút), tự nộp khi hết giờ và chấm cuối bài.</div>
+            </button>
+          </div>
         </div>
+
         <div style="display:flex; gap:10px; justify-content:flex-end;">
           <button id="cancelStartBtn" type="button" class="btn btn-outline">Hủy</button>
-          <button type="submit" class="btn btn-primary">Bắt đầu làm bài</button>
+          <button type="submit" class="btn btn-primary">Vào làm bài</button>
         </div>
       </form>
     </div>
   </div>
 
-  <script type="module" src="/js/home.js"></script>
+  <script type="module" src="/js/pages/home.page.js"></script>
 </body>
 </html>
