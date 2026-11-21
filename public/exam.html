@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Làm Bài Thi Tiếng Việt</title>
+  <title>Làm Bài Tập Tiếng Việt – VACT 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/workspace.css" />
 </head>
 <body class="exam-page">
   <header class="exam-topbar">
@@ -15,53 +17,69 @@
       <div style="display:flex; align-items:center; gap:12px; min-width:0;">
         <a href="/" class="btn btn-outline btn-sm">← Trang chủ</a>
         <div style="min-width:0;">
-          <div id="topbarExamTitle" style="font-weight:700; font-size:15.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-            Đang tải đề thi...
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span id="topbarExamTitle" style="font-weight:700; font-size:15.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+              Đang tải bài tập...
+            </span>
+            <span id="modeBadge" class="badge badge-blue hidden">Ôn luyện</span>
           </div>
           <div id="topbarStudentInfo" style="font-size:12.5px; color:var(--text-muted);"></div>
         </div>
       </div>
 
       <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-        <button id="demoAutoFillBtn" type="button" class="btn btn-soft btn-sm hidden" title="Chọn nhanh đáp án mẫu để xem thử chấm điểm">
-          ⚡ Điền thử đáp án (Demo)
-        </button>
         <span id="progressBadge" class="badge badge-blue">Đã làm: 0 / 30</span>
-        <div id="timerPill" class="timer-pill">40:00</div>
+        <div id="timerPill" class="timer-pill">00:00</div>
         <button id="submitTopBtn" type="button" class="btn btn-success">Nộp bài</button>
       </div>
+    </div>
+    <div class="workspace-progress-track">
+      <div id="workspaceProgressFill" class="workspace-progress-fill"></div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Form nhập tên nếu mở link trực tiếp -->
-    <section id="gateSection" class="card hidden" style="max-width:520px; margin:32px auto;">
+    <!-- Cổng nhập tên nếu mở link trực tiếp -->
+    <section id="gateSection" class="card hidden" style="max-width:540px; margin:32px auto;">
       <div class="card-body">
-        <h2 style="margin:0 0 8px;">Nhập thông tin trước khi làm bài</h2>
+        <h2 style="margin:0 0 8px;">Chuẩn bị làm bài</h2>
         <p id="gateExamName" style="margin:0 0 16px; color:var(--text-secondary);"></p>
         <form id="gateForm">
           <div class="form-group">
             <label class="form-label" for="gateStudentName">Họ và tên học sinh *</label>
             <input id="gateStudentName" type="text" class="form-control" required placeholder="Ví dụ: Trần Gia Bảo" />
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Bắt đầu tính giờ &amp; làm bài</button>
+          <div class="form-group">
+            <span class="form-label">Hình thức làm bài</span>
+            <div class="mode-selector">
+              <button type="button" class="mode-option active" data-gate-mode="practice">
+                <div class="mode-option-title">Ôn luyện / Bài tập</div>
+                <div class="mode-option-desc">Không giới hạn giờ, có nút xem đáp án từng câu.</div>
+              </button>
+              <button type="button" class="mode-option" data-gate-mode="timed">
+                <div class="mode-option-title">Thi thử bấm giờ</div>
+                <div class="mode-option-desc">Đếm ngược tự nộp khi hết giờ.</div>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Bắt đầu làm bài</button>
         </form>
       </div>
     </section>
 
-    <!-- Màn hình làm bài / xem lại bài làm -->
+    <!-- Không gian làm bài / xem lại -->
     <section id="examWorkspace" class="hidden">
       <div id="resultSummaryContainer" class="hidden" style="margin-top:20px;"></div>
 
       <div id="sectionTabs" class="tabs">
         <button type="button" class="tab-btn active" data-section-tab="all">Tất cả (30 câu)</button>
         <button type="button" class="tab-btn" data-section-tab="single">Phần I: Câu 1–20</button>
-        <button type="button" class="tab-btn" data-section-tab="group-1">Phần II: Nhóm 1 (21–25)</button>
-        <button type="button" class="tab-btn" data-section-tab="group-2">Phần III: Nhóm 2 (26–30)</button>
+        <button type="button" class="tab-btn" data-section-tab="group-1">Phần II: Đọc hiểu 1 (21–25)</button>
+        <button type="button" class="tab-btn" data-section-tab="group-2">Phần III: Đọc hiểu 2 (26–30)</button>
       </div>
 
       <div id="reviewFilterBar" class="tabs hidden" style="margin-top:-6px;">
-        <button type="button" class="tab-btn active" data-review-filter="all">Tất cả câu (30)</button>
+        <button type="button" class="tab-btn active" data-review-filter="all">Tất cả câu</button>
         <button type="button" class="tab-btn" data-review-filter="correct">Câu làm đúng</button>
         <button type="button" class="tab-btn" data-review-filter="wrong">Câu sai / Chưa làm</button>
       </div>
@@ -71,8 +89,8 @@
 
         <aside class="card palette-card">
           <div class="card-body">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
-              <strong style="font-size:15px;">Bảng câu hỏi (30 câu)</strong>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+              <strong style="font-size:15px;">Bảng câu hỏi</strong>
               <span id="paletteCounter" class="badge badge-blue">0/30</span>
             </div>
             <p style="margin:0 0 10px; font-size:12.5px; color:var(--text-muted);">
@@ -82,10 +100,10 @@
             <div class="palette-group-title">Phần I • Câu đơn (1 – 20)</div>
             <div id="paletteSingle" class="palette-grid"></div>
 
-            <div class="palette-group-title">Phần II • Nhóm đọc hiểu 1 (21 – 25)</div>
+            <div class="palette-group-title">Phần II • Đọc hiểu 1 (21 – 25)</div>
             <div id="paletteGroup1" class="palette-grid"></div>
 
-            <div class="palette-group-title">Phần III • Nhóm đọc hiểu 2 (26 – 30)</div>
+            <div class="palette-group-title">Phần III • Đọc hiểu 2 (26 – 30)</div>
             <div id="paletteGroup2" class="palette-grid"></div>
 
             <div id="paletteSubmitWrap" style="margin-top:18px; padding-top:14px; border-top:1px solid var(--border);">
@@ -100,7 +118,7 @@
 
     <section id="errorSection" class="card hidden" style="max-width:540px; margin:32px auto;">
       <div class="card-body" style="text-align:center;">
-        <h2 style="margin-top:0;">Không tìm thấy đề thi</h2>
+        <h2 style="margin-top:0;">Không tìm thấy bài tập</h2>
         <p id="errorMessage" style="color:var(--text-secondary);"></p>
         <a href="/" class="btn btn-primary">Quay lại trang chủ</a>
       </div>
@@ -122,6 +140,6 @@
     </div>
   </div>
 
-  <script type="module" src="/js/exam.js"></script>
+  <script type="module" src="/js/pages/exam.page.js"></script>
 </body>
 </html>

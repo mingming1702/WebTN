@@ -1,0 +1,183 @@
+/* Home Study Studio */
+.study-hero {
+  margin: 22px 0 20px;
+  padding: 24px 26px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 65%, #fefce8 100%);
+  border: 1px solid #dbeafe;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.study-hero-copy {
+  max-width: 620px;
+}
+
+.study-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-hover);
+  background: rgba(219, 234, 254, 0.75);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.study-hero h1 {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.25;
+}
+
+.study-hero p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14.5px;
+}
+
+.study-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(96px, 1fr));
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .study-hero {
+    padding: 18px;
+  }
+  .study-hero-metrics {
+    width: 100%;
+  }
+}
+
+.metric-pill-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.metric-pill-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-hover);
+  line-height: 1.15;
+}
+
+.metric-pill-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* Filter Bar */
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0 14px;
+}
+
+.toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.toolbar-search {
+  min-width: 220px;
+  max-width: 300px;
+  flex: 1 1 240px;
+}
+
+/* Assignment Grid */
+.grid-exams {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  margin: 14px 0 36px;
+}
+
+.exam-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #bfdbfe;
+}
+
+.exam-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.exam-card-title {
+  margin: 10px 0 6px;
+  font-size: 17.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.exam-card-desc {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.exam-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.exam-card-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+/* Recent History */
+.history-section {
+  margin: 0 0 48px;
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 13px 16px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}

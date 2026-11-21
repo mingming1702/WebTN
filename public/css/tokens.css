@@ -1,0 +1,52 @@
+:root {
+  /* Surfaces */
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --surface-muted: #f1f5f9;
+  --surface-tint: #eff6ff;
+  --passage-bg: #fffcf4;
+  --passage-border: #fde68a;
+
+  /* Borders */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* Typography */
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* Brand & Semantic Colors */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --primary-ring: rgba(37, 99, 235, 0.16);
+
+  --success: #16a34a;
+  --success-hover: #15803d;
+  --success-soft: #dcfce7;
+  --success-border: #86efac;
+
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --danger-border: #fca5a5;
+
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+  --warning-border: #fcd34d;
+
+  /* Shape & Elevation */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.18);
+
+  --font-sans: "Be Vietnam Pro", "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
