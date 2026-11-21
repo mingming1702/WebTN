@@ -1,5 +1,5 @@
 export const OPTION_KEYS = ['A', 'B', 'C', 'D'];
-export const SCORE_SCALE = 40;
+export const SCORE_SCALE = 30;
 
 export function getScoreBadgeClass(correctCount, totalQuestions = 30) {
   const ratio = Number(correctCount) / (Number(totalQuestions) || 30);
@@ -204,7 +204,7 @@ export function gradeExam(exam, answersMap) {
   });
 
   const totalQuestions = flatQuestions.length || 30;
-  // Thang điểm 40: mỗi câu đúng được 1 điểm
+  // Thang điểm 30: mỗi câu đúng được 1 điểm
   const score = correctCount;
 
   return {
