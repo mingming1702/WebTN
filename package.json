@@ -4,7 +4,7 @@
   "private": true,
   "description": "Web giao bài tập và ôn thi trắc nghiệm Tiếng Việt 30 câu (MVVM, hỗ trợ soạn từng câu hỏi & đáp án, chế độ ôn luyện/thi thử).",
   "scripts": {
-    "dev": "python -m http.server 3000 --directory public",
+    "dev": "node scripts/dev-server.mjs",
     "test": "node --test tests/*.test.mjs"
   }
 }

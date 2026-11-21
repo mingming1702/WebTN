@@ -45,6 +45,8 @@
 │       └── sample-data.js          # 5 bộ đề mẫu Đề 11 – Đề 15
 ├── supabase/
 │   └── schema.sql                  # Script tạo bảng Supabase (exams, submissions)
+├── scripts/
+│   └── dev-server.mjs              # Local dev server hỗ trợ cleanUrls và /api/*
 ├── tests/                          # Unit tests chạy bằng Node built-in test runner
 ├── vercel.json
 └── package.json
