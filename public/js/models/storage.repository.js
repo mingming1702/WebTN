@@ -206,11 +206,12 @@ export function createStorageRepository({
 
   return {
     getTeacherPin() {
-      return localStore?.getItem(STORAGE_KEYS.TEACHER_PIN) || '1234';
+      const stored = localStore?.getItem(STORAGE_KEYS.TEACHER_PIN);
+      return stored && stored !== '1234' ? stored : '1702';
     },
 
     setTeacherPin(pin) {
-      localStore?.setItem(STORAGE_KEYS.TEACHER_PIN, String(pin).trim() || '1234');
+      localStore?.setItem(STORAGE_KEYS.TEACHER_PIN, String(pin).trim() || '1702');
     },
 
     isTeacherSessionUnlocked() {

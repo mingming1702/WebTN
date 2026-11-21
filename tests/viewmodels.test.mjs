@@ -39,11 +39,11 @@ test('TeacherAuthViewModel enforces PIN strictly with no bypass', async () => {
   await authVm.init();
   assert.equal(authVm.state.unlocked, false);
 
-  assert.equal(authVm.verifyPin('9999'), false);
+  assert.equal(authVm.verifyPin('1234'), false);
   assert.equal(authVm.state.unlocked, false);
   assert.ok(authVm.state.pinError.length > 0);
 
-  assert.equal(authVm.verifyPin('1234'), true);
+  assert.equal(authVm.verifyPin('1702'), true);
   assert.equal(authVm.state.unlocked, true);
   assert.equal(authVm.state.pinError, '');
 

@@ -16,7 +16,7 @@
     - **Ôn luyện / Bài tập:** Đếm thời gian làm bài mà không ép tự nộp, hỗ trợ **kiểm tra đáp án & giải thích ngay từng câu**.
     - **Thi thử bấm giờ:** Đếm ngược theo thời gian thực (`Date.now()`), tự nộp khi hết giờ.
   - Split-view đọc hiểu giữ ngữ liệu cố định bên trái kèm nút tăng/giảm cỡ chữ (`A- / A+`), tự lưu nháp bài làm, đánh dấu câu xem lại, lọc câu đúng/sai khi xem lại kết quả.
-- **Giáo viên (`/teacher` — mã PIN mặc định: `1234`):**
+- **Giáo viên (`/teacher` — bảo vệ bằng mã PIN):**
   - **Soạn bài tập từng câu hỏi & đáp án:** Giao diện 2 cột cho phép thêm lần lượt từng câu một (hoặc chèn vào từng phần), sắp xếp thứ tự lên/xuống, lưu nháp giữa chừng (khi chưa đủ 30 câu) và chỉ kiểm tra đủ 30 câu khi mở giao bài.
   - Vẫn hỗ trợ **Nhập nhanh từ văn bản** (Copy/Paste kèm `Giải thích:`) và nhập/xuất file JSON, nhân bản đề.
   - **Theo dõi kết quả:** Thống kê điểm, Top câu hỏi học sinh hay sai nhất, xem chi tiết bài làm và xuất file CSV (UTF-8 BOM cho Excel).
